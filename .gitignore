@@ -1,0 +1,32 @@
+# pycache
+/__pycache__/*
+**.DS_Store
+**.png
+**.pdf
+**.h5
+**.pyc
+
+# CCLE-Dataset [methylation / mutation amplification;deletion]
+/datainfo/aa_raw_data/CCLE/
+# DepMap-Dataset [achilles_effect]
+/datainfo/aa_raw_data/DepMap/
+# GDSC-Dataset [copy_number_variation / rnaseq]
+/datainfo/aa_raw_data/GDSC/
+# Annotation File
+/datainfo/aa_raw_data/Annotation/
+# NCI60-Dataset [deeplearninginput]
+/datainfo/aa_raw_data/NCI60/ComboDrugGrowth_Nov2017.csv
+/datainfo/aa_raw_data/NCI60/NCI_drug_names.txt
+# DrugBank
+/datainfo/aa_raw_data/DrugBank/full_database.xml
+
+
+# Middle Data Processes
+/datainfo/init_data
+/datainfo/init_manual_data
+/datainfo/map_cell_line
+/datainfo/map_manual_cell_line
+
+# Form Data
+/datainfo/form_data
+

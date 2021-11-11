@@ -1,0 +1,817 @@
+Drug A,Drug B,Cell Line Name,Score
+Everolimus,Cladribine,DU-145,-6.0
+Thalidomide,Azacitidine,MDA-MB-231/ATCC,-2.6666666666666665
+Mitotane,Everolimus,786-0,3.4444444444444446
+Megestrol acetate,Gefitinib,RPMI-8226,7.1111111111111125
+Fulvestrant,Sirolimus,OVCAR-3,-0.4444444444444444
+Docetaxel,Cladribine,MALME-3M,-7.0
+Vorinostat,Paclitaxel,LOX IMVI,-0.7777777777777778
+Decitabine,Docetaxel,K-562,-4.333333333333333
+Everolimus,Docetaxel,SW-620,2.555555555555556
+Zoledronic acid,Paclitaxel,HS 578T,-11.333333333333336
+Zoledronic acid,Sirolimus,RPMI-8226,-10.666666666666666
+Paclitaxel,Tretinoin,HCT-116,12.666666666666664
+Romidepsin,Sirolimus,UACC-257,1.3333333333333333
+Zoledronic acid,Romidepsin,RPMI-8226,4.0
+Azacitidine,Nilotinib,LOX IMVI,-21.444444444444443
+Romidepsin,Celecoxib,NCI-H522,-2.7777777777777777
+Azacitidine,Celecoxib,DU-145,-5.0
+Gefitinib,Lenalidomide,OVCAR-3,-5.777777777777778
+Fulvestrant,Nilotinib,DU-145,-1.1111111111111112
+Zoledronic acid,Everolimus,786-0,2.4444444444444446
+Fulvestrant,Dasatinib,SF-295,4.4444444444444455
+Fulvestrant,Vorinostat,SF-539,-8.222222222222221
+Dasatinib,Azacitidine,SK-MEL-28,1.5555555555555556
+Decitabine,Sirolimus,UACC-62,4.2222222222222205
+Dasatinib,Paclitaxel,OVCAR-4,-1.5555555555555556
+Mitotane,Tretinoin,SF-539,-1.1111111111111112
+Zoledronic acid,Nilotinib,RPMI-8226,-12.111111111111107
+Docetaxel,Tretinoin,A498,6.777777777777778
+Dasatinib,Azacitidine,OVCAR-3,-4.888888888888889
+Azacitidine,Paclitaxel,NCI-H460,2.888888888888889
+Nilotinib,Cladribine,IGROV1,-6.0
+Mitotane,Cladribine,DU-145,-3.0
+Fulvestrant,Celecoxib,U251,-8.555555555555555
+Zoledronic acid,Everolimus,SF-295,6.1111111111111125
+Docetaxel,Nilotinib,NCI-H522,8.888888888888891
+Zoledronic acid,Cladribine,A498,-0.7777777777777778
+Sirolimus,Cladribine,T-47D,-10.777777777777779
+Nilotinib,Celecoxib,NCI-H23,-9.555555555555557
+Zoledronic acid,Vorinostat,SK-MEL-2,1.7777777777777777
+Docetaxel,Fulvestrant,KM12,19.33333333333333
+Everolimus,Docetaxel,LOX IMVI,0.5555555555555556
+Dasatinib,Celecoxib,T-47D,1.6666666666666667
+Decitabine,Mitotane,K-562,-2.1111111111111107
+Dasatinib,Sirolimus,MDA-MB-468,4.2222222222222205
+Vorinostat,Paclitaxel,UACC-257,-4.888888888888889
+Dasatinib,Romidepsin,HCT-15,-2.4444444444444446
+Azacitidine,Celecoxib,K-562,6.666666666666668
+Imiquimod,Docetaxel,SF-295,-14.444444444444445
+Romidepsin,Cladribine,K-562,-3.4444444444444446
+Romidepsin,Docetaxel,HCT-116,8.444444444444445
+Everolimus,Nilotinib,SNB-75,-6.333333333333332
+Vorinostat,Nilotinib,HS 578T,-1.0
+Mitotane,Azacitidine,HS 578T,1.3333333333333333
+Gefitinib,Lenalidomide,MCF7,-3.111111111111111
+Paclitaxel,Tretinoin,HS 578T,38.111111111111114
+Decitabine,Sirolimus,NCI-H23,-1.6666666666666667
+Thalidomide,Sirolimus,SK-MEL-5,-6.5555555555555545
+Fulvestrant,Romidepsin,SF-295,-0.6666666666666666
+Nilotinib,Cladribine,SK-OV-3,-1.0
+Nilotinib,Cladribine,HS 578T,-4.888888888888889
+Decitabine,Docetaxel,SF-539,-12.111111111111107
+Dasatinib,Celecoxib,MDA-MB-231/ATCC,8.777777777777779
+Vorinostat,Sirolimus,SF-268,-1.5555555555555556
+Sirolimus,Cladribine,MDA-MB-468,-4.666666666666667
+Azacitidine,Tretinoin,UACC-62,-4.111111111111111
+Decitabine,Azacitidine,SF-268,1.2222222222222223
+Mitotane,Nilotinib,SF-268,-5.222222222222221
+Everolimus,Celecoxib,UACC-257,-12.333333333333336
+Dasatinib,Vorinostat,A549/ATCC,-0.7777777777777778
+Everolimus,Celecoxib,OVCAR-3,-5.0
+Nilotinib,Cladribine,BT-549,-5.4444444444444455
+Everolimus,Romidepsin,NCI-H460,0.3333333333333333
+Fulvestrant,Sirolimus,PC-3,-0.5555555555555556
+Vorinostat,Cladribine,SF-539,-2.2222222222222223
+Thalidomide,Mitotane,HS 578T,1.5555555555555556
+Vorinostat,Azacitidine,OVCAR-4,-2.333333333333333
+Megestrol acetate,Lenalidomide,DU-145,-0.1111111111111111
+Docetaxel,Nilotinib,T-47D,6.777777777777778
+Vorinostat,Celecoxib,NCI-H522,-3.888888888888889
+Megestrol acetate,Gefitinib,T-47D,2.7777777777777777
+Thalidomide,Sirolimus,HS 578T,-2.888888888888889
+Dasatinib,Romidepsin,MDA-MB-231/ATCC,-7.555555555555554
+Mitotane,Everolimus,IGROV1,-4.5555555555555545
+Fulvestrant,Dasatinib,PC-3,-1.3333333333333333
+Mitotane,Paclitaxel,RPMI-8226,-13.222222222222221
+Mitotane,Celecoxib,BT-549,-10.333333333333334
+Everolimus,Dasatinib,KM12,-2.0
+Vorinostat,Celecoxib,KM12,-0.2222222222222222
+Thalidomide,Paclitaxel,CAKI-1,-2.888888888888889
+Decitabine,Cladribine,MDA-MB-468,5.4444444444444455
+Zoledronic acid,Nilotinib,MDA-MB-231/ATCC,-3.333333333333333
+Mitotane,Azacitidine,T-47D,-11.111111111111107
+Decitabine,Paclitaxel,OVCAR-3,15.0
+Everolimus,Cladribine,SW-620,-2.7777777777777777
+Mitotane,Azacitidine,OVCAR-3,3.111111111111111
+Vorinostat,Azacitidine,RPMI-8226,9.333333333333334
+Gefitinib,Lenalidomide,OVCAR-4,-5.777777777777778
+Imiquimod,Docetaxel,HCT-15,-4.4444444444444455
+Decitabine,Sirolimus,SF-268,-2.0
+Thalidomide,Cladribine,MDA-MB-468,-0.5555555555555556
+Sirolimus,Nilotinib,UACC-257,-4.4444444444444455
+Decitabine,Azacitidine,CAKI-1,-7.222222222222222
+Romidepsin,Tretinoin,HCT-116,7.333333333333332
+Nilotinib,Tretinoin,SF-539,-0.8888888888888888
+Docetaxel,Cladribine,SNB-75,0.0
+Docetaxel,Nilotinib,A498,6.0
+Azacitidine,Sirolimus,UACC-257,0.4444444444444444
+Docetaxel,Paclitaxel,NCI-H522,-3.888888888888889
+Mitotane,Dasatinib,SK-MEL-5,-10.555555555555557
+Decitabine,Tretinoin,HS 578T,5.0
+Zoledronic acid,Docetaxel,SF-295,5.222222222222221
+Romidepsin,Tretinoin,DU-145,-3.0
+Tretinoin,Celecoxib,KM12,4.111111111111111
+Tretinoin,Celecoxib,HOP-92,2.555555555555556
+Azacitidine,Docetaxel,OVCAR-4,-0.3333333333333333
+Decitabine,Azacitidine,DU-145,-9.0
+Imiquimod,Azacitidine,NCI-H460,11.111111111111107
+Zoledronic acid,Docetaxel,MCF7,5.4444444444444455
+Paclitaxel,Sirolimus,IGROV1,5.5555555555555545
+Mitotane,Celecoxib,NCI-H460,-6.1111111111111125
+Fulvestrant,Romidepsin,K-562,5.222222222222221
+Fulvestrant,Dasatinib,SF-539,8.444444444444445
+Azacitidine,Celecoxib,HS 578T,-6.1111111111111125
+Fulvestrant,Tretinoin,HS 578T,10.777777777777779
+Zoledronic acid,Docetaxel,SK-MEL-5,15.444444444444445
+Dasatinib,Vorinostat,NCI-H522,-2.888888888888889
+Paclitaxel,Nilotinib,OVCAR-8,19.33333333333333
+Dasatinib,Nilotinib,NCI-H460,-6.0
+Vorinostat,Azacitidine,SF-268,-8.0
+Fulvestrant,Romidepsin,786-0,1.7777777777777777
+Mitotane,Tretinoin,OVCAR-3,-8.666666666666666
+Megestrol acetate,Gefitinib,SK-OV-3,0.7777777777777778
+Sirolimus,Mitotane,OVCAR-4,7.0
+Mitotane,Celecoxib,SW-620,-6.4444444444444455
+Zoledronic acid,Paclitaxel,BT-549,2.1111111111111107
+Decitabine,Azacitidine,HCT-15,-3.333333333333333
+Thalidomide,Sirolimus,U251,-1.3333333333333333
+Azacitidine,Paclitaxel,T-47D,-4.2222222222222205
+Zoledronic acid,Dasatinib,SNB-75,6.333333333333332
+Docetaxel,Nilotinib,SK-MEL-5,-5.666666666666668
+Everolimus,Docetaxel,HCT-15,-2.7777777777777777
+Decitabine,Mitotane,SF-268,-3.4444444444444446
+Mitotane,Celecoxib,786-0,1.8888888888888888
+Docetaxel,Paclitaxel,SK-MEL-28,0.3333333333333333
+Everolimus,Azacitidine,SW-620,1.0
+Vorinostat,Romidepsin,SW-620,-2.888888888888889
+Fulvestrant,Vorinostat,SK-MEL-5,-1.0
+Megestrol acetate,Lenalidomide,SR,-15.444444444444445
+Imiquimod,Paclitaxel,LOX IMVI,2.6666666666666665
+Zoledronic acid,Paclitaxel,IGROV1,-2.888888888888889
+Fulvestrant,Vorinostat,HCT-116,-3.4444444444444446
+Megestrol acetate,Gefitinib,MDA-MB-231/ATCC,-14.444444444444445
+Vorinostat,Docetaxel,SNB-75,-3.888888888888889
+Romidepsin,Sirolimus,SK-MEL-5,1.7777777777777777
+Imiquimod,Cladribine,A498,-11.333333333333336
+Sirolimus,Cladribine,HS 578T,-10.888888888888893
+Romidepsin,Docetaxel,BT-549,-2.2222222222222223
+Nilotinib,Tretinoin,HOP-92,0.7777777777777778
+Fulvestrant,Sirolimus,786-0,-2.0
+Sirolimus,Mitotane,SW-620,7.888888888888887
+Everolimus,Vorinostat,U251,0.3333333333333333
+Docetaxel,Tretinoin,HCT-116,21.555555555555557
+Paclitaxel,Nilotinib,NCI-H460,-4.333333333333333
+Docetaxel,Tretinoin,MALME-3M,15.555555555555555
+Mitotane,Dasatinib,MDA-MB-468,-0.1111111111111111
+Everolimus,Dasatinib,NCI-H460,-2.555555555555556
+Vorinostat,Tretinoin,NCI-H522,-2.555555555555556
+Sirolimus,Tretinoin,HS 578T,7.1111111111111125
+Fulvestrant,Vorinostat,DU-145,2.4444444444444446
+Azacitidine,Sirolimus,UACC-62,-7.0
+Paclitaxel,Tretinoin,IGROV1,13.555555555555555
+Zoledronic acid,Celecoxib,IGROV1,-2.333333333333333
+Azacitidine,Celecoxib,SNB-75,0.6666666666666666
+Dasatinib,Nilotinib,A549/ATCC,-3.0
+Azacitidine,Fulvestrant,HCT-116,-4.333333333333333
+Romidepsin,Docetaxel,A498,1.0
+Zoledronic acid,Cladribine,HS 578T,4.2222222222222205
+Tretinoin,Celecoxib,OVCAR-4,1.4444444444444444
+Everolimus,Azacitidine,IGROV1,-9.0
+Fulvestrant,Dasatinib,SK-OV-3,0.8888888888888888
+Decitabine,Cladribine,OVCAR-4,-1.5555555555555556
+Mitotane,Nilotinib,SNB-75,-4.888888888888889
+Vorinostat,Cladribine,RPMI-8226,4.4444444444444455
+Paclitaxel,Celecoxib,MDA-MB-468,27.88888888888889
+Vorinostat,Tretinoin,KM12,-9.555555555555557
+Vorinostat,Cladribine,SK-MEL-5,1.5555555555555556
+Vorinostat,Azacitidine,MDA-MB-468,-11.111111111111107
+Thalidomide,Tretinoin,HS 578T,0.2222222222222222
+Everolimus,Nilotinib,OVCAR-3,-3.0
+Mitotane,Azacitidine,KM12,4.111111111111111
+Cladribine,Celecoxib,MDA-MB-468,-2.7777777777777777
+Imiquimod,Paclitaxel,U251,1.8888888888888888
+Imiquimod,Mitotane,A498,-2.555555555555556
+Romidepsin,Paclitaxel,RPMI-8226,-4.0
+Sirolimus,Mitotane,SF-268,1.1111111111111112
+Fulvestrant,Dasatinib,LOX IMVI,8.555555555555555
+Megestrol acetate,Lenalidomide,RPMI-8226,-0.5555555555555556
+Megestrol acetate,Gefitinib,SNB-75,-7.777777777777778
+Megestrol acetate,Gefitinib,786-0,-2.2222222222222223
+Zoledronic acid,Celecoxib,SR,-6.222222222222222
+Sirolimus,Tretinoin,HOP-92,-6.0
+Romidepsin,Paclitaxel,HS 578T,-6.5555555555555545
+Vorinostat,Cladribine,SK-MEL-28,-1.6666666666666667
+Docetaxel,Sirolimus,NCI-H460,7.777777777777778
+Paclitaxel,Sirolimus,UACC-62,-11.0
+Azacitidine,Fulvestrant,T-47D,-2.888888888888889
+Romidepsin,Tretinoin,A549/ATCC,15.0
+Thalidomide,Mitotane,OVCAR-3,1.8888888888888888
+Everolimus,Cladribine,NCI-H460,-2.7777777777777777
+Zoledronic acid,Vorinostat,CAKI-1,1.1111111111111112
+Nilotinib,Tretinoin,ACHN,-0.1111111111111111
+Docetaxel,Tretinoin,A549/ATCC,11.666666666666664
+Mitotane,Azacitidine,SK-OV-3,-6.888888888888888
+Decitabine,Sirolimus,SK-MEL-5,4.666666666666667
+Fulvestrant,Cladribine,NCI-H522,-1.0
+Fulvestrant,Cladribine,MDA-MB-231/ATCC,-0.2222222222222222
+Mitotane,Docetaxel,ACHN,5.5555555555555545
+Dasatinib,Nilotinib,T-47D,-16.555555555555557
+Imiquimod,Cladribine,OVCAR-3,-5.333333333333333
+Everolimus,Paclitaxel,MALME-3M,1.2222222222222223
+Romidepsin,Celecoxib,MALME-3M,-7.666666666666668
+Everolimus,Dasatinib,BT-549,-3.2222222222222223
+Fulvestrant,Cladribine,SR,-3.0
+Dasatinib,Sirolimus,A498,4.888888888888889
+Zoledronic acid,Nilotinib,SK-MEL-2,-0.4444444444444444
+Dasatinib,Romidepsin,UACC-257,-3.4444444444444446
+Zoledronic acid,Cladribine,NCI-H522,-4.777777777777779
+Imiquimod,Sirolimus,A498,-1.7777777777777777
+Paclitaxel,Sirolimus,SW-620,1.7777777777777777
+Everolimus,Azacitidine,A549/ATCC,-2.333333333333333
+Romidepsin,Tretinoin,IGROV1,3.4444444444444446
+Fulvestrant,Celecoxib,SF-268,-11.111111111111107
+Imiquimod,Azacitidine,K-562,-1.3333333333333333
+Everolimus,Docetaxel,PC-3,6.222222222222222
+Fulvestrant,Sirolimus,HCT-15,-4.333333333333333
+Vorinostat,Docetaxel,PC-3,-3.2222222222222223
+Zoledronic acid,Romidepsin,BT-549,4.333333333333333
+Fulvestrant,Romidepsin,MCF7,2.555555555555556
+Nilotinib,Mitotane,LOX IMVI,-4.2222222222222205
+Azacitidine,Tretinoin,MDA-MB-468,6.0
+Thalidomide,Mitotane,SK-OV-3,-3.111111111111111
+Zoledronic acid,Dasatinib,T-47D,3.888888888888889
+Imiquimod,Azacitidine,MCF7,-12.444444444444445
+Zoledronic acid,Vorinostat,HOP-92,-0.6666666666666666
+Mitotane,Paclitaxel,SF-268,-4.333333333333333
+Dasatinib,Romidepsin,HS 578T,-8.888888888888891
+Everolimus,Tretinoin,OVCAR-4,0.5555555555555556
+Dasatinib,Romidepsin,OVCAR-3,-5.888888888888888
+Dasatinib,Romidepsin,LOX IMVI,1.3333333333333333
+Dasatinib,Docetaxel,U251,-0.2222222222222222
+Romidepsin,Cladribine,OVCAR-4,-0.8888888888888888
+Everolimus,Romidepsin,MCF7,-1.3333333333333333
+Fulvestrant,Celecoxib,HS 578T,-4.666666666666667
+Paclitaxel,Nilotinib,A498,4.777777777777779
+Docetaxel,Cladribine,NCI-H460,-3.2222222222222223
+Imiquimod,Tretinoin,SK-MEL-28,-2.555555555555556
+Sirolimus,Celecoxib,HOP-92,-8.888888888888891
+Mitotane,Tretinoin,LOX IMVI,-9.888888888888893
+Azacitidine,Sirolimus,LOX IMVI,0.7777777777777778
+Azacitidine,Docetaxel,K-562,0.3333333333333333
+Fulvestrant,Sirolimus,BT-549,-2.555555555555556
+Romidepsin,Docetaxel,T-47D,-1.7777777777777777
+Zoledronic acid,Docetaxel,HOP-92,-3.333333333333333
+Imiquimod,Sirolimus,RPMI-8226,-4.0
+Nilotinib,Cladribine,MCF7,-0.3333333333333333
+Romidepsin,Tretinoin,K-562,0.4444444444444444
+Imiquimod,Sirolimus,OVCAR-3,-5.5555555555555545
+Nilotinib,Cladribine,OVCAR-3,1.1111111111111112
+Sirolimus,Mitotane,ACHN,9.444444444444443
+Dasatinib,Vorinostat,MALME-3M,4.111111111111111
+Dasatinib,Cladribine,UACC-257,-5.333333333333333
+Fulvestrant,Cladribine,RPMI-8226,-6.1111111111111125
+Docetaxel,Tretinoin,BT-549,25.11111111111111
+Azacitidine,Tretinoin,SK-MEL-5,-7.666666666666668
+Mitotane,Everolimus,NCI-H460,4.0
+Everolimus,Azacitidine,DU-145,-7.222222222222222
+Zoledronic acid,Nilotinib,K-562,-25.33333333333333
+Nilotinib,Cladribine,A549/ATCC,-10.0
+Everolimus,Paclitaxel,IGROV1,-0.8888888888888888
+Fulvestrant,Vorinostat,SR,-8.333333333333334
+Dasatinib,Nilotinib,SF-539,-4.0
+Docetaxel,Celecoxib,PC-3,3.7777777777777777
+Zoledronic acid,Tretinoin,SF-268,-0.3333333333333333
+Mitotane,Cladribine,SF-268,1.3333333333333333
+Paclitaxel,Tretinoin,NCI-H460,32.111111111111114
+Docetaxel,Paclitaxel,HCT-116,-4.111111111111111
+Mitotane,Paclitaxel,BT-549,-5.5555555555555545
+Sirolimus,Nilotinib,RPMI-8226,10.777777777777779
+Docetaxel,Sirolimus,MALME-3M,-9.666666666666666
+Zoledronic acid,Celecoxib,OVCAR-4,-2.1111111111111107
+Paclitaxel,Nilotinib,K-562,23.0
+Dasatinib,Docetaxel,MDA-MB-468,-1.0
+Vorinostat,Paclitaxel,SF-539,-8.777777777777779
+Zoledronic acid,Nilotinib,SNB-75,-3.0
+Dasatinib,Nilotinib,IGROV1,-2.4444444444444446
+Mitotane,Paclitaxel,UACC-257,-10.444444444444443
+Dasatinib,Cladribine,DU-145,-4.777777777777779
+Vorinostat,Docetaxel,HCT-116,-1.5555555555555556
+Paclitaxel,Nilotinib,OVCAR-3,29.66666666666667
+Zoledronic acid,Celecoxib,K-562,-7.0
+Zoledronic acid,Docetaxel,NCI-H23,2.0
+Azacitidine,Tretinoin,LOX IMVI,-11.0
+Everolimus,Docetaxel,OVCAR-3,-4.777777777777779
+Sirolimus,Nilotinib,SW-620,2.4444444444444446
+Everolimus,Romidepsin,MALME-3M,0.7777777777777778
+Azacitidine,Celecoxib,UACC-257,-6.4444444444444455
+Romidepsin,Tretinoin,OVCAR-3,-2.888888888888889
+Docetaxel,Nilotinib,UACC-62,-5.888888888888888
+Sirolimus,Mitotane,MCF7,-4.5555555555555545
+Zoledronic acid,Vorinostat,SF-268,-0.8888888888888888
+Decitabine,Tretinoin,SK-OV-3,-11.333333333333336
+Fulvestrant,Romidepsin,NCI-H23,5.888888888888888
+Sirolimus,Celecoxib,SF-268,-0.5555555555555556
+Zoledronic acid,Celecoxib,HS 578T,-5.222222222222221
+Azacitidine,Celecoxib,SK-MEL-5,-0.3333333333333333
+Decitabine,Paclitaxel,786-0,-9.111111111111107
+Mitotane,Celecoxib,HOP-92,-5.666666666666668
+Everolimus,Azacitidine,LOX IMVI,-0.1111111111111111
+Zoledronic acid,Celecoxib,ACHN,-6.333333333333332
+Dasatinib,Nilotinib,LOX IMVI,-10.222222222222221
+Mitotane,Tretinoin,NCI-H522,2.6666666666666665
+Fulvestrant,Nilotinib,SF-539,1.2222222222222223
+Vorinostat,Nilotinib,T-47D,-14.444444444444445
+Fulvestrant,Everolimus,A549/ATCC,25.66666666666667
+Everolimus,Nilotinib,MCF7,0.0
+Vorinostat,Azacitidine,HS 578T,8.888888888888891
+Nilotinib,Mitotane,BT-549,-0.2222222222222222
+Fulvestrant,Azacitidine,PC-3,-1.3333333333333333
+Tretinoin,Celecoxib,NCI-H522,-0.6666666666666666
+Tretinoin,Cladribine,PC-3,-4.4444444444444455
+Vorinostat,Cladribine,KM12,-1.4444444444444444
+Megestrol acetate,Gefitinib,SK-MEL-5,-12.0
+Gefitinib,Lenalidomide,SK-OV-3,-1.8888888888888888
+Thalidomide,Cladribine,BT-549,-7.222222222222222
+Thalidomide,Mitotane,SW-620,-2.2222222222222223
+Imiquimod,Cladribine,PC-3,3.2222222222222223
+Mitotane,Cladribine,PC-3,-4.2222222222222205
+Sirolimus,Mitotane,SF-539,1.7777777777777777
+Azacitidine,Docetaxel,IGROV1,-1.4444444444444444
+Decitabine,Docetaxel,MDA-MB-231/ATCC,-8.555555555555555
+Azacitidine,Romidepsin,OVCAR-8,-6.222222222222222
+Mitotane,Tretinoin,SK-MEL-5,-4.888888888888889
+Mitotane,Cladribine,OVCAR-4,-3.333333333333333
+Thalidomide,Tretinoin,NCI-H522,-2.888888888888889
+Azacitidine,Paclitaxel,OVCAR-4,-1.6666666666666667
+Mitotane,Tretinoin,MALME-3M,-6.333333333333332
+Vorinostat,Celecoxib,SF-539,-6.4444444444444455
+Everolimus,Vorinostat,A549/ATCC,-5.666666666666668
+Mitotane,Cladribine,SK-MEL-28,-5.333333333333333
+Azacitidine,Nilotinib,BT-549,-6.777777777777778
+Fulvestrant,Paclitaxel,MDA-MB-231/ATCC,0.1111111111111111
+Zoledronic acid,Tretinoin,NCI-H522,0.5555555555555556
+Nilotinib,Tretinoin,MCF7,-4.0
+Zoledronic acid,Tretinoin,MALME-3M,4.0
+Mitotane,Everolimus,MDA-MB-468,-3.888888888888889
+Romidepsin,Sirolimus,SK-MEL-28,4.2222222222222205
+Thalidomide,Sirolimus,HCT-15,-1.5555555555555556
+Zoledronic acid,Cladribine,T-47D,-1.8888888888888888
+Fulvestrant,Tretinoin,SK-MEL-5,2.333333333333333
+Everolimus,Celecoxib,MALME-3M,-5.333333333333333
+Zoledronic acid,Vorinostat,NCI-H460,2.333333333333333
+Zoledronic acid,Sirolimus,HS 578T,2.1111111111111107
+Decitabine,Cladribine,SK-OV-3,-8.555555555555555
+Megestrol acetate,Lenalidomide,SK-MEL-5,-22.88888888888889
+Zoledronic acid,Sirolimus,NCI-H522,-10.888888888888893
+Decitabine,Paclitaxel,MDA-MB-231/ATCC,-6.1111111111111125
+Dasatinib,Nilotinib,PC-3,-3.555555555555556
+Zoledronic acid,Nilotinib,KM12,-4.777777777777779
+Everolimus,Paclitaxel,OVCAR-4,17.333333333333332
+Fulvestrant,Azacitidine,OVCAR-3,-6.4444444444444455
+Cladribine,Celecoxib,NCI-H460,-10.555555555555557
+Mitotane,Docetaxel,CAKI-1,2.4444444444444446
+Thalidomide,Azacitidine,NCI-H23,-3.111111111111111
+Mitotane,Nilotinib,SK-OV-3,-8.444444444444445
+Fulvestrant,Everolimus,SR,-17.0
+Thalidomide,Azacitidine,CAKI-1,-7.666666666666668
+Mitotane,Docetaxel,T-47D,-7.555555555555554
+Mitotane,Dasatinib,RPMI-8226,-19.88888888888889
+Vorinostat,Paclitaxel,MDA-MB-468,-24.555555555555557
+Zoledronic acid,Vorinostat,ACHN,-2.1111111111111107
+Dasatinib,Docetaxel,HS 578T,-1.0
+Azacitidine,Docetaxel,SF-268,-5.111111111111111
+Romidepsin,Paclitaxel,HCT-116,0.6666666666666666
+Everolimus,Dasatinib,A498,-2.1111111111111107
+Imiquimod,Mitotane,KM12,-6.222222222222222
+Mitotane,Docetaxel,K-562,14.111111111111107
+Dasatinib,Celecoxib,U251,-2.555555555555556
+Decitabine,Mitotane,HOP-92,-4.111111111111111
+Everolimus,Nilotinib,MALME-3M,-4.5555555555555545
+Vorinostat,Celecoxib,MALME-3M,-7.1111111111111125
+Thalidomide,Tretinoin,KM12,-4.888888888888889
+Everolimus,Paclitaxel,MDA-MB-468,8.222222222222221
+Fulvestrant,Sirolimus,A549/ATCC,-0.5555555555555556
+Azacitidine,Tretinoin,OVCAR-4,1.3333333333333333
+Paclitaxel,Celecoxib,NCI-H522,21.444444444444443
+Mitotane,Docetaxel,IGROV1,6.777777777777778
+Sirolimus,Celecoxib,MCF7,5.777777777777778
+Sirolimus,Tretinoin,BT-549,-13.777777777777779
+Zoledronic acid,Cladribine,SK-OV-3,-2.555555555555556
+Sirolimus,Tretinoin,MALME-3M,23.66666666666667
+Vorinostat,Sirolimus,PC-3,-4.888888888888889
+Sirolimus,Nilotinib,MALME-3M,-20.555555555555557
+Dasatinib,Celecoxib,MCF7,-0.5555555555555556
+Romidepsin,Nilotinib,HCT-116,-4.4444444444444455
+Romidepsin,Sirolimus,HS 578T,3.0
+Zoledronic acid,Paclitaxel,786-0,-1.3333333333333333
+Decitabine,Tretinoin,SF-295,-3.555555555555556
+Nilotinib,Celecoxib,MALME-3M,-16.444444444444443
+Azacitidine,Nilotinib,RPMI-8226,-2.6666666666666665
+Zoledronic acid,Paclitaxel,CAKI-1,-14.666666666666664
+Sirolimus,Tretinoin,OVCAR-4,6.4444444444444455
+Nilotinib,Celecoxib,U251,-7.0
+Zoledronic acid,Everolimus,LOX IMVI,-2.1111111111111107
+Everolimus,Cladribine,U251,-5.4444444444444455
+Imiquimod,Tretinoin,SF-295,-4.5555555555555545
+Everolimus,Vorinostat,PC-3,1.6666666666666667
+Sirolimus,Tretinoin,U251,6.777777777777778
+Megestrol acetate,Gefitinib,NCI-H23,-1.4444444444444444
+Decitabine,Paclitaxel,SF-268,-5.888888888888888
+Romidepsin,Tretinoin,NCI-H522,-5.333333333333333
+Vorinostat,Tretinoin,OVCAR-3,-19.555555555555557
+Zoledronic acid,Celecoxib,PC-3,-5.4444444444444455
+Imiquimod,Tretinoin,U251,-4.5555555555555545
+Fulvestrant,Celecoxib,SK-OV-3,-12.444444444444445
+Imiquimod,Sirolimus,U251,-7.777777777777778
+Mitotane,Paclitaxel,OVCAR-8,-7.666666666666668
+Mitotane,Everolimus,ACHN,2.1111111111111107
+Decitabine,Cladribine,U251,-4.5555555555555545
+Nilotinib,Mitotane,OVCAR-4,-4.111111111111111
+Docetaxel,Celecoxib,UACC-62,19.555555555555557
+Imiquimod,Azacitidine,A498,-5.4444444444444455
+Azacitidine,Romidepsin,SK-MEL-28,-2.333333333333333
+Vorinostat,Azacitidine,LOX IMVI,-0.2222222222222222
+Everolimus,Sirolimus,NCI-H522,1.8888888888888888
+Vorinostat,Docetaxel,NCI-H460,-2.2222222222222223
+Zoledronic acid,Cladribine,RPMI-8226,-10.444444444444443
+Decitabine,Tretinoin,NCI-H522,0.0
+Paclitaxel,Cladribine,A498,-2.6666666666666665
+Paclitaxel,Cladribine,DU-145,1.7777777777777777
+Imiquimod,Azacitidine,SF-268,-1.5555555555555556
+Fulvestrant,Romidepsin,SK-MEL-5,10.333333333333334
+Everolimus,Paclitaxel,HS 578T,8.0
+Everolimus,Dasatinib,A549/ATCC,0.6666666666666666
+Zoledronic acid,Azacitidine,OVCAR-3,-0.5555555555555556
+Thalidomide,Sirolimus,SW-620,4.0
+Fulvestrant,Tretinoin,SK-MEL-28,-0.4444444444444444
+Zoledronic acid,Paclitaxel,OVCAR-4,2.4444444444444446
+Sirolimus,Cladribine,HCT-116,-4.2222222222222205
+Zoledronic acid,Cladribine,SR,-3.0
+Paclitaxel,Sirolimus,KM12,11.888888888888893
+Docetaxel,Fulvestrant,SK-MEL-28,14.888888888888893
+Fulvestrant,Everolimus,HS 578T,20.88888888888889
+Fulvestrant,Vorinostat,OVCAR-8,-3.555555555555556
+Vorinostat,Cladribine,UACC-257,-3.111111111111111
+Paclitaxel,Sirolimus,OVCAR-8,3.4444444444444446
+Azacitidine,Paclitaxel,K-562,-26.555555555555557
+Zoledronic acid,Vorinostat,K-562,-1.4444444444444444
+Vorinostat,Azacitidine,SK-MEL-28,-12.555555555555555
+Mitotane,Nilotinib,SR,-12.777777777777779
+Decitabine,Paclitaxel,RPMI-8226,-12.666666666666664
+Mitotane,Celecoxib,MALME-3M,-3.4444444444444446
+Sirolimus,Celecoxib,HCT-116,-0.7777777777777778
+Fulvestrant,Dasatinib,OVCAR-8,1.3333333333333333
+Romidepsin,Sirolimus,SF-268,-8.333333333333334
+Docetaxel,Cladribine,HCT-116,-6.777777777777778
+Azacitidine,Romidepsin,DU-145,-0.3333333333333333
+Nilotinib,Celecoxib,KM12,-5.4444444444444455
+Azacitidine,Cladribine,SF-539,-18.0
+Vorinostat,Tretinoin,UACC-257,3.0
+Sirolimus,Mitotane,HOP-92,-6.5555555555555545
+Dasatinib,Cladribine,SF-268,-3.0
+Docetaxel,Cladribine,MDA-MB-468,-0.8888888888888888
+Mitotane,Docetaxel,PC-3,-4.333333333333333
+Zoledronic acid,Docetaxel,MDA-MB-231/ATCC,-1.2222222222222223
+Tretinoin,Cladribine,BT-549,-4.666666666666667
+Sirolimus,Cladribine,NCI-H522,-7.666666666666668
+Sirolimus,Nilotinib,NCI-H460,-5.5555555555555545
+Nilotinib,Mitotane,SNB-75,-8.0
+Sirolimus,Mitotane,SNB-75,-0.3333333333333333
+Dasatinib,Celecoxib,HS 578T,8.888888888888891
+Thalidomide,Sirolimus,RPMI-8226,-3.333333333333333
+Decitabine,Cladribine,MCF7,-0.4444444444444444
+Azacitidine,Fulvestrant,NCI-H460,-0.3333333333333333
+Mitotane,Cladribine,SF-539,-1.3333333333333333
+Azacitidine,Paclitaxel,A498,-17.22222222222222
+Imiquimod,Mitotane,SK-OV-3,-0.6666666666666666
+Zoledronic acid,Azacitidine,SF-268,-2.1111111111111107
+Docetaxel,Fulvestrant,K-562,9.222222222222221
+Cladribine,Celecoxib,HCT-15,-3.2222222222222223
+Zoledronic acid,Tretinoin,KM12,-7.555555555555554
+Zoledronic acid,Docetaxel,ACHN,0.6666666666666666
+Dasatinib,Azacitidine,SF-268,-1.0
+Mitotane,Cladribine,HOP-92,0.7777777777777778
+Nilotinib,Mitotane,MDA-MB-468,-4.2222222222222205
+Docetaxel,Fulvestrant,SF-539,32.44444444444444
+Azacitidine,Sirolimus,OVCAR-3,4.2222222222222205
+Romidepsin,Celecoxib,PC-3,6.222222222222222
+Dasatinib,Romidepsin,U251,-3.4444444444444446
+Fulvestrant,Paclitaxel,HS 578T,-0.1111111111111111
+Cladribine,Celecoxib,OVCAR-3,8.555555555555555
+Paclitaxel,Nilotinib,OVCAR-4,-6.222222222222222
+Everolimus,Tretinoin,PC-3,2.4444444444444446
+Sirolimus,Cladribine,SW-620,-2.4444444444444446
+Fulvestrant,Vorinostat,SW-620,1.0
+Everolimus,Dasatinib,OVCAR-4,-2.888888888888889
+Azacitidine,Sirolimus,OVCAR-4,-1.3333333333333333
+Dasatinib,Azacitidine,MALME-3M,-6.333333333333332
+Paclitaxel,Sirolimus,K-562,1.0
+Vorinostat,Paclitaxel,OVCAR-8,5.5555555555555545
+Vorinostat,Romidepsin,UACC-62,3.2222222222222223
+Megestrol acetate,Lenalidomide,T-47D,-4.4444444444444455
+Cladribine,Celecoxib,MCF7,-3.555555555555556
+Fulvestrant,Sirolimus,ACHN,-4.2222222222222205
+Zoledronic acid,Dasatinib,RPMI-8226,-15.222222222222221
+Paclitaxel,Celecoxib,SF-539,26.44444444444445
+Fulvestrant,Celecoxib,SR,-12.444444444444445
+Dasatinib,Sirolimus,BT-549,1.0
+Romidepsin,Cladribine,BT-549,1.8888888888888888
+Everolimus,Paclitaxel,NCI-H522,11.888888888888893
+Vorinostat,Tretinoin,SK-MEL-5,-6.5555555555555545
+Everolimus,Sirolimus,OVCAR-3,9.555555555555557
+Decitabine,Mitotane,OVCAR-4,1.4444444444444444
+Tretinoin,Cladribine,MDA-MB-231/ATCC,6.777777777777778
+Paclitaxel,Sirolimus,DU-145,5.0
+Vorinostat,Paclitaxel,BT-549,-19.555555555555557
+Mitotane,Sirolimus,MALME-3M,1.7777777777777777
+Everolimus,Romidepsin,SNB-75,-3.111111111111111
+Dasatinib,Celecoxib,SF-268,-0.6666666666666666
+Decitabine,Paclitaxel,HOP-92,-12.444444444444445
+Fulvestrant,Celecoxib,BT-549,-7.666666666666668
+Docetaxel,Tretinoin,MDA-MB-468,24.777777777777786
+Gefitinib,Lenalidomide,UACC-257,0.1111111111111111
+Fulvestrant,Paclitaxel,CAKI-1,-6.222222222222222
+Decitabine,Tretinoin,OVCAR-3,-1.7777777777777777
+Mitotane,Docetaxel,KM12,-3.888888888888889
+Azacitidine,Fulvestrant,SF-268,-9.444444444444443
+Thalidomide,Mitotane,SK-MEL-5,3.6666666666666665
+Tretinoin,Celecoxib,MCF7,-2.2222222222222223
+Thalidomide,Mitotane,UACC-257,-3.111111111111111
+Vorinostat,Nilotinib,DU-145,-4.5555555555555545
+Fulvestrant,Cladribine,HCT-116,-5.111111111111111
+Imiquimod,Paclitaxel,RPMI-8226,-3.7777777777777777
+Decitabine,Docetaxel,UACC-257,-4.333333333333333
+Nilotinib,Tretinoin,KM12,-6.5555555555555545
+Imiquimod,Paclitaxel,SK-MEL-28,-5.888888888888888
+Sirolimus,Nilotinib,MDA-MB-231/ATCC,-14.555555555555555
+Decitabine,Docetaxel,OVCAR-8,-4.5555555555555545
+Vorinostat,Sirolimus,IGROV1,-4.4444444444444455
+Azacitidine,Paclitaxel,HCT-116,-4.333333333333333
+Mitotane,Tretinoin,MDA-MB-468,-0.6666666666666666
+Nilotinib,Tretinoin,NCI-H23,-13.333333333333336
+Decitabine,Azacitidine,K-562,-7.333333333333332
+Mitotane,Celecoxib,SF-295,-2.0
+Docetaxel,Sirolimus,SW-620,4.666666666666667
+Decitabine,Mitotane,CAKI-1,1.3333333333333333
+Fulvestrant,Nilotinib,SF-268,-3.4444444444444446
+Zoledronic acid,Celecoxib,U251,-6.5555555555555545
+Tretinoin,Cladribine,SNB-75,-0.2222222222222222
+Vorinostat,Romidepsin,OVCAR-4,-0.4444444444444444
+Cladribine,Celecoxib,SF-539,-10.111111111111107
+Docetaxel,Paclitaxel,A549/ATCC,5.111111111111111
+Paclitaxel,Tretinoin,A498,9.777777777777779
+Docetaxel,Cladribine,OVCAR-4,-4.2222222222222205
+Vorinostat,Tretinoin,NCI-H460,-4.0
+Decitabine,Paclitaxel,U251,-18.666666666666668
+Sirolimus,Nilotinib,A498,1.2222222222222223
+Dasatinib,Azacitidine,KM12,-1.6666666666666667
+Gefitinib,Lenalidomide,ACHN,-6.1111111111111125
+Docetaxel,Cladribine,OVCAR-8,-6.666666666666668
+Mitotane,Docetaxel,SF-295,3.333333333333333
+Fulvestrant,Romidepsin,UACC-257,-1.5555555555555556
+Imiquimod,Paclitaxel,SK-OV-3,-0.8888888888888888
+Fulvestrant,Sirolimus,UACC-62,-0.5555555555555556
+Fulvestrant,Paclitaxel,NCI-H460,-0.6666666666666666
+Thalidomide,Tretinoin,OVCAR-3,-21.33333333333333
+Fulvestrant,Vorinostat,MALME-3M,-2.888888888888889
+Docetaxel,Sirolimus,HS 578T,-3.111111111111111
+Gefitinib,Lenalidomide,K-562,-3.4444444444444446
+Zoledronic acid,Tretinoin,MDA-MB-231/ATCC,-3.0
+Paclitaxel,Celecoxib,OVCAR-3,26.11111111111111
+Imiquimod,Azacitidine,SK-MEL-5,-1.0
+Paclitaxel,Sirolimus,A549/ATCC,3.4444444444444446
+Sirolimus,Tretinoin,UACC-257,-3.111111111111111
+Mitotane,Sirolimus,HCT-15,-6.1111111111111125
+Megestrol acetate,Lenalidomide,OVCAR-4,-4.0
+Zoledronic acid,Azacitidine,U251,0.2222222222222222
+Vorinostat,Docetaxel,MDA-MB-468,-3.7777777777777777
+Romidepsin,Cladribine,SW-620,-2.333333333333333
+Thalidomide,Mitotane,SF-268,-5.222222222222221
+Sirolimus,Cladribine,LOX IMVI,-6.666666666666668
+Decitabine,Mitotane,OVCAR-3,-2.2222222222222223
+Everolimus,Sirolimus,HCT-116,-2.1111111111111107
+Romidepsin,Cladribine,NCI-H460,-0.5555555555555556
+Paclitaxel,Nilotinib,LOX IMVI,3.333333333333333
+Azacitidine,Nilotinib,SK-MEL-28,-20.666666666666668
+Mitotane,Azacitidine,SR,5.333333333333333
+Dasatinib,Sirolimus,MALME-3M,-9.111111111111107
+Dasatinib,Sirolimus,U251,3.6666666666666665
+Vorinostat,Celecoxib,UACC-257,-6.5555555555555545
+Imiquimod,Mitotane,NCI-H522,-1.7777777777777777
+Paclitaxel,Sirolimus,SF-268,-0.6666666666666666
+Azacitidine,Nilotinib,HCT-116,-6.777777777777778
+Zoledronic acid,Nilotinib,HS 578T,-3.888888888888889
+Thalidomide,Cladribine,SK-OV-3,-10.0
+Dasatinib,Cladribine,NCI-H460,-1.3333333333333333
+Zoledronic acid,Paclitaxel,A498,-0.3333333333333333
+Imiquimod,Cladribine,SK-OV-3,-6.666666666666668
+Nilotinib,Cladribine,RPMI-8226,-0.2222222222222222
+Mitotane,Celecoxib,OVCAR-4,-3.111111111111111
+Dasatinib,Celecoxib,SK-MEL-28,-9.888888888888893
+Nilotinib,Mitotane,PC-3,-3.888888888888889
+Fulvestrant,Paclitaxel,ACHN,-4.5555555555555545
+Paclitaxel,Nilotinib,PC-3,-6.777777777777778
+Fulvestrant,Romidepsin,UACC-62,6.888888888888888
+Mitotane,Sirolimus,SR,-1.7777777777777777
+Decitabine,Sirolimus,U251,-2.333333333333333
+Romidepsin,Celecoxib,SK-MEL-5,-8.0
+Docetaxel,Fulvestrant,HCT-116,7.333333333333332
+Docetaxel,Nilotinib,KM12,18.11111111111111
+Zoledronic acid,Everolimus,SF-539,1.7777777777777777
+Vorinostat,Tretinoin,OVCAR-8,-7.888888888888887
+Zoledronic acid,Dasatinib,NCI-H460,-0.3333333333333333
+Zoledronic acid,Docetaxel,SNB-75,6.666666666666668
+Nilotinib,Cladribine,MDA-MB-231/ATCC,-4.111111111111111
+Docetaxel,Sirolimus,NCI-H522,2.333333333333333
+Docetaxel,Fulvestrant,SK-MEL-5,9.0
+Zoledronic acid,Tretinoin,UACC-257,-5.5555555555555545
+Mitotane,Celecoxib,NCI-H23,1.3333333333333333
+Everolimus,Paclitaxel,OVCAR-3,-0.8888888888888888
+Everolimus,Romidepsin,SF-539,-13.666666666666664
+Zoledronic acid,Everolimus,RPMI-8226,-11.555555555555555
+Dasatinib,Sirolimus,UACC-62,-3.888888888888889
+Fulvestrant,Paclitaxel,MALME-3M,-5.888888888888888
+Vorinostat,Cladribine,MDA-MB-231/ATCC,9.333333333333334
+Azacitidine,Docetaxel,RPMI-8226,1.5555555555555556
+Mitotane,Azacitidine,HCT-15,7.1111111111111125
+Romidepsin,Nilotinib,SF-539,-5.777777777777778
+Docetaxel,Tretinoin,OVCAR-3,16.555555555555557
+Vorinostat,Docetaxel,MDA-MB-231/ATCC,-2.7777777777777777
+Zoledronic acid,Paclitaxel,SF-295,-0.2222222222222222
+Zoledronic acid,Sirolimus,786-0,0.1111111111111111
+Everolimus,Celecoxib,LOX IMVI,-1.6666666666666667
+Vorinostat,Sirolimus,T-47D,-8.0
+Romidepsin,Celecoxib,OVCAR-3,-0.3333333333333333
+Mitotane,Azacitidine,OVCAR-8,2.333333333333333
+Vorinostat,Celecoxib,SW-620,-5.222222222222221
+Thalidomide,Tretinoin,RPMI-8226,-20.0
+Azacitidine,Sirolimus,SK-MEL-5,-1.5555555555555556
+Nilotinib,Celecoxib,SF-539,-4.666666666666667
+Tretinoin,Cladribine,LOX IMVI,-10.555555555555557
+Fulvestrant,Tretinoin,PC-3,0.0
+Nilotinib,Tretinoin,SK-OV-3,-7.888888888888887
+Megestrol acetate,Gefitinib,MALME-3M,0.4444444444444444
+Tretinoin,Cladribine,UACC-62,6.1111111111111125
+Zoledronic acid,Dasatinib,A498,-0.8888888888888888
+Zoledronic acid,Azacitidine,OVCAR-4,3.111111111111111
+Imiquimod,Mitotane,SF-295,-7.4444444444444455
+Vorinostat,Cladribine,HS 578T,3.333333333333333
+Dasatinib,Azacitidine,UACC-257,-2.4444444444444446
+Everolimus,Vorinostat,HS 578T,-10.555555555555557
+Paclitaxel,Celecoxib,SK-MEL-28,2.4444444444444446
+Docetaxel,Fulvestrant,OVCAR-4,14.888888888888893
+Azacitidine,Celecoxib,RPMI-8226,-4.666666666666667
+Sirolimus,Mitotane,MDA-MB-468,10.0
+Megestrol acetate,Gefitinib,SF-539,1.1111111111111112
+Fulvestrant,Nilotinib,MALME-3M,-0.6666666666666666
+Dasatinib,Vorinostat,OVCAR-4,-9.444444444444443
+Everolimus,Docetaxel,UACC-62,5.5555555555555545
+Everolimus,Sirolimus,MDA-MB-231/ATCC,1.2222222222222223
+Decitabine,Cladribine,SF-539,-10.333333333333334
+Azacitidine,Romidepsin,OVCAR-4,6.1111111111111125
+Vorinostat,Sirolimus,MDA-MB-231/ATCC,1.2222222222222223
+Tretinoin,Cladribine,HOP-92,-9.111111111111107
+Decitabine,Azacitidine,LOX IMVI,-4.777777777777779
+Everolimus,Cladribine,SF-539,-2.333333333333333
+Everolimus,Paclitaxel,SNB-75,5.333333333333333
+Docetaxel,Paclitaxel,A498,2.2222222222222223
+Fulvestrant,Romidepsin,SK-MEL-28,4.2222222222222205
+Nilotinib,Cladribine,DU-145,-7.555555555555554
+Fulvestrant,Tretinoin,HOP-92,-4.777777777777779
+Romidepsin,Tretinoin,A498,0.0
+Tretinoin,Cladribine,SK-MEL-28,-6.1111111111111125
+Megestrol acetate,Lenalidomide,LOX IMVI,-0.4444444444444444
+Zoledronic acid,Vorinostat,HS 578T,3.6666666666666665
+Thalidomide,Docetaxel,MCF7,-7.777777777777778
+Zoledronic acid,Everolimus,A498,-0.6666666666666666
+Mitotane,Celecoxib,SR,-17.0
+Decitabine,Paclitaxel,HS 578T,-15.777777777777779
+Fulvestrant,Nilotinib,CAKI-1,-8.11111111111111
+Vorinostat,Nilotinib,MDA-MB-231/ATCC,-19.777777777777786
+Mitotane,Sirolimus,A498,2.333333333333333
+Romidepsin,Cladribine,MALME-3M,6.1111111111111125
+Docetaxel,Paclitaxel,MDA-MB-468,4.0
+Mitotane,Azacitidine,HCT-116,8.888888888888891
+Thalidomide,Sirolimus,DU-145,-5.777777777777778
+Vorinostat,Cladribine,DU-145,10.111111111111107
+Decitabine,Mitotane,U251,0.4444444444444444
+Imiquimod,Mitotane,RPMI-8226,-1.1111111111111112
+Imiquimod,Paclitaxel,A498,-3.4444444444444446
+Everolimus,Celecoxib,DU-145,-4.2222222222222205
+Fulvestrant,Everolimus,NCI-H522,3.555555555555556
+Fulvestrant,Paclitaxel,SR,-4.111111111111111
+Megestrol acetate,Gefitinib,NCI-H460,4.0
+Vorinostat,Nilotinib,RPMI-8226,1.7777777777777777
+Tretinoin,Celecoxib,MALME-3M,-6.5555555555555545
+Docetaxel,Nilotinib,PC-3,-5.888888888888888
+Dasatinib,Sirolimus,MCF7,1.6666666666666667
+Megestrol acetate,Lenalidomide,SF-268,-13.333333333333336
+Dasatinib,Paclitaxel,A549/ATCC,2.4444444444444446
+Zoledronic acid,Nilotinib,NCI-H23,-3.333333333333333
+Cladribine,Celecoxib,OVCAR-4,-4.888888888888889
+Decitabine,Paclitaxel,UACC-62,-8.333333333333334
+Romidepsin,Paclitaxel,K-562,-4.4444444444444455
+Dasatinib,Docetaxel,SF-539,3.111111111111111
+Thalidomide,Mitotane,K-562,-13.555555555555555
+Mitotane,Azacitidine,RPMI-8226,-7.1111111111111125
+Zoledronic acid,Tretinoin,IGROV1,0.2222222222222222
+Fulvestrant,Vorinostat,SK-MEL-28,2.333333333333333
+Nilotinib,Mitotane,A549/ATCC,-4.777777777777779
+Dasatinib,Nilotinib,MCF7,-5.333333333333333
+Mitotane,Paclitaxel,NCI-H522,-3.333333333333333
+Azacitidine,Celecoxib,BT-549,0.3333333333333333
+Vorinostat,Nilotinib,SF-539,-5.5555555555555545
+Fulvestrant,Celecoxib,HOP-92,-4.888888888888889
+Imiquimod,Paclitaxel,NCI-H522,-3.333333333333333
+Sirolimus,Tretinoin,T-47D,1.3333333333333333
+Decitabine,Paclitaxel,NCI-H23,-21.0
+Azacitidine,Tretinoin,OVCAR-3,-18.555555555555557
+Romidepsin,Paclitaxel,OVCAR-3,-8.11111111111111
+Romidepsin,Celecoxib,NCI-H460,1.4444444444444444
+Dasatinib,Vorinostat,DU-145,-2.4444444444444446
+Azacitidine,Sirolimus,HS 578T,2.555555555555556
+Everolimus,Romidepsin,DU-145,-2.555555555555556
+Imiquimod,Sirolimus,MCF7,0.2222222222222222
+Thalidomide,Mitotane,SF-295,-0.8888888888888888
+Zoledronic acid,Nilotinib,MALME-3M,-1.0
+Thalidomide,Cladribine,UACC-62,8.222222222222221
+Fulvestrant,Everolimus,OVCAR-4,11.0
+Zoledronic acid,Paclitaxel,DU-145,5.777777777777778
+Azacitidine,Docetaxel,T-47D,-14.111111111111107
+Paclitaxel,Tretinoin,SW-620,11.222222222222221
+Vorinostat,Romidepsin,A498,-9.111111111111107
+Thalidomide,Azacitidine,A498,5.888888888888888
+Romidepsin,Tretinoin,SNB-75,1.6666666666666667
+Mitotane,Docetaxel,SF-539,19.555555555555557
+Decitabine,Mitotane,OVCAR-8,-3.6666666666666665
+Fulvestrant,Dasatinib,UACC-257,0.5555555555555556
+Everolimus,Celecoxib,NCI-H460,-2.7777777777777777
+Paclitaxel,Nilotinib,NCI-H522,9.333333333333334
+Mitotane,Paclitaxel,SF-295,-2.0
+Tretinoin,Celecoxib,SK-MEL-5,-0.3333333333333333
+Dasatinib,Vorinostat,K-562,12.222222222222221
+Everolimus,Tretinoin,HCT-116,-9.222222222222221
+Thalidomide,Paclitaxel,BT-549,-0.6666666666666666
+Nilotinib,Cladribine,LOX IMVI,-7.222222222222222
+Fulvestrant,Dasatinib,MDA-MB-231/ATCC,6.1111111111111125
+Fulvestrant,Tretinoin,SR,-8.555555555555555
+Fulvestrant,Cladribine,T-47D,-3.888888888888889
+Dasatinib,Sirolimus,K-562,11.888888888888893
+Sirolimus,Tretinoin,RPMI-8226,15.222222222222221
+Sirolimus,Mitotane,RPMI-8226,7.1111111111111125
+Mitotane,Paclitaxel,SK-OV-3,-3.2222222222222223
+Everolimus,Romidepsin,LOX IMVI,-1.6666666666666667
+Azacitidine,Romidepsin,A549/ATCC,-2.4444444444444446
+Dasatinib,Docetaxel,HCT-116,-7.777777777777778
+Docetaxel,Fulvestrant,OVCAR-8,14.888888888888893
+Dasatinib,Tretinoin,OVCAR-4,0.1111111111111111
+Zoledronic acid,Celecoxib,SF-268,-9.0
+Vorinostat,Romidepsin,SF-539,4.2222222222222205
+Zoledronic acid,Docetaxel,786-0,-5.4444444444444455
+Azacitidine,Docetaxel,LOX IMVI,-1.0
+Romidepsin,Paclitaxel,OVCAR-4,-4.2222222222222205
+Everolimus,Tretinoin,HCT-15,-6.1111111111111125
+Zoledronic acid,Paclitaxel,UACC-257,3.555555555555556
+Azacitidine,Fulvestrant,KM12,-8.444444444444445
+Fulvestrant,Tretinoin,NCI-H522,5.222222222222221
+Imiquimod,Sirolimus,SK-MEL-5,-2.6666666666666665
+Zoledronic acid,Sirolimus,IGROV1,4.2222222222222205
+Imiquimod,Sirolimus,786-0,0.1111111111111111
+Azacitidine,Tretinoin,HCT-116,-1.7777777777777777
+Mitotane,Dasatinib,SF-268,-6.1111111111111125
+Azacitidine,Docetaxel,UACC-257,-4.2222222222222205
+Paclitaxel,Celecoxib,T-47D,3.2222222222222223
+Zoledronic acid,Romidepsin,NCI-H460,1.3333333333333333
+Docetaxel,Nilotinib,MALME-3M,-19.444444444444443
+Fulvestrant,Paclitaxel,SF-539,-6.888888888888888
+Nilotinib,Tretinoin,UACC-257,-1.6666666666666667
+Imiquimod,Sirolimus,UACC-62,1.0
+Mitotane,Tretinoin,786-0,-3.333333333333333
+Docetaxel,Sirolimus,T-47D,11.444444444444445
+Imiquimod,Tretinoin,RPMI-8226,-5.0
+Everolimus,Vorinostat,OVCAR-4,-4.777777777777779
+Docetaxel,Fulvestrant,MALME-3M,-17.555555555555557
+Mitotane,Azacitidine,786-0,-1.6666666666666667
+Mitotane,Everolimus,NCI-H23,0.6666666666666666
+Mitotane,Nilotinib,NCI-H522,-3.555555555555556
+Azacitidine,Fulvestrant,UACC-257,-4.4444444444444455
+Azacitidine,Fulvestrant,RPMI-8226,-3.888888888888889
+Zoledronic acid,Dasatinib,U251,1.3333333333333333
+Dasatinib,Azacitidine,LOX IMVI,-2.555555555555556
+Decitabine,Docetaxel,HOP-92,-11.666666666666664
+Vorinostat,Sirolimus,LOX IMVI,0.4444444444444444
+Mitotane,Sirolimus,HS 578T,-4.5555555555555545
+Vorinostat,Docetaxel,UACC-257,0.6666666666666666
+Mitotane,Dasatinib,HOP-92,-5.333333333333333
+Thalidomide,Paclitaxel,MCF7,-1.3333333333333333
+Mitotane,Cladribine,A549/ATCC,-13.0
+Zoledronic acid,Azacitidine,SK-MEL-28,0.5555555555555556
+Thalidomide,Docetaxel,HCT-15,-0.1111111111111111
+Zoledronic acid,Azacitidine,A498,1.4444444444444444
+Cladribine,Celecoxib,PC-3,-0.3333333333333333
+Everolimus,Nilotinib,BT-549,-4.111111111111111
+Azacitidine,Fulvestrant,SK-MEL-28,-15.555555555555555
+Docetaxel,Fulvestrant,SW-620,13.777777777777779
+Zoledronic acid,Vorinostat,SNB-75,1.5555555555555556
+Docetaxel,Sirolimus,HCT-116,1.5555555555555556
