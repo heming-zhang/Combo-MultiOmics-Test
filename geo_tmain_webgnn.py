@@ -261,14 +261,15 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
         # fold_n = 1
         test_save_path = path
         test_pearson, test_loss = test_geowebgnn(prog_args, fold_n, model, test_save_path, device)
-        test_pearson_list.append(test_pearson)
+        test_pearson_score = test_pearson['Pred Score'][0]
+        test_pearson_list.append(test_pearson_score)
         test_loss_list.append(test_loss)
         print('\n-------------EPOCH TEST PEARSON CORRELATION LIST: -------------')
         print(test_pearson_list)
         print('\n-------------EPOCH TEST MSE LOSS LIST: -------------')
         print(test_loss_list)
         # SAVE BEST TEST MODEL
-        if test_pearson > max_test_corr:
+        if test_pearson_score > max_test_corr:
             max_test_corr = test_pearson
             max_test_corr_id = i
             # torch.save(model.state_dict(), path + '/best_train_model'+ str(i) +'.pt')
