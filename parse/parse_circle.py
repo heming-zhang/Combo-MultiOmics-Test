@@ -142,6 +142,8 @@ class CellLineAnnotation():
         nci_cnv_cell_line_dict = dict(zip(omics_cell_df.cnv_cell, omics_cell_df.dl_cell))
         tail_cell_cnv_df = tail_cell_cnv_df.rename(columns=nci_cnv_cell_line_dict)
         tail_cell_cnv_df.insert(0, 'symbol', list(cnv_df['symbol']))
+        tail_cell_cnv_df = tail_cell_cnv_df.reset_index(drop=True)
+        print(tail_cell_cnv_df)
         tail_cell_cnv_df.to_csv('../datainfo/mid_cell_line/tail_cell_cnv.csv', index=False, header=True)
         # TAIL [CCLE Methylation] // KEEP [CMeth] CELL LINE NAMES CONSISTENT WITH [NCI ALMANAC]
         omics_cmeth_cell_line_list = list(omics_cell_df['cmeth_cell'])
@@ -165,11 +167,8 @@ class GeneAnnotation():
 
     def gdsc_cnv_tail_overzero(self):
         tail_cell_cnv_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_cnv.csv')
-
-        # tail_cell_cnv_df = tail_cell_cnv_df.sort_values(by=['symbol'])
-        # tail_cell_cnv_df_T = tail_cell_cnv_df.T
-        print(tail_cell_cnv_df)
-        # print(tail_cell_cnv_df_T)
+        tail_cell_cnv_gene_deletion_list = [row[0] for row in tail_cell_cnv_df.itertuples() if list(row[2:]).count('missing')>4]
+        print(len(tail_cell_cnv_gene_deletion_list))
 
     def kegg_omics_intersect(self):
         # # GET [8002] KEGG GENES
@@ -222,7 +221,6 @@ class GeneAnnotation():
         drugbank_df = pd.read_csv('../datainfo/init_data/drugbank.csv')
         new_drugbank_df = drugbank_df[drugbank_df['Target'].isin(kegg_gene_list)].reset_index(drop=True)
         new_drugbank_df.to_csv('../datainfo/mid_gene/tail_gene_drugbank.csv', index=False, header=True)
-
 
 
 '''
@@ -303,7 +301,7 @@ class DrugAnnotation():
 '''
 Recheck the number of cell lines after tailing drugs in NCI ALMANAC:
 (1) tail_cell_drug_dl_input.csv
-(2) tail_gene_cell_rna.csv
+(2) tail_cell_gene_rna.csv
 '''
 class RecheckFinal():
     def __init__(self):
@@ -314,9 +312,9 @@ class RecheckFinal():
         tail_cell_drug_dl_input_df = pd.read_csv('../datainfo/mid_drug/tail_cell_drug_dl_input.csv')
         tail_cell_drug_dl_input_cell_list = list(set(list(tail_cell_drug_dl_input_df['Cell Line Name'])))
         # TAILED [GDSC RNA_seq]
-        tail_gene_cell_rna_df = pd.read_csv('../datainfo/mid_cell_line/tail_gene_cell_rna.csv')
-        tail_gene_cell_rna_cell_list = tail_gene_cell_rna_df.columns[1:]
-        recheck_cell_line = [cell_line for cell_line in tail_gene_cell_rna_cell_list if cell_line not in tail_cell_drug_dl_input_cell_list]
+        tail_cell_gene_rna_df = pd.read_csv('../datainfo/mid_gene/tail_cell_gene_rna.csv')
+        tail_cell_gene_rna_cell_list = tail_cell_gene_rna_df.columns[1:]
+        recheck_cell_line = [cell_line for cell_line in tail_cell_gene_rna_cell_list if cell_line not in tail_cell_drug_dl_input_cell_list]
         if len(recheck_cell_line)==0 : print('NO MORE CHECK NEEDED')
 
     def final(self):
@@ -325,14 +323,17 @@ class RecheckFinal():
         # tail_cell_drug_dl_input_df['Score'] = (tail_cell_drug_dl_input_df['Score'] - tail_cell_drug_dl_input_df['Score'].mean()) / tail_cell_drug_dl_input_df['Score'].std()    
         tail_cell_drug_dl_input_df.to_csv('../datainfo/filtered_data/final_dl_input.csv', index=False, header=True)
         # [RNA-Seq]
-        tail_gene_cell_rna_df = pd.read_csv('../datainfo/mid_cell_line/tail_gene_cell_rna.csv')
-        tail_gene_cell_rna_df = tail_gene_cell_rna_df.replace(['missing'], 0.0)
-        tail_gene_cell_rna_df.to_csv('../datainfo/filtered_data/final_rna.csv', index=False, header=True)
+        tail_cell_gene_rna_df = pd.read_csv('../datainfo/mid_gene/tail_cell_gene_rna.csv')
+        tail_cell_gene_rna_df = tail_cell_gene_rna_df.replace(['missing'], 0.0)
+        tail_cell_gene_rna_df.to_csv('../datainfo/filtered_data/final_rna.csv', index=False, header=True)
+        # [CNV]
+        tail_cell_gene_cnv_df = pd.read_csv('../datainfo/mid_gene/tail_cell_gene_cnv.csv')
+        tail_cell_gene_cnv_df.to_csv('../datainfo/filtered_data/final_cnv.csv', index=False, header=True)
         # [Methylation]
-        tail_gene_cell_cmeth_df = pd.read_csv('../datainfo/mid_cell_line/tail_gene_cell_cmeth.csv')
-        # print(tail_gene_cell_cmeth_df.isnull().values.any())
-        # tail_gene_cell_cmeth_df = tail_gene_cell_cmeth_df.replace(['missing'], 0.0)
-        tail_gene_cell_cmeth_df.to_csv('../datainfo/filtered_data/final_cmeth.csv', index=False, header=True)
+        tail_cell_gene_cmeth_df = pd.read_csv('../datainfo/mid_gene/tail_cell_gene_cmeth.csv')
+        # print(tail_cell_gene_cmeth_df.isnull().values.any())
+        # tail_cell_gene_cmeth_df = tail_cell_gene_cmeth_df.replace(['missing'], 0.0)
+        tail_cell_gene_cmeth_df.to_csv('../datainfo/filtered_data/final_cmeth.csv', index=False, header=True)
         # [DrugBank]
         tail_gene_drug_drugbank_df = pd.read_csv('../datainfo/mid_drug/tail_gene_drug_drugbank.csv')
         tail_gene_drug_drugbank_df = tail_gene_drug_drugbank_df.sort_values(by=['Drug', 'Target'])
@@ -355,7 +356,7 @@ if os.path.exists('../datainfo/filtered_data') == False:
 # CellLineAnnotation().omics_cell()
 # CellLineAnnotation().tail_cell()
 
-GeneAnnotation().gdsc_cnv_tail_overzero()
+# GeneAnnotation().gdsc_cnv_tail_overzero()
 # GeneAnnotation().kegg_omics_intersect()
 # GeneAnnotation().kegg_drugbank_gene_intersect()
 
@@ -365,4 +366,4 @@ GeneAnnotation().gdsc_cnv_tail_overzero()
 # DrugAnnotation().nci_drugbank_drug_intersect()
 
 # RecheckFinal().recheck_cell_line()
-# RecheckFinal().final()
+RecheckFinal().final()

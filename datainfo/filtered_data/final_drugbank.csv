@@ -7,7 +7,6 @@ Cladribine,RRM2B
 Dasatinib,ABL1
 Dasatinib,ABL2
 Dasatinib,BCR
-Dasatinib,BTK
 Dasatinib,CSK
 Dasatinib,EPHA2
 Dasatinib,EPHA5
@@ -30,11 +29,9 @@ Docetaxel,TUBB1
 Everolimus,MTOR
 Fulvestrant,ESR1
 Gefitinib,EGFR
-Imiquimod,TLR8
 Lenalidomide,CDH5
 Lenalidomide,PTGS2
 Megestrol acetate,PGR
-Mitotane,AR
 Mitotane,ESR1
 Mitotane,PGR
 Nilotinib,ABL1
@@ -52,7 +49,6 @@ Thalidomide,FGFR2
 Thalidomide,NFKB1
 Thalidomide,PTGS2
 Thalidomide,TNF
-Tretinoin,NR0B1
 Tretinoin,RARA
 Tretinoin,RARB
 Tretinoin,RXRA

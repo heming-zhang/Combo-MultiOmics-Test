@@ -119,7 +119,7 @@ def init_parse():
     dir_opt = '/datainfo'
     # ReadFile(dir_opt).combo_input()
     # ReadFile(dir_opt).gdsc_rnaseq()
-    # ReadFile(dir_opt).gdsc_cnv()
+    ReadFile(dir_opt).gdsc_cnv()
     # ReadFile(dir_opt).ccle_meth()
     # ReadFile(dir_opt).kegg()
     # ReadFile(dir_opt).drugbank()
