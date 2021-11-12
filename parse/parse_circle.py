@@ -127,7 +127,6 @@ class CellLineAnnotation():
         dl_input_df = pd.read_csv('../datainfo/init_data/DeepLearningInput.csv')
         tail_cell_dl_input_df = dl_input_df[dl_input_df['Cell Line Name'].isin(new_dl_input_cell_line_list)].reset_index(drop=True)
         tail_cell_dl_input_df.to_csv('../datainfo/mid_cell_line/tail_cell_dl_input.csv', index=False, header=True)
-        print(tail_cell_dl_input_df)
         # TAIL [GDSC RNA-Seq] CELL LINEs // KEEP [RNA-Seq] CELL LINE NAMES CONSISTENT WITH [NCI ALMANAC]
         omics_rna_cell_line_list = list(omics_cell_df['rna_cell'])
         rna_df = pd.read_csv('../datainfo/init_data/gdsc_rnaseq_manual.csv', low_memory=False)
@@ -136,7 +135,6 @@ class CellLineAnnotation():
         tail_cell_rna_df = tail_cell_rna_df.rename(columns=nci_rna_cell_line_dict)
         tail_cell_rna_df.insert(0, 'symbol', list(rna_df['symbol']))
         tail_cell_rna_df.to_csv('../datainfo/mid_cell_line/tail_cell_rna.csv', index=False, header=True)
-        print(tail_cell_rna_df.shape)
         # TAIL [GDSC CNV] CELL LINEs // KEEP [CNV] CELL LINE NAMES CONSISTENT WITH [NCI ALMANAC]
         omics_cnv_cell_line_list = list(omics_cell_df['cnv_cell'])
         cnv_df = pd.read_csv('../datainfo/init_data/gdsc_cnv_manual.csv', low_memory=False)
@@ -145,7 +143,6 @@ class CellLineAnnotation():
         tail_cell_cnv_df = tail_cell_cnv_df.rename(columns=nci_cnv_cell_line_dict)
         tail_cell_cnv_df.insert(0, 'symbol', list(cnv_df['symbol']))
         tail_cell_cnv_df.to_csv('../datainfo/mid_cell_line/tail_cell_cnv.csv', index=False, header=True)
-        print(tail_cell_cnv_df.shape)
         # TAIL [CCLE Methylation] // KEEP [CMeth] CELL LINE NAMES CONSISTENT WITH [NCI ALMANAC]
         omics_cmeth_cell_line_list = list(omics_cell_df['cmeth_cell'])
         cmeth_df = pd.read_csv('../datainfo/init_data/ccle_methylation.csv', low_memory=False)
@@ -154,7 +151,6 @@ class CellLineAnnotation():
         tail_cell_cmeth_df = tail_cell_cmeth_df.rename(columns=nci_cmeth_cell_line_dict)
         tail_cell_cmeth_df.insert(0, 'locus_id', list(cmeth_df['locus_id']))
         tail_cell_cmeth_df.to_csv('../datainfo/mid_cell_line/tail_cell_cmeth.csv', index=False, header=True)
-        print(tail_cell_cmeth_df.shape)
 
 
 '''
@@ -168,7 +164,8 @@ class GeneAnnotation():
         pass
 
     def gdsc_cnv_tail_overzero(self):
-        tail_cell_cnv_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_cnv.csv', low_memory=False)
+        tail_cell_cnv_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_cnv.csv')
+
         # tail_cell_cnv_df = tail_cell_cnv_df.sort_values(by=['symbol'])
         # tail_cell_cnv_df_T = tail_cell_cnv_df.T
         print(tail_cell_cnv_df)
