@@ -28,7 +28,7 @@ class Result():
             epoch_pearson = train_df.corr(method = 'pearson')
             epoch_pearson_list.append(epoch_pearson['Pred Score'][0])
             # TEST
-            test_df = pd.read_csv(path + '/TestPred_' + str(i) + '.txt', delimiter=',')
+            test_df = pd.read_csv(path + '/TestPred' + str(i) + '.txt', delimiter=',')
             test_score_list = list(test_df['Score'])
             test_pred_list = list(test_df['Pred Score'])
             test_epoch_loss = mean_squared_error(test_score_list, test_pred_list)
@@ -84,7 +84,7 @@ class Result():
         
     def plot_test_real_pred(self, path, epoch_time):
         # ALL POINTS PREDICTION SCATTERPLOT
-        pred_dl_input_df = pd.read_csv(path + '/TestPred.txt', delimiter = ',')
+        pred_dl_input_df = pd.read_csv(path + '/TestPred' + best_model_num + '.txt', delimiter = ',')
         print(pred_dl_input_df.corr(method = 'pearson'))
         score_list = list(pred_dl_input_df['Score'])
         pred_list = list(pred_dl_input_df['Pred Score'])
