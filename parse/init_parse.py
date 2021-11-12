@@ -44,10 +44,10 @@ class ReadFile():
 
     def gdsc_cnv(self):
         dir_opt = self.dir_opt
-        cnv_df = pd.read_csv('.' + dir_opt + '/GDSC/cnv_20191101/cnv_gistic_20191101.csv', low_memory=False)
-        cnv_df = cnv_df.fillna(0.0)
-        print(cnv_df)
-        cnv_df.to_csv('./datainfo/mid_data/gdsc_cnv.csv', index = False, header = True)
+        cnv_df = pd.read_csv('../datainfo/aa_raw_data/GDSC/cnv_20191101/cnv_gistic_20191101.csv', low_memory=False)
+        cnv_df = cnv_df.fillna('missing')
+        cnv_df.to_csv('../datainfo/init_data/gdsc_cnv.csv', index = False, header = True)
+        print(cnv_df.shape)
         # AFTER THIS NEED SOME MANUAL OPERATIONS TO CHANGE COLUMNS AND ROWS NAMES
 
     def ccle_meth(self):
@@ -119,6 +119,7 @@ def init_parse():
     dir_opt = '/datainfo'
     # ReadFile(dir_opt).combo_input()
     # ReadFile(dir_opt).gdsc_rnaseq()
+    # ReadFile(dir_opt).gdsc_cnv()
     # ReadFile(dir_opt).ccle_meth()
     # ReadFile(dir_opt).kegg()
     # ReadFile(dir_opt).drugbank()
