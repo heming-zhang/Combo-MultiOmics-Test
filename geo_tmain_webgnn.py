@@ -179,13 +179,15 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
     # RECORD EPOCH LOSS AND PEARSON CORRELATION
     if args.model != 'load':
         iteration_num = 0
-    min_train_loss = 1000
-    min_train_id = 0
+    max_test_corr = 0
+    max_test_corr_id = 0
     e1 = 50
     e2 = 25
     e3 = 25
     epoch_loss_list = []
     epoch_pearson_list = []
+    test_loss_list = []
+    test_pearson_list = []
     # CLEAN RESULT PREVIOUS EPOCH_I_PRED FILES
     folder_name = 'epoch_' + str(epoch_num)
     path = '.' + dir_opt + '/result/%s' % (folder_name)
@@ -228,7 +230,7 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
             batch_ypred = (Variable(batch_ypred).data).cpu().numpy()
             epoch_ypred = np.vstack((epoch_ypred, batch_ypred))
         epoch_loss = np.mean(batch_loss_list)
-        print('EPOCH ' + str(i) + ' MSE LOSS: ', epoch_loss)
+        print('TRAIN EPOCH ' + str(i) + ' MSE LOSS: ', epoch_loss)
         epoch_loss_list.append(epoch_loss)
         epoch_ypred = np.delete(epoch_ypred, 0, axis = 0)
         print(epoch_ypred)
@@ -245,15 +247,6 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
         epoch_pearson_list.append(epoch_pearson['Pred Score'][0])
         tmp_training_input_df.to_csv(path + '/TrainingPred_' + str(i) + '.txt', index=False, header=True)
         print('EPOCH ' + str(i) + ' PEARSON CORRELATION: ', epoch_pearson)
-        # SAVE BEST TRAINING AND VALIDATION MODEL
-        if epoch_loss < min_train_loss:
-            min_train_loss = epoch_loss
-            min_train_id = i
-            # torch.save(model.state_dict(), path + '/best_train_model'+ str(i) +'.pt')
-            torch.save(model.state_dict(), path + '/best_train_model.pt')
-        print('\n-------------BEST MODEL ID:' + str(min_train_id) + '-------------')
-        print('BEST MODEL TRAIN LOSS: ', min_train_loss)
-        print('BEST MODEL PEARSON CORR: ', epoch_pearson_list[min_train_id - 1])
         print('\n-------------EPOCH TRAINING PEARSON CORRELATION LIST: -------------')
         print(epoch_pearson_list)
         print('\n-------------EPOCH TRAINING MSE LOSS LIST: -------------')
@@ -267,7 +260,26 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
         # # # TEST MODEL ON TEST DATASET
         # fold_n = 1
         test_save_path = path
-        test_geowebgnn(prog_args, fold_n, model, test_save_path, device)
+        test_pearson, test_loss = test_geowebgnn(prog_args, fold_n, model, test_save_path, device)
+        test_pearson_list.append(test_pearson)
+        test_loss_list.append(test_loss)
+        print('\n-------------EPOCH TEST PEARSON CORRELATION LIST: -------------')
+        print(test_pearson_list)
+        print('\n-------------EPOCH TEST MSE LOSS LIST: -------------')
+        print(test_loss_list)
+        # SAVE BEST TEST MODEL
+        if test_pearson > max_test_corr:
+            max_test_corr = test_pearson
+            max_test_corr_id = i
+            # torch.save(model.state_dict(), path + '/best_train_model'+ str(i) +'.pt')
+            torch.save(model.state_dict(), path + '/best_train_model.pt')
+        print('\n-------------BEST TEST PEARSON CORR MODEL ID INFO:' + str(max_test_corr_id) + '-------------')
+        print('--- TRAIN ---')
+        print('BEST MODEL TRAIN LOSS: ', epoch_loss_list[max_test_corr_id - 1])
+        print('BEST MODEL TRAIN PEARSON CORR: ', epoch_pearson_list[max_test_corr_id - 1])
+        print('--- TEST ---')
+        print('BEST MODEL TEST LOSS: ', test_loss_list[max_test_corr_id - 1])
+        print('BEST MODEL TEST PEARSON CORR: ', test_pearson_list[max_test_corr_id - 1])
 
 
 def test_geowebgnn_model(dataset_loader, model, device, args):
@@ -344,6 +356,7 @@ def test_geowebgnn(args, fold_n, model, test_save_path, device):
     test_pearson = tmp_test_input_df.corr(method = 'pearson')
     tmp_test_input_df.to_csv(path + '/TestPred.txt', index = False, header = True)
     print('PEARSON CORRELATION: ', test_pearson)
+    return test_pearson, test_loss
 
 
 
