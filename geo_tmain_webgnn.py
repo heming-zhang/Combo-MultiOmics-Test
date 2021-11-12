@@ -270,7 +270,7 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
         print(test_loss_list)
         # SAVE BEST TEST MODEL
         if test_pearson_score > max_test_corr:
-            max_test_corr = test_pearson
+            max_test_corr = test_pearson_score
             max_test_corr_id = i
             # torch.save(model.state_dict(), path + '/best_train_model'+ str(i) +'.pt')
             torch.save(model.state_dict(), path + '/best_train_model.pt')
