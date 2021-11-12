@@ -165,9 +165,16 @@ class GeneAnnotation():
     def __init__(self):
         pass
 
+    def gdsc_raw_cnv_tail_overzero(self):
+        raw_cnv_df = pd.read_csv('../datainfo/init_data/gdsc_cnv_manual.csv')
+        threshold = len(raw_cnv_df.columns[1:]) * 0.9
+        raw_cnv_gene_deletion_list = [row[0] for row in raw_cnv_df.itertuples() if list(row[2:]).count(0)>threshold]
+        print(len(raw_cnv_gene_deletion_list))
+
     def gdsc_cnv_tail_overzero(self):
         tail_cell_cnv_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_cnv.csv')
-        tail_cell_cnv_gene_deletion_list = [row[0] for row in tail_cell_cnv_df.itertuples() if list(row[2:]).count('missing')>4]
+        threshold = len(tail_cell_cnv_df.columns[1:]) * 0.9
+        tail_cell_cnv_gene_deletion_list = [row[0] for row in tail_cell_cnv_df.itertuples() if list(row[2:]).count(0)>threshold]
         print(len(tail_cell_cnv_gene_deletion_list))
 
     def kegg_omics_intersect(self):
@@ -356,6 +363,7 @@ if os.path.exists('../datainfo/filtered_data') == False:
 # CellLineAnnotation().omics_cell()
 # CellLineAnnotation().tail_cell()
 
+GeneAnnotation().gdsc_raw_cnv_tail_overzero()
 # GeneAnnotation().gdsc_cnv_tail_overzero()
 # GeneAnnotation().kegg_omics_intersect()
 # GeneAnnotation().kegg_drugbank_gene_intersect()
@@ -366,4 +374,4 @@ if os.path.exists('../datainfo/filtered_data') == False:
 # DrugAnnotation().nci_drugbank_drug_intersect()
 
 # RecheckFinal().recheck_cell_line()
-RecheckFinal().final()
+# RecheckFinal().final()

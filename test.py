@@ -1,6 +1,6 @@
 import numpy as np
 
-a = np.load('./datainfo/form_data/x_split1.npy')
+a = np.load('./datainfo/form_data/x_split2.npy')
 print(a.shape)
 
-print(a[0,0:27])
+print(a[0,0:45])

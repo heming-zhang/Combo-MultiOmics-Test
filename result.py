@@ -76,6 +76,10 @@ class Result():
         # ALL POINTS PREDICTION SCATTERPLOT
         pred_dl_input_df = pd.read_csv(path + '/TestPred.txt', delimiter = ',')
         print(pred_dl_input_df.corr(method = 'pearson'))
+        score_list = list(pred_dl_input_df['Score'])
+        pred_list = list(pred_dl_input_df['Pred Score'])
+        test_loss = mean_squared_error(score_list, pred_list)
+        print('BEST MODEL TEST LOSS: ', test_loss)
         title = 'Scatter Plot After ' + epoch_time + ' Iterations In Test Dataset'
         ax = pred_dl_input_df.plot(x = 'Score', y = 'Pred Score', color='green',
                     style = '.', legend = False, title = title)
