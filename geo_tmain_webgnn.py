@@ -260,10 +260,11 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
         # # # TEST MODEL ON TEST DATASET
         # fold_n = 1
         test_save_path = path
-        test_pearson, test_loss = test_geowebgnn(prog_args, fold_n, model, test_save_path, device)
+        test_pearson, test_loss, tmp_test_input_df = test_geowebgnn(prog_args, fold_n, model, test_save_path, device)
         test_pearson_score = test_pearson['Pred Score'][0]
         test_pearson_list.append(test_pearson_score)
         test_loss_list.append(test_loss)
+        tmp_test_input_df.to_csv(path + '/TestPred' + str(i) + '.txt', index = False, header = True)
         print('\n-------------EPOCH TEST PEARSON CORRELATION LIST: -------------')
         print(test_pearson_list)
         print('\n-------------EPOCH TEST MSE LOSS LIST: -------------')
@@ -355,9 +356,8 @@ def test_geowebgnn(args, fold_n, model, test_save_path, device):
     test_dict = {'Score': score_list, 'Pred Score': all_ypred_list}
     tmp_test_input_df = pd.DataFrame(test_dict)
     test_pearson = tmp_test_input_df.corr(method = 'pearson')
-    tmp_test_input_df.to_csv(path + '/TestPred.txt', index = False, header = True)
     print('PEARSON CORRELATION: ', test_pearson)
-    return test_pearson, test_loss
+    return test_pearson, test_loss, tmp_test_input_df
 
 
 

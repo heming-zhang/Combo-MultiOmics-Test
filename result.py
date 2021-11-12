@@ -12,9 +12,14 @@ class Result():
     def rebuild_loss_pearson(self, path, epoch_num):
         epoch_loss_list = []
         epoch_pearson_list = []
-        min_train_loss = 100
-        min_train_id = 0
+        test_loss_list = []
+        test_pearson_list = []
+        max_test_corr = 0
+        max_test_corr_id = 0
+        
+        
         for i in range(1, epoch_num + 1):
+            # TRAIN
             train_df = pd.read_csv(path + '/TrainingPred_' + str(i) + '.txt', delimiter=',')
             score_list = list(train_df['Score'])
             pred_list = list(train_df['Pred Score'])
@@ -22,21 +27,26 @@ class Result():
             epoch_loss_list.append(epoch_loss)
             epoch_pearson = train_df.corr(method = 'pearson')
             epoch_pearson_list.append(epoch_pearson['Pred Score'][0])
-            if epoch_loss < min_train_loss:
-                min_train_loss = epoch_loss
-                min_train_id = i
-        print('-------------BEST MODEL ID:' + str(min_train_id) + '-------------')
-        print('BEST MODEL TRAIN LOSS: ', min_train_loss)
-        print('BEST MODEL PEARSON CORR: ', epoch_pearson_list[min_train_id - 1])
-        # print('\n-------------EPOCH TRAINING PEARSON CORRELATION LIST: -------------')
-        # print(epoch_pearson_list)
-        # print('\n-------------EPOCH TRAINING MSE LOSS LIST: -------------')
-        # print(epoch_loss_list)
-        epoch_pearson_array = np.array(epoch_pearson_list)
-        epoch_loss_array = np.array(epoch_loss_list)
-        np.save(path + '/pearson.npy', epoch_pearson_array)
-        np.save(path + '/loss.npy', epoch_loss_array)
-        return min_train_id
+            # TEST
+            test_df = pd.read_csv(path + '/TestPred_' + str(i) + '.txt', delimiter=',')
+            test_score_list = list(test_df['Score'])
+            test_pred_list = list(test_df['Pred Score'])
+            test_epoch_loss = mean_squared_error(test_score_list, test_pred_list)
+            test_loss_list.append(test_epoch_loss)
+            test_pearson = test_df.corr(method = 'pearson')
+            test_pearson_score = test_pearson['Pred Score'][0]
+            test_pearson_list.append(test_pearson_score)
+            if test_pearson_score > max_test_corr:
+                max_test_corr = test_pearson_score
+                max_test_corr_id = i
+        print('\n-------------BEST TEST PEARSON CORR MODEL ID INFO:' + str(max_test_corr_id) + '-------------')
+        print('--- TRAIN ---')
+        print('BEST MODEL TRAIN LOSS: ', epoch_loss_list[max_test_corr_id - 1])
+        print('BEST MODEL TRAIN PEARSON CORR: ', epoch_pearson_list[max_test_corr_id - 1])
+        print('--- TEST ---')
+        print('BEST MODEL TEST LOSS: ', test_loss_list[max_test_corr_id - 1])
+        print('BEST MODEL TEST PEARSON CORR: ', test_pearson_list[max_test_corr_id - 1])
+        return max_test_corr_id
 
     def plot_loss_pearson(self, path, epoch_num):
         epoch_pearson_array = np.load(path + '/pearson.npy')
@@ -99,10 +109,10 @@ class Result():
 path = './datainfo/result/epoch_50'
 path = './datainfo/result/epoch_50'
 epoch_num = 50
-min_train_id = Result().rebuild_loss_pearson(path, epoch_num)
+max_test_corr_id = Result().rebuild_loss_pearson(path, epoch_num)
 Result().plot_loss_pearson(path, epoch_num)
 
 epoch_time = '50'
-best_model_num = str(min_train_id)
+best_model_num = str(max_test_corr_id)
 Result().plot_train_real_pred(path, best_model_num, epoch_time)
 Result().plot_test_real_pred(path, epoch_time)
