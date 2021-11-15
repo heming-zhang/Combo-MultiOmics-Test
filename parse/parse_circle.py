@@ -217,12 +217,9 @@ class GeneAnnotation():
         kegg_gene_list = sorted(list(set(list(kegg_df['src']) + list(kegg_df['dest']))))
         # # # GET [] BIOGRID GENES
         # biogrid_df = 
-
         # # # GET [] STRING GENES
         # string_df = 
-
-
-        # # GET INTERSETED GENES
+        # # GET [OMICS] INTERSETED GENES
         tail_cell_rna_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_rna.csv', low_memory=False)
         tail_cell_rna_df = tail_cell_rna_df.sort_values(by=['symbol'])
         rna_gene_list = list(tail_cell_rna_df['symbol'])
@@ -232,14 +229,21 @@ class GeneAnnotation():
         tail_cell_cmeth_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_cmeth.csv', low_memory=False)
         tail_cell_cmeth_df = tail_cell_cmeth_df.sort_values(by=['locus_id'])
         cmeth_gene_list = list(tail_cell_cmeth_df['locus_id'])
-        omics_gene_set = set(rna_gene_list).intersection(set(cnv_gene_list)).intersection(set(cmeth_gene_list))
+        tail_cell_cmut_amp_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_cmut_amp.csv')
+        tail_cell_cmut_amp_df = tail_cell_cmut_amp_df.sort_values(by=['Name'])
+        cmut_amp_gene_list = list(tail_cell_cmut_amp_df['Name'])
+        tail_cell_cmut_del_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_cmut_del.csv')
+        tail_cell_cmut_del_df = tail_cell_cmut_del_df.sort_values(by=['Name'])
+        cmut_del_gene_list = list(tail_cell_cmut_del_df['Name'])
+        omics_gene_set = set(rna_gene_list).intersection(set(cnv_gene_list)).intersection(set(cmeth_gene_list))\
+                            .intersection(set(cmut_amp_gene_list)).intersection(set(cmut_del_gene_list))
         omics_gene_list = sorted(list(omics_gene_set))
         # # # LEFT JOIN TO AUTO MAP
         kegg_gene_df = pd.DataFrame(data=kegg_gene_list, columns=['kegg_gene'])
         omics_gene_df = pd.DataFrame(data=omics_gene_list, columns=['omics_gene'])
         kegg_omics_gene_df = pd.merge(kegg_gene_df, omics_gene_df, how='left', left_on='kegg_gene', right_on='omics_gene')
         kegg_omics_gene_df = kegg_omics_gene_df.dropna().reset_index(drop=True) # [8002] => [4099] GENEs
-        # TAIL [KEGG] GENE => [3066] GENES
+        # TAIL [KEGG] GENE => [3000] GENES
         kegg_gene_deletion_list = [gene for gene in kegg_gene_list if gene not in list(kegg_omics_gene_df['kegg_gene'])]
         kegg_gene_deletion_index = [row[0] for row in kegg_df.itertuples() \
                                     if row[1] in kegg_gene_deletion_list or row[2] in kegg_gene_deletion_list]
@@ -249,18 +253,27 @@ class GeneAnnotation():
         new_kegg_gene_list = sorted(list(set(list(new_kegg_df['src']) + list(new_kegg_df['dest']))))
         new_kegg_gene_df = pd.DataFrame(data=new_kegg_gene_list, columns=['kegg_gene'])
         new_kegg_gene_df.to_csv('../datainfo/filtered_data/kegg_gene_annotation.csv', index=False, header=True)
-        # TAIL [GDSC RNASeq] => [3066] GENES
+        # TAIL [GDSC RNASeq] => [3000] GENES
         tail_cell_gene_rna_df = tail_cell_rna_df[tail_cell_rna_df['symbol'].isin(new_kegg_gene_list)].reset_index(drop=True)
         tail_cell_gene_rna_df.to_csv('../datainfo/mid_gene/tail_cell_gene_rna.csv', index=False, header=True)
         print(tail_cell_gene_rna_df)
-        # TAIL [GDSC CNV] => [3066] GENES
+        # TAIL [GDSC CNV] => [3000] GENES
         tail_cell_gene_cnv_df = tail_cell_cnv_df[tail_cell_cnv_df['symbol'].isin(new_kegg_gene_list)].reset_index(drop=True)
         tail_cell_gene_cnv_df.to_csv('../datainfo/mid_gene/tail_cell_gene_cnv.csv', index=False, header=True)
         print(tail_cell_gene_cnv_df)
-        # TAIL [CCLE Methylation] => [3066] GENES
+        # TAIL [CCLE Methylation] => [3000] GENES
         tail_cell_gene_cmeth_df = tail_cell_cmeth_df[tail_cell_cmeth_df['locus_id'].isin(new_kegg_gene_list)].reset_index(drop=True)
         tail_cell_gene_cmeth_df.to_csv('../datainfo/mid_gene/tail_cell_gene_cmeth.csv', index=False, header=True)
         print(tail_cell_gene_cmeth_df)
+        # TAIL [CCLE MUTATION AMP] => [3000] GENES
+        tail_cell_gene_cmut_amp_df = tail_cell_cmut_amp_df[tail_cell_cmut_amp_df['Name'].isin(new_kegg_gene_list)].reset_index(drop=True)
+        tail_cell_gene_cmut_amp_df.to_csv('../datainfo/mid_gene/tail_cell_gene_cmut_amp.csv', index=False, header=True)
+        print(tail_cell_gene_cmut_amp_df)
+        # TAIL [CCLE MUTATION DEL] => [3000] GENES
+        tail_cell_gene_cmut_del_df = tail_cell_cmut_del_df[tail_cell_cmut_del_df['Name'].isin(new_kegg_gene_list)].reset_index(drop=True)
+        tail_cell_gene_cmut_del_df.to_csv('../datainfo/mid_gene/tail_cell_gene_cmut_del.csv', index=False, header=True)
+        print(tail_cell_gene_cmut_del_df)
+
 
     def kegg_drugbank_gene_intersect(self):
         # TAIL [DrugBank] GENE
@@ -349,6 +362,14 @@ class RecheckFinal():
         # print(tail_cell_gene_cmeth_df.isnull().values.any())
         # tail_cell_gene_cmeth_df = tail_cell_gene_cmeth_df.replace(['missing'], 0.0)
         tail_cell_gene_cmeth_df.to_csv('../datainfo/filtered_data/final_cmeth.csv', index=False, header=True)
+        # [CCLE AMP]
+        tail_cell_gene_cmut_amp_df = pd.read_csv('../datainfo/mid_gene/tail_cell_gene_cmut_amp.csv')
+        # print(tail_cell_gene_cmut_amp_df.isna().sum().sum())
+        tail_cell_gene_cmut_amp_df.to_csv('../datainfo/filtered_data/final_cmut_amp.csv', index=False, header=True)
+        # [CCLE DEL]
+        tail_cell_gene_cmut_del_df = pd.read_csv('../datainfo/mid_gene/tail_cell_gene_cmut_del.csv')
+        # print(tail_cell_gene_cmut_del_df.isna().sum().sum())
+        tail_cell_gene_cmut_del_df.to_csv('../datainfo/filtered_data/final_cmut_del.csv', index=False, header=True)
         # [DrugBank]
         tail_gene_drug_drugbank_df = pd.read_csv('../datainfo/mid_drug/tail_gene_drug_drugbank.csv')
         tail_gene_drug_drugbank_df = tail_gene_drug_drugbank_df.sort_values(by=['Drug', 'Target'])
@@ -369,17 +390,14 @@ if os.path.exists('../datainfo/filtered_data') == False:
 # CellLineAnnotation().parse_cell_xml()
 # CellLineAnnotation().dl_cell_annotation()
 # CellLineAnnotation().omics_cell()
-CellLineAnnotation().tail_cell()
+# CellLineAnnotation().tail_cell()
 
 # GeneAnnotation().gdsc_raw_cnv_tail_overzero()
 # GeneAnnotation().gdsc_cnv_tail_overzero()
 # GeneAnnotation().kegg_omics_intersect()
 # GeneAnnotation().kegg_drugbank_gene_intersect()
 
-# DrugAnnotation().pubchem_cid_dl_drug()
-# DrugAnnotation().pubchem_cid_drugbank_drug()
-# DrugAnnotation().nci_drugbank_cid_intersect()
 # DrugAnnotation().nci_drugbank_drug_intersect()
 
 # RecheckFinal().recheck_cell_line()
-# RecheckFinal().final()
+RecheckFinal().final()

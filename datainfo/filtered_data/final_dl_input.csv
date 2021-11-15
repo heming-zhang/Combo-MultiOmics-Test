@@ -248,7 +248,6 @@ Azacitidine,Tretinoin,SW-620,0.6666666666666666
 Azacitidine,Tretinoin,T-47D,-7.888888888888887
 Azacitidine,Tretinoin,UACC-257,-1.1111111111111112
 Azacitidine,Tretinoin,UACC-62,-4.111111111111111
-Cladribine,Celecoxib,786-0,-5.777777777777778
 Cladribine,Celecoxib,A498,-8.333333333333334
 Cladribine,Celecoxib,A549/ATCC,-4.0
 Cladribine,Celecoxib,ACHN,0.2222222222222222
@@ -570,7 +569,6 @@ Dasatinib,Vorinostat,T-47D,3.555555555555556
 Dasatinib,Vorinostat,U251,0.3333333333333333
 Dasatinib,Vorinostat,UACC-257,-1.3333333333333333
 Dasatinib,Vorinostat,UACC-62,1.4444444444444444
-Decitabine,Azacitidine,786-0,-3.7777777777777777
 Decitabine,Azacitidine,A498,-8.888888888888891
 Decitabine,Azacitidine,ACHN,-4.0
 Decitabine,Azacitidine,BT-549,1.2222222222222223
@@ -601,7 +599,6 @@ Decitabine,Azacitidine,SW-620,-2.333333333333333
 Decitabine,Azacitidine,U251,-4.4444444444444455
 Decitabine,Azacitidine,UACC-257,1.0
 Decitabine,Azacitidine,UACC-62,4.5555555555555545
-Decitabine,Cladribine,786-0,-3.0
 Decitabine,Cladribine,A498,-6.777777777777778
 Decitabine,Cladribine,ACHN,2.333333333333333
 Decitabine,Cladribine,BT-549,7.4444444444444455
@@ -632,7 +629,6 @@ Decitabine,Cladribine,SW-620,2.6666666666666665
 Decitabine,Cladribine,U251,-4.5555555555555545
 Decitabine,Cladribine,UACC-257,3.7777777777777777
 Decitabine,Cladribine,UACC-62,8.444444444444445
-Decitabine,Docetaxel,786-0,-6.888888888888888
 Decitabine,Docetaxel,A498,-6.777777777777778
 Decitabine,Docetaxel,ACHN,-1.7777777777777777
 Decitabine,Docetaxel,BT-549,6.666666666666668
@@ -661,7 +657,6 @@ Decitabine,Docetaxel,SK-OV-3,-12.222222222222221
 Decitabine,Docetaxel,U251,-9.888888888888893
 Decitabine,Docetaxel,UACC-257,-4.333333333333333
 Decitabine,Docetaxel,UACC-62,-0.2222222222222222
-Decitabine,Mitotane,786-0,-3.333333333333333
 Decitabine,Mitotane,A498,-2.6666666666666665
 Decitabine,Mitotane,ACHN,-5.0
 Decitabine,Mitotane,BT-549,-1.0
@@ -692,7 +687,6 @@ Decitabine,Mitotane,SW-620,-1.1111111111111112
 Decitabine,Mitotane,U251,0.4444444444444444
 Decitabine,Mitotane,UACC-257,-5.777777777777778
 Decitabine,Mitotane,UACC-62,-1.2222222222222223
-Decitabine,Paclitaxel,786-0,-9.111111111111107
 Decitabine,Paclitaxel,A498,-20.88888888888889
 Decitabine,Paclitaxel,ACHN,-0.6666666666666666
 Decitabine,Paclitaxel,BT-549,12.777777777777779
@@ -723,7 +717,6 @@ Decitabine,Paclitaxel,SW-620,2.7777777777777777
 Decitabine,Paclitaxel,U251,-18.666666666666668
 Decitabine,Paclitaxel,UACC-257,1.6666666666666667
 Decitabine,Paclitaxel,UACC-62,-8.333333333333334
-Decitabine,Sirolimus,786-0,-1.3333333333333333
 Decitabine,Sirolimus,A498,-0.2222222222222222
 Decitabine,Sirolimus,ACHN,2.7777777777777777
 Decitabine,Sirolimus,BT-549,4.888888888888889
@@ -754,7 +747,6 @@ Decitabine,Sirolimus,SW-620,5.0
 Decitabine,Sirolimus,U251,-2.333333333333333
 Decitabine,Sirolimus,UACC-257,-8.444444444444445
 Decitabine,Sirolimus,UACC-62,4.2222222222222205
-Decitabine,Tretinoin,786-0,-6.0
 Decitabine,Tretinoin,A498,-14.555555555555555
 Decitabine,Tretinoin,ACHN,1.7777777777777777
 Decitabine,Tretinoin,BT-549,-8.333333333333334
@@ -1295,7 +1287,6 @@ Everolimus,Vorinostat,T-47D,-3.2222222222222223
 Everolimus,Vorinostat,U251,0.3333333333333333
 Everolimus,Vorinostat,UACC-257,-6.0
 Everolimus,Vorinostat,UACC-62,0.3333333333333333
-Fulvestrant,Azacitidine,786-0,-3.111111111111111
 Fulvestrant,Azacitidine,A498,0.8888888888888888
 Fulvestrant,Azacitidine,A549/ATCC,0.3333333333333333
 Fulvestrant,Azacitidine,ACHN,-1.2222222222222223
@@ -1333,7 +1324,6 @@ Fulvestrant,Azacitidine,T-47D,-0.3333333333333333
 Fulvestrant,Azacitidine,U251,0.2222222222222222
 Fulvestrant,Azacitidine,UACC-257,1.2222222222222223
 Fulvestrant,Azacitidine,UACC-62,1.4444444444444444
-Fulvestrant,Celecoxib,786-0,-1.2222222222222223
 Fulvestrant,Celecoxib,A498,-3.7777777777777777
 Fulvestrant,Celecoxib,A549/ATCC,-5.0
 Fulvestrant,Celecoxib,ACHN,-5.111111111111111
@@ -1372,7 +1362,6 @@ Fulvestrant,Celecoxib,T-47D,-7.666666666666668
 Fulvestrant,Celecoxib,U251,-8.555555555555555
 Fulvestrant,Celecoxib,UACC-257,-6.777777777777778
 Fulvestrant,Celecoxib,UACC-62,-7.333333333333332
-Fulvestrant,Cladribine,786-0,0.6666666666666666
 Fulvestrant,Cladribine,A498,-1.6666666666666667
 Fulvestrant,Cladribine,A549/ATCC,-3.555555555555556
 Fulvestrant,Cladribine,ACHN,0.3333333333333333
@@ -1411,7 +1400,6 @@ Fulvestrant,Cladribine,T-47D,-3.888888888888889
 Fulvestrant,Cladribine,U251,1.6666666666666667
 Fulvestrant,Cladribine,UACC-257,-7.0
 Fulvestrant,Cladribine,UACC-62,0.5555555555555556
-Fulvestrant,Dasatinib,786-0,-1.5555555555555556
 Fulvestrant,Dasatinib,A498,1.5555555555555556
 Fulvestrant,Dasatinib,A549/ATCC,7.1111111111111125
 Fulvestrant,Dasatinib,ACHN,-3.0
@@ -1450,7 +1438,6 @@ Fulvestrant,Dasatinib,T-47D,0.4444444444444444
 Fulvestrant,Dasatinib,U251,-4.111111111111111
 Fulvestrant,Dasatinib,UACC-257,0.5555555555555556
 Fulvestrant,Dasatinib,UACC-62,2.1111111111111107
-Fulvestrant,Everolimus,786-0,-9.555555555555557
 Fulvestrant,Everolimus,A498,17.11111111111111
 Fulvestrant,Everolimus,A549/ATCC,25.66666666666667
 Fulvestrant,Everolimus,ACHN,-2.333333333333333
@@ -1489,7 +1476,6 @@ Fulvestrant,Everolimus,T-47D,18.444444444444443
 Fulvestrant,Everolimus,U251,0.1111111111111111
 Fulvestrant,Everolimus,UACC-257,0.0
 Fulvestrant,Everolimus,UACC-62,9.0
-Fulvestrant,Nilotinib,786-0,-4.2222222222222205
 Fulvestrant,Nilotinib,A498,-2.555555555555556
 Fulvestrant,Nilotinib,A549/ATCC,-2.7777777777777777
 Fulvestrant,Nilotinib,ACHN,-8.666666666666666
@@ -1527,7 +1513,6 @@ Fulvestrant,Nilotinib,SW-620,-3.333333333333333
 Fulvestrant,Nilotinib,T-47D,4.333333333333333
 Fulvestrant,Nilotinib,UACC-257,-4.4444444444444455
 Fulvestrant,Nilotinib,UACC-62,-0.6666666666666666
-Fulvestrant,Paclitaxel,786-0,-2.0
 Fulvestrant,Paclitaxel,A498,-1.7777777777777777
 Fulvestrant,Paclitaxel,A549/ATCC,-3.4444444444444446
 Fulvestrant,Paclitaxel,ACHN,-4.5555555555555545
@@ -1566,7 +1551,6 @@ Fulvestrant,Paclitaxel,T-47D,-0.7777777777777778
 Fulvestrant,Paclitaxel,U251,-1.6666666666666667
 Fulvestrant,Paclitaxel,UACC-257,-2.555555555555556
 Fulvestrant,Paclitaxel,UACC-62,-4.2222222222222205
-Fulvestrant,Romidepsin,786-0,1.7777777777777777
 Fulvestrant,Romidepsin,A498,11.333333333333336
 Fulvestrant,Romidepsin,A549/ATCC,0.4444444444444444
 Fulvestrant,Romidepsin,ACHN,1.8888888888888888
@@ -1605,7 +1589,6 @@ Fulvestrant,Romidepsin,T-47D,2.7777777777777777
 Fulvestrant,Romidepsin,U251,7.1111111111111125
 Fulvestrant,Romidepsin,UACC-257,-1.5555555555555556
 Fulvestrant,Romidepsin,UACC-62,6.888888888888888
-Fulvestrant,Sirolimus,786-0,-2.0
 Fulvestrant,Sirolimus,A498,-2.0
 Fulvestrant,Sirolimus,A549/ATCC,-0.5555555555555556
 Fulvestrant,Sirolimus,ACHN,-4.2222222222222205
@@ -1644,7 +1627,6 @@ Fulvestrant,Sirolimus,T-47D,2.888888888888889
 Fulvestrant,Sirolimus,U251,-11.333333333333336
 Fulvestrant,Sirolimus,UACC-257,-4.0
 Fulvestrant,Sirolimus,UACC-62,-0.5555555555555556
-Fulvestrant,Tretinoin,786-0,-2.4444444444444446
 Fulvestrant,Tretinoin,A498,-1.6666666666666667
 Fulvestrant,Tretinoin,A549/ATCC,7.333333333333332
 Fulvestrant,Tretinoin,ACHN,0.4444444444444444
@@ -1683,7 +1665,6 @@ Fulvestrant,Tretinoin,T-47D,-2.1111111111111107
 Fulvestrant,Tretinoin,U251,0.3333333333333333
 Fulvestrant,Tretinoin,UACC-257,1.2222222222222223
 Fulvestrant,Tretinoin,UACC-62,1.2222222222222223
-Fulvestrant,Vorinostat,786-0,-2.888888888888889
 Fulvestrant,Vorinostat,A498,-1.4444444444444444
 Fulvestrant,Vorinostat,A549/ATCC,1.2222222222222223
 Fulvestrant,Vorinostat,ACHN,-3.555555555555556
@@ -1722,7 +1703,6 @@ Fulvestrant,Vorinostat,T-47D,2.333333333333333
 Fulvestrant,Vorinostat,U251,-0.6666666666666666
 Fulvestrant,Vorinostat,UACC-257,-0.3333333333333333
 Fulvestrant,Vorinostat,UACC-62,1.4444444444444444
-Gefitinib,Lenalidomide,786-0,-4.888888888888889
 Gefitinib,Lenalidomide,A498,-5.888888888888888
 Gefitinib,Lenalidomide,A549/ATCC,-0.7777777777777778
 Gefitinib,Lenalidomide,ACHN,-6.1111111111111125
@@ -1762,7 +1742,6 @@ Gefitinib,Lenalidomide,T-47D,-1.0
 Gefitinib,Lenalidomide,U251,-3.111111111111111
 Gefitinib,Lenalidomide,UACC-257,0.1111111111111111
 Gefitinib,Lenalidomide,UACC-62,1.8888888888888888
-Megestrol acetate,Gefitinib,786-0,-2.2222222222222223
 Megestrol acetate,Gefitinib,A498,-4.2222222222222205
 Megestrol acetate,Gefitinib,A549/ATCC,1.5555555555555556
 Megestrol acetate,Gefitinib,ACHN,-2.555555555555556
@@ -1802,7 +1781,6 @@ Megestrol acetate,Gefitinib,T-47D,2.7777777777777777
 Megestrol acetate,Gefitinib,U251,3.4444444444444446
 Megestrol acetate,Gefitinib,UACC-257,0.0
 Megestrol acetate,Gefitinib,UACC-62,5.111111111111111
-Megestrol acetate,Lenalidomide,786-0,-5.222222222222221
 Megestrol acetate,Lenalidomide,A498,-4.777777777777779
 Megestrol acetate,Lenalidomide,A549/ATCC,1.2222222222222223
 Megestrol acetate,Lenalidomide,ACHN,-9.888888888888893
@@ -1842,7 +1820,6 @@ Megestrol acetate,Lenalidomide,T-47D,-4.4444444444444455
 Megestrol acetate,Lenalidomide,U251,-0.3333333333333333
 Megestrol acetate,Lenalidomide,UACC-257,-7.333333333333332
 Megestrol acetate,Lenalidomide,UACC-62,-0.1111111111111111
-Mitotane,Azacitidine,786-0,-1.6666666666666667
 Mitotane,Azacitidine,A498,-1.7777777777777777
 Mitotane,Azacitidine,A549/ATCC,4.4444444444444455
 Mitotane,Azacitidine,ACHN,-2.1111111111111107
@@ -1879,7 +1856,6 @@ Mitotane,Azacitidine,T-47D,-11.111111111111107
 Mitotane,Azacitidine,U251,-3.2222222222222223
 Mitotane,Azacitidine,UACC-257,6.1111111111111125
 Mitotane,Azacitidine,UACC-62,0.5555555555555556
-Mitotane,Celecoxib,786-0,1.8888888888888888
 Mitotane,Celecoxib,A498,0.3333333333333333
 Mitotane,Celecoxib,A549/ATCC,-3.6666666666666665
 Mitotane,Celecoxib,ACHN,-3.111111111111111
@@ -1917,7 +1893,6 @@ Mitotane,Celecoxib,T-47D,-8.11111111111111
 Mitotane,Celecoxib,U251,-1.4444444444444444
 Mitotane,Celecoxib,UACC-257,-14.0
 Mitotane,Celecoxib,UACC-62,-4.111111111111111
-Mitotane,Cladribine,786-0,0.2222222222222222
 Mitotane,Cladribine,A498,0.4444444444444444
 Mitotane,Cladribine,A549/ATCC,-13.0
 Mitotane,Cladribine,ACHN,3.333333333333333
@@ -1955,7 +1930,6 @@ Mitotane,Cladribine,T-47D,-9.888888888888893
 Mitotane,Cladribine,U251,-3.2222222222222223
 Mitotane,Cladribine,UACC-257,-15.666666666666664
 Mitotane,Cladribine,UACC-62,-2.6666666666666665
-Mitotane,Dasatinib,786-0,-3.6666666666666665
 Mitotane,Dasatinib,A549/ATCC,-3.0
 Mitotane,Dasatinib,ACHN,3.4444444444444446
 Mitotane,Dasatinib,BT-549,-4.888888888888889
@@ -1991,7 +1965,6 @@ Mitotane,Dasatinib,T-47D,-7.4444444444444455
 Mitotane,Dasatinib,U251,-4.4444444444444455
 Mitotane,Dasatinib,UACC-257,-1.2222222222222223
 Mitotane,Dasatinib,UACC-62,2.0
-Mitotane,Docetaxel,786-0,2.888888888888889
 Mitotane,Docetaxel,A498,1.1111111111111112
 Mitotane,Docetaxel,A549/ATCC,-1.5555555555555556
 Mitotane,Docetaxel,ACHN,5.5555555555555545
@@ -2028,7 +2001,6 @@ Mitotane,Docetaxel,SW-620,5.4444444444444455
 Mitotane,Docetaxel,T-47D,-7.555555555555554
 Mitotane,Docetaxel,U251,6.1111111111111125
 Mitotane,Docetaxel,UACC-257,0.3333333333333333
-Mitotane,Everolimus,786-0,3.4444444444444446
 Mitotane,Everolimus,A498,11.222222222222221
 Mitotane,Everolimus,A549/ATCC,3.4444444444444446
 Mitotane,Everolimus,ACHN,2.1111111111111107
@@ -2066,7 +2038,6 @@ Mitotane,Everolimus,T-47D,-7.888888888888887
 Mitotane,Everolimus,U251,-3.888888888888889
 Mitotane,Everolimus,UACC-257,-5.5555555555555545
 Mitotane,Everolimus,UACC-62,7.888888888888887
-Mitotane,Nilotinib,786-0,-2.7777777777777777
 Mitotane,Nilotinib,A498,-6.5555555555555545
 Mitotane,Nilotinib,A549/ATCC,-3.0
 Mitotane,Nilotinib,ACHN,-15.888888888888893
@@ -2128,7 +2099,6 @@ Mitotane,Paclitaxel,SK-OV-3,-3.2222222222222223
 Mitotane,Paclitaxel,SW-620,1.5555555555555556
 Mitotane,Paclitaxel,UACC-257,-10.444444444444443
 Mitotane,Paclitaxel,UACC-62,0.4444444444444444
-Mitotane,Sirolimus,786-0,-1.7777777777777777
 Mitotane,Sirolimus,A498,2.333333333333333
 Mitotane,Sirolimus,A549/ATCC,-2.4444444444444446
 Mitotane,Sirolimus,ACHN,2.6666666666666665
@@ -2166,7 +2136,6 @@ Mitotane,Sirolimus,T-47D,-0.1111111111111111
 Mitotane,Sirolimus,U251,-7.666666666666668
 Mitotane,Sirolimus,UACC-257,-5.5555555555555545
 Mitotane,Sirolimus,UACC-62,-2.555555555555556
-Mitotane,Tretinoin,786-0,-3.333333333333333
 Mitotane,Tretinoin,A498,-0.8888888888888888
 Mitotane,Tretinoin,A549/ATCC,5.111111111111111
 Mitotane,Tretinoin,ACHN,4.777777777777779
@@ -2204,7 +2173,6 @@ Mitotane,Tretinoin,T-47D,8.888888888888891
 Mitotane,Tretinoin,U251,-3.4444444444444446
 Mitotane,Tretinoin,UACC-257,0.8888888888888888
 Mitotane,Tretinoin,UACC-62,0.2222222222222222
-Nilotinib,Celecoxib,786-0,-9.777777777777779
 Nilotinib,Celecoxib,A498,-0.6666666666666666
 Nilotinib,Celecoxib,A549/ATCC,-4.111111111111111
 Nilotinib,Celecoxib,ACHN,-1.7777777777777777
@@ -2236,7 +2204,6 @@ Nilotinib,Celecoxib,SW-620,-9.888888888888893
 Nilotinib,Celecoxib,T-47D,-2.555555555555556
 Nilotinib,Celecoxib,U251,-7.0
 Nilotinib,Celecoxib,UACC-257,-2.0
-Nilotinib,Cladribine,786-0,-14.222222222222221
 Nilotinib,Cladribine,A498,-4.2222222222222205
 Nilotinib,Cladribine,A549/ATCC,-10.0
 Nilotinib,Cladribine,ACHN,0.5555555555555556
@@ -2684,7 +2651,6 @@ Sirolimus,Celecoxib,SW-620,-0.1111111111111111
 Sirolimus,Celecoxib,T-47D,2.888888888888889
 Sirolimus,Celecoxib,U251,1.0
 Sirolimus,Celecoxib,UACC-257,-4.5555555555555545
-Sirolimus,Cladribine,786-0,2.2222222222222223
 Sirolimus,Cladribine,A498,-6.666666666666668
 Sirolimus,Cladribine,A549/ATCC,-6.1111111111111125
 Sirolimus,Cladribine,ACHN,-4.0
@@ -2716,7 +2682,6 @@ Sirolimus,Cladribine,SW-620,-2.4444444444444446
 Sirolimus,Cladribine,T-47D,-10.777777777777779
 Sirolimus,Cladribine,U251,-9.222222222222221
 Sirolimus,Cladribine,UACC-257,-4.2222222222222205
-Sirolimus,Mitotane,786-0,-7.222222222222222
 Sirolimus,Mitotane,A498,0.8888888888888888
 Sirolimus,Mitotane,A549/ATCC,6.777777777777778
 Sirolimus,Mitotane,ACHN,9.444444444444443
@@ -2807,7 +2772,6 @@ Sirolimus,Tretinoin,SW-620,1.6666666666666667
 Sirolimus,Tretinoin,T-47D,1.3333333333333333
 Sirolimus,Tretinoin,U251,6.777777777777778
 Sirolimus,Tretinoin,UACC-257,-3.111111111111111
-Thalidomide,Azacitidine,786-0,-2.333333333333333
 Thalidomide,Azacitidine,A498,5.888888888888888
 Thalidomide,Azacitidine,ACHN,-1.3333333333333333
 Thalidomide,Azacitidine,BT-549,-2.1111111111111107
@@ -2838,7 +2802,6 @@ Thalidomide,Azacitidine,SW-620,1.3333333333333333
 Thalidomide,Azacitidine,U251,3.111111111111111
 Thalidomide,Azacitidine,UACC-257,-3.0
 Thalidomide,Azacitidine,UACC-62,0.6666666666666666
-Thalidomide,Cladribine,786-0,-8.0
 Thalidomide,Cladribine,A498,-5.333333333333333
 Thalidomide,Cladribine,ACHN,-2.0
 Thalidomide,Cladribine,BT-549,-7.222222222222222
@@ -2869,7 +2832,6 @@ Thalidomide,Cladribine,SW-620,0.3333333333333333
 Thalidomide,Cladribine,U251,-12.0
 Thalidomide,Cladribine,UACC-257,-4.888888888888889
 Thalidomide,Cladribine,UACC-62,8.222222222222221
-Thalidomide,Docetaxel,786-0,-4.0
 Thalidomide,Docetaxel,A498,-9.555555555555557
 Thalidomide,Docetaxel,ACHN,-8.444444444444445
 Thalidomide,Docetaxel,CAKI-1,-11.444444444444445
@@ -2893,7 +2855,6 @@ Thalidomide,Docetaxel,SK-OV-3,-8.11111111111111
 Thalidomide,Docetaxel,SW-620,-6.4444444444444455
 Thalidomide,Docetaxel,UACC-257,-11.0
 Thalidomide,Docetaxel,UACC-62,-2.333333333333333
-Thalidomide,Mitotane,786-0,0.0
 Thalidomide,Mitotane,A498,-3.7777777777777777
 Thalidomide,Mitotane,ACHN,-1.7777777777777777
 Thalidomide,Mitotane,BT-549,-4.777777777777779
@@ -2924,7 +2885,6 @@ Thalidomide,Mitotane,SW-620,-2.2222222222222223
 Thalidomide,Mitotane,U251,1.7777777777777777
 Thalidomide,Mitotane,UACC-257,-3.111111111111111
 Thalidomide,Mitotane,UACC-62,0.2222222222222222
-Thalidomide,Paclitaxel,786-0,0.3333333333333333
 Thalidomide,Paclitaxel,A498,-4.666666666666667
 Thalidomide,Paclitaxel,ACHN,2.2222222222222223
 Thalidomide,Paclitaxel,BT-549,-0.6666666666666666
@@ -2950,7 +2910,6 @@ Thalidomide,Paclitaxel,SW-620,-1.7777777777777777
 Thalidomide,Paclitaxel,U251,-4.333333333333333
 Thalidomide,Paclitaxel,UACC-257,-4.4444444444444455
 Thalidomide,Paclitaxel,UACC-62,8.777777777777779
-Thalidomide,Sirolimus,786-0,1.3333333333333333
 Thalidomide,Sirolimus,ACHN,-2.555555555555556
 Thalidomide,Sirolimus,BT-549,1.4444444444444444
 Thalidomide,Sirolimus,CAKI-1,0.1111111111111111
@@ -2979,7 +2938,6 @@ Thalidomide,Sirolimus,SW-620,4.0
 Thalidomide,Sirolimus,U251,-1.3333333333333333
 Thalidomide,Sirolimus,UACC-257,-5.666666666666668
 Thalidomide,Sirolimus,UACC-62,4.111111111111111
-Thalidomide,Tretinoin,786-0,-7.777777777777778
 Thalidomide,Tretinoin,A498,-2.4444444444444446
 Thalidomide,Tretinoin,ACHN,-2.555555555555556
 Thalidomide,Tretinoin,BT-549,-9.666666666666666
@@ -3010,7 +2968,6 @@ Thalidomide,Tretinoin,SW-620,-4.888888888888889
 Thalidomide,Tretinoin,U251,-12.666666666666664
 Thalidomide,Tretinoin,UACC-257,-0.6666666666666666
 Thalidomide,Tretinoin,UACC-62,-2.555555555555556
-Tretinoin,Celecoxib,786-0,-4.111111111111111
 Tretinoin,Celecoxib,A498,-7.0
 Tretinoin,Celecoxib,A549/ATCC,-3.0
 Tretinoin,Celecoxib,ACHN,-2.0
@@ -3045,7 +3002,6 @@ Tretinoin,Celecoxib,T-47D,0.2222222222222222
 Tretinoin,Celecoxib,U251,-8.222222222222221
 Tretinoin,Celecoxib,UACC-257,-0.4444444444444444
 Tretinoin,Celecoxib,UACC-62,-2.1111111111111107
-Tretinoin,Cladribine,786-0,-3.333333333333333
 Tretinoin,Cladribine,A498,-8.0
 Tretinoin,Cladribine,A549/ATCC,-2.333333333333333
 Tretinoin,Cladribine,ACHN,-1.7777777777777777
@@ -3328,7 +3284,6 @@ Vorinostat,Tretinoin,SW-620,-5.0
 Vorinostat,Tretinoin,T-47D,7.333333333333332
 Vorinostat,Tretinoin,UACC-257,3.0
 Vorinostat,Tretinoin,UACC-62,3.2222222222222223
-Zoledronic acid,Azacitidine,786-0,-1.2222222222222223
 Zoledronic acid,Azacitidine,A498,1.4444444444444444
 Zoledronic acid,Azacitidine,A549/ATCC,-1.7777777777777777
 Zoledronic acid,Azacitidine,ACHN,-2.7777777777777777
@@ -3367,7 +3322,6 @@ Zoledronic acid,Azacitidine,T-47D,-1.6666666666666667
 Zoledronic acid,Azacitidine,U251,0.2222222222222222
 Zoledronic acid,Azacitidine,UACC-257,1.0
 Zoledronic acid,Azacitidine,UACC-62,2.333333333333333
-Zoledronic acid,Celecoxib,786-0,-1.0
 Zoledronic acid,Celecoxib,A498,-2.6666666666666665
 Zoledronic acid,Celecoxib,A549/ATCC,-4.111111111111111
 Zoledronic acid,Celecoxib,ACHN,-6.333333333333332
@@ -3406,7 +3360,6 @@ Zoledronic acid,Celecoxib,T-47D,-8.555555555555555
 Zoledronic acid,Celecoxib,U251,-6.5555555555555545
 Zoledronic acid,Celecoxib,UACC-257,-4.888888888888889
 Zoledronic acid,Celecoxib,UACC-62,-6.4444444444444455
-Zoledronic acid,Cladribine,786-0,-0.4444444444444444
 Zoledronic acid,Cladribine,A498,-0.7777777777777778
 Zoledronic acid,Cladribine,A549/ATCC,-0.4444444444444444
 Zoledronic acid,Cladribine,ACHN,-7.4444444444444455
@@ -3445,7 +3398,6 @@ Zoledronic acid,Cladribine,T-47D,-1.8888888888888888
 Zoledronic acid,Cladribine,U251,-2.888888888888889
 Zoledronic acid,Cladribine,UACC-257,-2.888888888888889
 Zoledronic acid,Cladribine,UACC-62,-11.666666666666664
-Zoledronic acid,Dasatinib,786-0,-3.333333333333333
 Zoledronic acid,Dasatinib,A498,-0.8888888888888888
 Zoledronic acid,Dasatinib,A549/ATCC,-0.3333333333333333
 Zoledronic acid,Dasatinib,ACHN,-5.888888888888888
@@ -3484,7 +3436,6 @@ Zoledronic acid,Dasatinib,T-47D,3.888888888888889
 Zoledronic acid,Dasatinib,U251,1.3333333333333333
 Zoledronic acid,Dasatinib,UACC-257,-0.1111111111111111
 Zoledronic acid,Dasatinib,UACC-62,2.888888888888889
-Zoledronic acid,Docetaxel,786-0,-5.4444444444444455
 Zoledronic acid,Docetaxel,A498,6.777777777777778
 Zoledronic acid,Docetaxel,A549/ATCC,-0.7777777777777778
 Zoledronic acid,Docetaxel,ACHN,0.6666666666666666
@@ -3519,7 +3470,6 @@ Zoledronic acid,Docetaxel,T-47D,-1.5555555555555556
 Zoledronic acid,Docetaxel,U251,-7.777777777777778
 Zoledronic acid,Docetaxel,UACC-257,-2.1111111111111107
 Zoledronic acid,Docetaxel,UACC-62,-1.8888888888888888
-Zoledronic acid,Everolimus,786-0,2.4444444444444446
 Zoledronic acid,Everolimus,A498,-0.6666666666666666
 Zoledronic acid,Everolimus,A549/ATCC,-1.1111111111111112
 Zoledronic acid,Everolimus,ACHN,-0.4444444444444444
@@ -3558,7 +3508,6 @@ Zoledronic acid,Everolimus,T-47D,-3.0
 Zoledronic acid,Everolimus,U251,-2.6666666666666665
 Zoledronic acid,Everolimus,UACC-257,2.4444444444444446
 Zoledronic acid,Everolimus,UACC-62,1.1111111111111112
-Zoledronic acid,Nilotinib,786-0,-3.333333333333333
 Zoledronic acid,Nilotinib,A498,-6.888888888888888
 Zoledronic acid,Nilotinib,A549/ATCC,-4.2222222222222205
 Zoledronic acid,Nilotinib,ACHN,-10.666666666666666
@@ -3597,7 +3546,6 @@ Zoledronic acid,Nilotinib,T-47D,-1.0
 Zoledronic acid,Nilotinib,U251,-10.555555555555557
 Zoledronic acid,Nilotinib,UACC-257,-3.111111111111111
 Zoledronic acid,Nilotinib,UACC-62,-0.1111111111111111
-Zoledronic acid,Paclitaxel,786-0,-1.3333333333333333
 Zoledronic acid,Paclitaxel,A498,-0.3333333333333333
 Zoledronic acid,Paclitaxel,A549/ATCC,4.0
 Zoledronic acid,Paclitaxel,ACHN,-2.4444444444444446
@@ -3635,7 +3583,6 @@ Zoledronic acid,Paclitaxel,T-47D,3.333333333333333
 Zoledronic acid,Paclitaxel,U251,-10.666666666666666
 Zoledronic acid,Paclitaxel,UACC-257,3.555555555555556
 Zoledronic acid,Paclitaxel,UACC-62,-8.11111111111111
-Zoledronic acid,Romidepsin,786-0,-1.6666666666666667
 Zoledronic acid,Romidepsin,A498,8.11111111111111
 Zoledronic acid,Romidepsin,A549/ATCC,3.0
 Zoledronic acid,Romidepsin,ACHN,-4.777777777777779
@@ -3674,7 +3621,6 @@ Zoledronic acid,Romidepsin,T-47D,12.333333333333336
 Zoledronic acid,Romidepsin,U251,5.333333333333333
 Zoledronic acid,Romidepsin,UACC-257,0.3333333333333333
 Zoledronic acid,Romidepsin,UACC-62,-0.7777777777777778
-Zoledronic acid,Sirolimus,786-0,0.1111111111111111
 Zoledronic acid,Sirolimus,A498,1.2222222222222223
 Zoledronic acid,Sirolimus,A549/ATCC,10.444444444444443
 Zoledronic acid,Sirolimus,ACHN,-7.777777777777778
@@ -3713,7 +3659,6 @@ Zoledronic acid,Sirolimus,T-47D,9.333333333333334
 Zoledronic acid,Sirolimus,U251,3.333333333333333
 Zoledronic acid,Sirolimus,UACC-257,3.111111111111111
 Zoledronic acid,Sirolimus,UACC-62,-1.0
-Zoledronic acid,Tretinoin,786-0,-3.7777777777777777
 Zoledronic acid,Tretinoin,A498,-6.666666666666668
 Zoledronic acid,Tretinoin,A549/ATCC,1.5555555555555556
 Zoledronic acid,Tretinoin,ACHN,-6.4444444444444455
@@ -3752,7 +3697,6 @@ Zoledronic acid,Tretinoin,T-47D,8.555555555555555
 Zoledronic acid,Tretinoin,U251,-9.333333333333334
 Zoledronic acid,Tretinoin,UACC-257,-5.5555555555555545
 Zoledronic acid,Tretinoin,UACC-62,1.8888888888888888
-Zoledronic acid,Vorinostat,786-0,2.4444444444444446
 Zoledronic acid,Vorinostat,A498,2.1111111111111107
 Zoledronic acid,Vorinostat,A549/ATCC,-1.4444444444444444
 Zoledronic acid,Vorinostat,ACHN,-2.1111111111111107

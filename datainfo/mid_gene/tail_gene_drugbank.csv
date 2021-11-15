@@ -355,14 +355,12 @@ ATP,PRKAA1
 ATP,ACVRL1
 ATP,ACSL1
 ATP,AKT1
-ATP,GRK2
 ATP,APAF1
 ATP,ACVR1B
 ATP,ACVR1
 ATP,SLC25A4
 ATP,ABCC8
 ATP,ASS1
-ATP,GRK3
 ATP,ABL1
 ATP,ADCY1
 ATP,ABCC1
@@ -1841,7 +1839,6 @@ Estradiol,ESR1
 Estradiol,ESR2
 Estradiol,CHRNA4
 Estradiol,NCOA2
-Estradiol,GPER1
 Estradiol,BECN1
 Mefenamic acid,PTGS2
 Mefenamic acid,PTGS1
@@ -2919,7 +2916,6 @@ Dasatinib,EPHB4
 Dasatinib,FGR
 Dasatinib,HSPA8
 Dasatinib,LYN
-Dasatinib,MAP3K20
 Dasatinib,MAPK14
 Lisdexamfetamine,SLC6A3
 Lisdexamfetamine,ADRA1B
@@ -3320,7 +3316,6 @@ Iron,TF
 Zinc,ALDOA
 Zinc,EEF1A1
 Zinc,ENO1
-Zinc,P4HB
 Zinc,PDIA3
 Zinc,ESR1
 Zinc,IL3
@@ -3423,7 +3418,6 @@ Genistein,NCOA1
 Genistein,ESR1
 Genistein,NCOA2
 Genistein,AKT1
-Genistein,GPER1
 Daxalipram,PDE4B
 7-Methyl-Gpppa,EIF4E
 Roflumilast,PDE4D
@@ -3520,7 +3514,6 @@ Hyperforin,PTGS1
 N6-Benzyl Adenosine-5'-Diphosphate,SRC
 Sucrosofate,FGF1
 Sucrosofate,FGFR2
-"1-Ethyl-Pyrrolidine-2,5-Dione",ERO1B
 2-(2-Hydroxy-5-Methoxy-Phenyl)-1h-Benzoimidazole-5-Carboxamidine,PLAU
 RU85493,SRC
 S-Hydroxycysteine,GSTP1
@@ -3829,7 +3822,6 @@ Calyculin A,PPP1CC
 "3''-(Beta-Chloroethyl)-2'',4''-Dioxo-3, 5''-Spiro-Oxazolidino-4-Deacetoxy-Vinblastine",CALM1
 "3''-(Beta-Chloroethyl)-2'',4''-Dioxo-3, 5''-Spiro-Oxazolidino-4-Deacetoxy-Vinblastine",CALM2
 "3''-(Beta-Chloroethyl)-2'',4''-Dioxo-3, 5''-Spiro-Oxazolidino-4-Deacetoxy-Vinblastine",CALM3
-3-amino-5-phenylpentane,CTSV
 "Cis-[4,5-Bis-(4-Bromophenyl)-2-(2-Ethoxy-4-Methoxyphenyl)-4,5-Dihydroimidazol-1-Yl]-[4-(2-Hydroxyethyl)Piperazin-1-Yl]Methanone",MDM2
 "1-(2,6-Dichlorophenyl)-5-(2,4-Difluorophenyl)-7-Piperazin-1-Yl-3,4-Dihydroquinazolin-2(1h)-One",MAPK14
 Arotinoid acid,RARB
@@ -3923,7 +3915,6 @@ N-Omega-Hydroxy-L-Arginine,NOS1
 Flavin adenine dinucleotide,ACADM
 Flavin adenine dinucleotide,NOS1
 Flavin adenine dinucleotide,NQO1
-Flavin adenine dinucleotide,ERO1B
 Flavin adenine dinucleotide,TXNRD1
 Flavin adenine dinucleotide,ACOX1
 Flavin adenine dinucleotide,NDUFA9
@@ -4035,7 +4026,6 @@ Capric acid,PPARG
 Tiratricol,THRB
 (S)-Rolipram,PDE4D
 (S)-Rolipram,PDE4B
-Ribostamycin,P4HB
 Deoxycholic Acid,GSTP1
 "5-Methoxy-1,2-Dimethyl-3-(Phenoxymethyl)Indole-4,7-Dione",NQO1
 ISO24,SRC
@@ -4043,7 +4033,6 @@ Guanidine-3-Propanol,PRSS3
 Phosphonoacetohydroxamic Acid,ENO3
 (3e)-3-[(4-Hydroxyphenyl)Imino]-1h-Indol-2(3h)-One,PIM1
 1-Deoxy-1-Methoxycarbamido-Beta-D-Glucopyranose,PYGM
-Cysteinesulfonic Acid,CTSL
 Cysteinesulfonic Acid,PTPN1
 Cysteinesulfonic Acid,CDC25B
 "1-[(2-Amino-6,9-Dihydro-1h-Purin-6-Yl)Oxy]-3-Methyl-2-Butanol",CDK2
@@ -4273,7 +4262,6 @@ Tetrafluoroaluminate Ion,MYH14
 "1,4-Dithiothreitol",CAMK2A
 "1,4-Dithiothreitol",AXIN1
 "1,4-Dithiothreitol",HMGCR
-4-Methylpiperazin-1-Yl Carbonyl Group,CTSV
 "3,4-Dichloroisocoumarin",CFD
 N-Formylmethionine,UBC
 Afimoxifene,ESR2
@@ -4527,7 +4515,6 @@ Imexon,RRM2
 AC162352,NPY2R
 AC162352,NPY1R
 AC162352,NPY5R
-AC162352,NPY4R
 Apadenoson,ADORA2A
 SGS-742,GABBR1
 SGS-742,GABBR2
@@ -4558,7 +4545,6 @@ Anatibant,BDKRB2
 Indacaterol,ADRB2
 SGS518,HTR6
 PSN357,PYGL
-Obinepitide,NPY4R
 Obinepitide,NPY2R
 V1003,OPRK1
 CX717,GRIA4
@@ -4580,7 +4566,6 @@ HY10275,HRH1
 HY10275,HTR2A
 OBE101,HRH1
 Abaloparatide,PTH1R
-TM30339,NPY4R
 Ganaxolone,GABRA1
 Ganaxolone,GABRA2
 Ganaxolone,GABRA4
@@ -4875,7 +4860,6 @@ Denibulin,FLT1
 Denibulin,FLT4
 CVT-6883,ADORA2B
 Edonerpic,APP
-MK-0354,GPER1
 Varlitinib,ERBB2
 Varlitinib,EGFR
 Contulakin-G,CACNA1B
@@ -5574,7 +5558,6 @@ Sobetirome,THRB
 "(3aS)-3a-hydroxy-1-phenyl-1,2,3,3a-tetrahydro-4H-pyrrolo[2,3-b]quinolin-4-one",MYH14
 "5-[5,6-BIS(METHYLOXY)-1H-BENZIMIDAZOL-1-YL]-3-{[1-(2-CHLOROPHENYL)ETHYL]OXY}-2-THIOPHENECARBOXAMIDE",CDK2
 3-[5-(1H-IMIDAZOL-1-YL)-7-METHYL-1H-BENZIMIDAZOL-2-YL]-4-[(PYRIDIN-2-YLMETHYL)AMINO]PYRIDIN-2(1H)-ONE,IGF1R
-Felbinac,CTSL
 "(1S)-1,2,3,4-TETRAHYDRO-BENZO[C]PHENANTHRENE-2,3,4-TRIOL",POLB
 4-PHOSPHONOOXY-PHENYL-METHYL-[4-PHOSPHONOOXY]BENZEN,PTPN1
 "{(2Z)-4-AMINO-2-[(4-METHOXYPHENYL)IMINO]-2,3-DIHYDRO-1,3-THIAZOL-5-YL}(4-METHOXYPHENYL)METHANONE",CSNK1G3
@@ -6069,7 +6052,6 @@ CARBOBENZYLOXY-(L)-LEUCINYL-(L)LEUCINYL METHOXYMETHYLKETONE,CTSH
 "3-PYRIDIN-4-YL-2,4-DIHYDRO-INDENO[1,2-.C.] PYRAZOLE",PRKACA
 "3-PYRIDIN-4-YL-2,4-DIHYDRO-INDENO[1,2-.C.] PYRAZOLE",PKIA
 4-{[4-AMINO-6-(CYCLOHEXYLMETHOXY)-5-NITROSOPYRIMIDIN-2-YL]AMINO}BENZAMIDE,CDK2
-"(5R)-2-SULFANYL-5-[4-(TRIFLUOROMETHYL)BENZYL]-1,3-THIAZOL-4-ONE",AFDN
 3-[(3-(2-CARBOXYETHYL)-4-METHYLPYRROL-2-YL)METHYLENE]-2-INDOLINONE,FGFR1
 "2-amino-5-[3-(1-ethyl-1H-pyrazol-5-yl)-1H-pyrrolo[2,3-b]pyridin-5-yl]-N,N-dimethylbenzamide",ABL1
 "6-{[6-(1-methyl-1H-pyrazol-4-yl)[1,2,4]triazolo[4,3-b]pyridazin-3-yl]sulfanyl}quinoline",MET
@@ -6410,13 +6392,11 @@ Copper,GAPDH
 Copper,ACTG1
 Copper,ENO1
 Copper,EEF1A1
-Copper,P4HB
 Copper,PDIA3
 Copper,HSPA5
 Copper,HSP90B1
 Copper,TF
 Copper,SRSF1
-Copper,RACK1
 Copper,ACTN1
 Copper,CALR
 Copper,PKM
@@ -6892,7 +6872,6 @@ Artenimol,GAPDH
 Artenimol,CYCS
 Artenimol,PGAM1
 Artenimol,MYH9
-Artenimol,P4HB
 Artenimol,DDX5
 Dibotermin alfa,BMPR2
 Dibotermin alfa,BMPR1A
@@ -6960,7 +6939,6 @@ Abemaciclib,CDK6
 Isoflavone,PPARA
 Isoflavone,PPARG
 Fostamatinib,SYK
-Fostamatinib,CTSL
 Fostamatinib,ABL1
 Fostamatinib,TYK2
 Fostamatinib,JAK1
@@ -6979,7 +6957,6 @@ Fostamatinib,ULK1
 Fostamatinib,ULK2
 Fostamatinib,WEE1
 Fostamatinib,YES1
-Fostamatinib,MAP3K20
 Fostamatinib,ZAP70
 Fostamatinib,ABL2
 Fostamatinib,ACVR1
@@ -7088,7 +7065,6 @@ Fostamatinib,PAK1
 Fostamatinib,PAK2
 Fostamatinib,PAK4
 Fostamatinib,PAK6
-Fostamatinib,PAK5
 Fostamatinib,PDGFRA
 Fostamatinib,PDPK1
 Fostamatinib,PHKG1
@@ -7365,31 +7341,26 @@ Estradiol acetate,ESR1
 Estradiol acetate,ESR2
 Estradiol acetate,CHRNA4
 Estradiol acetate,NCOA2
-Estradiol acetate,GPER1
 Estradiol acetate,BECN1
 Estradiol benzoate,ESR1
 Estradiol benzoate,ESR2
 Estradiol benzoate,CHRNA4
 Estradiol benzoate,NCOA2
-Estradiol benzoate,GPER1
 Estradiol benzoate,BECN1
 Estradiol cypionate,ESR1
 Estradiol cypionate,ESR2
 Estradiol cypionate,CHRNA4
 Estradiol cypionate,NCOA2
-Estradiol cypionate,GPER1
 Estradiol cypionate,BECN1
 Estradiol dienanthate,ESR1
 Estradiol dienanthate,ESR2
 Estradiol dienanthate,CHRNA4
 Estradiol dienanthate,NCOA2
-Estradiol dienanthate,GPER1
 Estradiol dienanthate,BECN1
 Estradiol valerate,ESR1
 Estradiol valerate,ESR2
 Estradiol valerate,CHRNA4
 Estradiol valerate,NCOA2
-Estradiol valerate,GPER1
 Estradiol valerate,BECN1
 Fish oil,PTGS2
 Fish oil,CACNA1C
