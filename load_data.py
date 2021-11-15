@@ -12,13 +12,15 @@ class LoadData():
     def load_batch(self, index, upper_index, place_num, drug_feature=False):
         # PRELOAD EACH SPLIT DATASET
         split_input_df = pd.read_csv('./datainfo/filtered_data/split_input_' + str(place_num + 1) + '.csv')
-        num_feature = 5
+        num_feature = 7
         final_annotation_gene_df = pd.read_csv('./datainfo/filtered_data/kegg_gene_annotation.csv')
         gene_name_list = list(final_annotation_gene_df['kegg_gene'])
         print('READING GENE FEATURES FILES ...')
         final_gdsc_rna_df = pd.read_csv('./datainfo/filtered_data/final_rna.csv')
         final_cmeth_df = pd.read_csv('./datainfo/filtered_data/final_cmeth.csv')
         final_gdsc_cnv_df = pd.read_csv('./datainfo/filtered_data/final_cnv.csv')
+        final_cmut_amp_df = pd.read_csv('./datainfo/filtered_data/final_cmut_amp.csv')
+        final_cmut_del_df = pd.read_csv('./datainfo/filtered_data/final_cmut_del.csv')
         num_gene, num_cellline = final_gdsc_rna_df.shape
         # CONVERT [drugbank.csv] TO A LIST
         print('READING DRUGBANK ...')
@@ -61,6 +63,8 @@ class LoadData():
             gene_rna_list = [float(x) for x in list(final_gdsc_rna_df[cellline_name])]
             gene_cmeth_list = [float(x) for x in list(final_cmeth_df[cellline_name])]
             gene_cnv_list = [float(x) for x in list(final_gdsc_cnv_df[cellline_name])]
+            gene_cmut_amp_list = [float(x) for x in list(final_cmut_amp_df[cellline_name])]
+            gene_cmut_del_list = [float(x) for x in list(final_cmut_del_df[cellline_name])]
             # COMBINE [drugA, drugB, rna, cmeth] 
             x_input_list = []
             for i in range(num_gene):
@@ -71,6 +75,8 @@ class LoadData():
                 x_input_list.append(gene_rna_list[i])
                 x_input_list.append(gene_cmeth_list[i])
                 x_input_list.append(gene_cnv_list[i])
+                x_input_list.append(gene_cmut_amp_list[i])
+                x_input_list.append(gene_cmut_del_list[i])
             if drug_feature == False:
                 fillin_list = [0.0] * num_feature
                 for i in range(num_drug):
@@ -101,7 +107,7 @@ class LoadData():
         for place_num in range(k):
             split_input_df = pd.read_csv('./datainfo/filtered_data/split_input_' + str(place_num + 1) + '.csv')
             input_num, input_dim = split_input_df.shape
-            num_feature = 5
+            num_feature = 7
             final_annotation_gene_df = pd.read_csv('./datainfo/filtered_data/kegg_gene_annotation.csv')
             gene_name_list = list(final_annotation_gene_df['kegg_gene'])
             num_gene = len(gene_name_list)
@@ -134,7 +140,7 @@ class LoadData():
 
     def load_train_test(self, k, n_fold):
         form_data_path = './datainfo/form_data'
-        num_feature = 5
+        num_feature = 7
         final_annotation_gene_df = pd.read_csv('./datainfo/filtered_data/kegg_gene_annotation.csv')
         gene_name_list = list(final_annotation_gene_df['kegg_gene'])
         num_gene = len(gene_name_list)

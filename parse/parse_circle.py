@@ -400,4 +400,4 @@ if os.path.exists('../datainfo/filtered_data') == False:
 # DrugAnnotation().nci_drugbank_drug_intersect()
 
 # RecheckFinal().recheck_cell_line()
-RecheckFinal().final()
+# RecheckFinal().final()
