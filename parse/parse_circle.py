@@ -116,8 +116,23 @@ class CellLineAnnotation():
         dl_cmeth_rna_cnv_cell_annotation_df = pd.merge(dl_cmeth_rna_cell_annotation_df, cnv_cell_accession_df, \
                             how='left', left_on='Accession', right_on='Accession')
         dl_cmeth_rna_cnv_cell_annotation_df = dl_cmeth_rna_cnv_cell_annotation_df.dropna().reset_index(drop=True)
-        dl_cmeth_rna_cnv_cell_annotation_df.to_csv('../datainfo/init_data/omics_cell_annotation.csv', index=False, header=True)  
-        print(dl_cmeth_rna_cnv_cell_annotation_df)
+        # # # [CCLE Mutation]
+        cmut_amp_df = pd.read_csv('../datainfo/init_data/ccle_mutation_amp.csv')
+        cmut_amp_cell_line_list = sorted(list(cmut_amp_df.columns)[1:])
+        cmut_amp_selected_cell_list = []
+        cmut_amp_cell_accession_list = []
+        for cmut_amp_cell in cmut_amp_cell_line_list:
+            for row in dl_cmeth_cell_annotation_df.itertuples():
+                if (cmut_amp_cell == row.Identifier) or (cmut_amp_cell in eval(row.Synonym)):
+                    cmut_amp_selected_cell_list.append(cmut_amp_cell)
+                    cmut_amp_cell_accession_list.append(row.Accession)
+        cmut_amp_cell_accession_df = pd.DataFrame({'cmut_amp_cell': cmut_amp_selected_cell_list,
+                                              'Accession': cmut_amp_cell_accession_list})
+        dl_cmeth_rna_cnv_cmut_amp_cell_annotation_df = pd.merge(dl_cmeth_rna_cnv_cell_annotation_df, cmut_amp_cell_accession_df, \
+                            how='left', left_on='Accession', right_on='Accession')
+        dl_cmeth_rna_cnv_cmut_amp_cell_annotation_df = dl_cmeth_rna_cnv_cmut_amp_cell_annotation_df.dropna().reset_index(drop=True)
+        dl_cmeth_rna_cnv_cmut_amp_cell_annotation_df.to_csv('../datainfo/init_data/omics_cell_annotation.csv', index=False, header=True)  
+        print(dl_cmeth_rna_cnv_cmut_amp_cell_annotation_df)
 
     def tail_cell(self):
         # READ [omics_cell_annotation]
@@ -127,6 +142,7 @@ class CellLineAnnotation():
         dl_input_df = pd.read_csv('../datainfo/init_data/DeepLearningInput.csv')
         tail_cell_dl_input_df = dl_input_df[dl_input_df['Cell Line Name'].isin(new_dl_input_cell_line_list)].reset_index(drop=True)
         tail_cell_dl_input_df.to_csv('../datainfo/mid_cell_line/tail_cell_dl_input.csv', index=False, header=True)
+        print(tail_cell_dl_input_df)
         # TAIL [GDSC RNA-Seq] CELL LINEs // KEEP [RNA-Seq] CELL LINE NAMES CONSISTENT WITH [NCI ALMANAC]
         omics_rna_cell_line_list = list(omics_cell_df['rna_cell'])
         rna_df = pd.read_csv('../datainfo/init_data/gdsc_rnaseq_manual.csv', low_memory=False)
@@ -135,6 +151,7 @@ class CellLineAnnotation():
         tail_cell_rna_df = tail_cell_rna_df.rename(columns=nci_rna_cell_line_dict)
         tail_cell_rna_df.insert(0, 'symbol', list(rna_df['symbol']))
         tail_cell_rna_df.to_csv('../datainfo/mid_cell_line/tail_cell_rna.csv', index=False, header=True)
+        print(tail_cell_rna_df)
         # TAIL [GDSC CNV] CELL LINEs // KEEP [CNV] CELL LINE NAMES CONSISTENT WITH [NCI ALMANAC]
         omics_cnv_cell_line_list = list(omics_cell_df['cnv_cell'])
         cnv_df = pd.read_csv('../datainfo/init_data/gdsc_cnv_manual.csv', low_memory=False)
@@ -143,8 +160,8 @@ class CellLineAnnotation():
         tail_cell_cnv_df = tail_cell_cnv_df.rename(columns=nci_cnv_cell_line_dict)
         tail_cell_cnv_df.insert(0, 'symbol', list(cnv_df['symbol']))
         tail_cell_cnv_df = tail_cell_cnv_df.reset_index(drop=True)
-        print(tail_cell_cnv_df)
         tail_cell_cnv_df.to_csv('../datainfo/mid_cell_line/tail_cell_cnv.csv', index=False, header=True)
+        print(tail_cell_cnv_df)
         # TAIL [CCLE Methylation] // KEEP [CMeth] CELL LINE NAMES CONSISTENT WITH [NCI ALMANAC]
         omics_cmeth_cell_line_list = list(omics_cell_df['cmeth_cell'])
         cmeth_df = pd.read_csv('../datainfo/init_data/ccle_methylation.csv', low_memory=False)
@@ -153,7 +170,24 @@ class CellLineAnnotation():
         tail_cell_cmeth_df = tail_cell_cmeth_df.rename(columns=nci_cmeth_cell_line_dict)
         tail_cell_cmeth_df.insert(0, 'locus_id', list(cmeth_df['locus_id']))
         tail_cell_cmeth_df.to_csv('../datainfo/mid_cell_line/tail_cell_cmeth.csv', index=False, header=True)
-
+        print(tail_cell_cmeth_df)
+        # TAIL [CCLE AMP/DEL]
+        # [amp]
+        omics_mut_cell_line_list = list(omics_cell_df['cmut_amp_cell'])
+        cmut_amp_df = pd.read_csv('../datainfo/init_data/ccle_mutation_amp.csv')
+        tail_cell_cmut_amp_df = cmut_amp_df[omics_mut_cell_line_list]
+        nci_cmut_amp_cell_line_dict = dict(zip(omics_cell_df.cmut_amp_cell, omics_cell_df.dl_cell))
+        tail_cell_cmut_amp_df = tail_cell_cmut_amp_df.rename(columns=nci_cmut_amp_cell_line_dict)
+        tail_cell_cmut_amp_df.insert(0, 'Name', list(cmut_amp_df['Name']))
+        tail_cell_cmut_amp_df.to_csv('../datainfo/mid_cell_line/tail_cell_cmut_amp.csv', index=False, header=True)
+        print(tail_cell_cmut_amp_df)
+        # [del]
+        cmut_del_df = pd.read_csv('../datainfo/init_data/ccle_mutation_del.csv')
+        tail_cell_cmut_del_df = cmut_del_df[omics_mut_cell_line_list]
+        tail_cell_cmut_del_df = tail_cell_cmut_del_df.rename(columns=nci_cmut_amp_cell_line_dict)
+        tail_cell_cmut_del_df.insert(0, 'Name', list(cmut_del_df['Name']))
+        tail_cell_cmut_del_df.to_csv('../datainfo/mid_cell_line/tail_cell_cmut_del.csv', index=False, header=True)
+        print(tail_cell_cmut_del_df)
 
 '''
 Pin the number of genes from following intersection of tables:
@@ -181,6 +215,13 @@ class GeneAnnotation():
         # # GET [8002] KEGG GENES
         kegg_df = pd.read_csv('../datainfo/init_data/up_kegg.csv')
         kegg_gene_list = sorted(list(set(list(kegg_df['src']) + list(kegg_df['dest']))))
+        # # # GET [] BIOGRID GENES
+        # biogrid_df = 
+
+        # # # GET [] STRING GENES
+        # string_df = 
+
+
         # # GET INTERSETED GENES
         tail_cell_rna_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_rna.csv', low_memory=False)
         tail_cell_rna_df = tail_cell_rna_df.sort_values(by=['symbol'])
@@ -238,39 +279,6 @@ Pin the number of drug from following tables:
 class DrugAnnotation():
     def __init__(self):
         pass
-
-    # def pubchem_cid_dl_drug(self):
-    #     tail_cell_dl_input_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_dl_input.csv')
-    #     tail_cell_dl_input_drug_list = sorted(list(set(list(tail_cell_dl_input_df['Drug A']) + list(tail_cell_dl_input_df['Drug B']))))
-    #     tail_cell_dl_input_selected_drug_list = []
-    #     tail_cell_dl_input_drug_cid_list = []
-    #     for drug in tail_cell_dl_input_drug_list:
-    #         if get_cids(drug) ==[]: continue
-    #         else: 
-    #             tail_cell_dl_input_selected_drug_list.append(drug)
-    #             tail_cell_dl_input_drug_cid_list.append('cid'+str(get_cids(drug)[0]))
-    #     dl_input_cid_df = pd.DataFrame({'dl_input': tail_cell_dl_input_selected_drug_list, 'dl_input_cid': tail_cell_dl_input_drug_cid_list})
-    #     dl_input_cid_df.to_csv('../datainfo/mid_drug/dl_input_cid.csv', index=False, header=True)
-
-    # def pubchem_cid_drugbank_drug(self):
-    #     tail_gene_drugbank_df = pd.read_csv('../datainfo/mid_gene/tail_gene_drugbank.csv')
-    #     tail_gene_drugbank_drug_list = sorted(list(set(list(tail_gene_drugbank_df['Drug']))))
-    #     tail_gene_drugbank_selected_drug_list = []
-    #     tail_gene_drugbank_drug_cid_list = []
-    #     for drug in tail_gene_drugbank_drug_list:
-    #         if get_cids(drug) ==[]: continue
-    #         else: 
-    #             tail_gene_drugbank_selected_drug_list.append(drug)
-    #             tail_gene_drugbank_drug_cid_list.append('cid'+str(get_cids(drug)[0]))
-    #     drugbank_cid_df = pd.DataFrame({'drugbank': tail_gene_drugbank_selected_drug_list, 'drugbank_cid': tail_gene_drugbank_drug_cid_list})
-    #     drugbank_cid_df.to_csv('../datainfo/mid_drug/drugbank_cid.csv', index=False, header=True)
-
-    # def nci_drugbank_cid_intersect(self):
-    #     dl_input_cid_df = pd.read_csv('../datainfo/mid_drug/dl_input_cid.csv')
-    #     drugbank_cid_df = pd.read_csv('../datainfo/mid_drug/drugbank_cid.csv')
-    #     nci_drugbank_df = pd.merge(dl_input_cid_df, drugbank_cid_df, how='left', left_on='dl_input_cid', right_on='drugbank_cid')
-    #     nci_drugbank_df = nci_drugbank_df.dropna().reset_index(drop=True)
-    #     print(nci_drugbank_df)
 
     def nci_drugbank_drug_intersect(self):
         tail_cell_dl_input_df = pd.read_csv('../datainfo/mid_cell_line/tail_cell_dl_input.csv')
@@ -361,9 +369,9 @@ if os.path.exists('../datainfo/filtered_data') == False:
 # CellLineAnnotation().parse_cell_xml()
 # CellLineAnnotation().dl_cell_annotation()
 # CellLineAnnotation().omics_cell()
-# CellLineAnnotation().tail_cell()
+CellLineAnnotation().tail_cell()
 
-GeneAnnotation().gdsc_raw_cnv_tail_overzero()
+# GeneAnnotation().gdsc_raw_cnv_tail_overzero()
 # GeneAnnotation().gdsc_cnv_tail_overzero()
 # GeneAnnotation().kegg_omics_intersect()
 # GeneAnnotation().kegg_drugbank_gene_intersect()
