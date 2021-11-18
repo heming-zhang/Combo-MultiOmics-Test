@@ -106,8 +106,7 @@ class Result():
 
 
 
-path = './datainfo/result/epoch_50'
-path = './datainfo/result/epoch_50'
+path = './datainfo/result/epoch_50_rna'
 epoch_num = 50
 max_test_corr_id = Result().rebuild_loss_pearson(path, epoch_num)
 Result().plot_loss_pearson(path, epoch_num)
