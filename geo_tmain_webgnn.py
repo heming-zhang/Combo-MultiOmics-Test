@@ -67,10 +67,10 @@ def arg_parse():
                         batch_size = 64,
                         num_epochs = 50,
                         num_workers = 0,
-                        input_dim = 3,
-                        hidden_dim = 3,
-                        output_dim = 27,
-                        decoder_dim = 30,
+                        input_dim = 4,
+                        hidden_dim = 4,
+                        output_dim = 36,
+                        decoder_dim = 40,
                         num_classes = 1,
                         num_gc_layer = 3,
                         dropout = 0.01)
@@ -146,7 +146,7 @@ def train_geowebgnn_model(dataset_loader, model, device, args, learning_rate):
 def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
     # TRAINING DATASET BASIC PARAMETERS
     # [num_feature, num_gene, num_drug]
-    num_feature = 3
+    num_feature = 4
     dict_drug_num = pd.read_csv('./datainfo/filtered_data/drug_num_dict.csv')
     num_drug = dict_drug_num.shape[0]
     final_annotation_gene_df = pd.read_csv('./datainfo/filtered_data/kegg_gene_annotation.csv')
@@ -319,7 +319,7 @@ def test_geowebgnn(args, fold_n, model, test_save_path, device):
     # CLEAN RESULT PREVIOUS EPOCH_I_PRED FILES
     path = test_save_path
     # [num_feature, num_gene, num_drug]
-    num_feature = 3
+    num_feature = 4
     dict_drug_num = pd.read_csv('./datainfo/filtered_data/drug_num_dict.csv')
     num_drug = dict_drug_num.shape[0]
     final_annotation_gene_df = pd.read_csv('./datainfo/filtered_data/kegg_gene_annotation.csv')
