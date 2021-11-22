@@ -12,7 +12,7 @@ class LoadData():
     def load_batch(self, index, upper_index, place_num, drug_feature=False):
         # PRELOAD EACH SPLIT DATASET
         split_input_df = pd.read_csv('./datainfo/filtered_data/split_input_' + str(place_num + 1) + '.csv')
-        num_feature = 3
+        num_feature = 7
         final_annotation_gene_df = pd.read_csv('./datainfo/filtered_data/kegg_gene_annotation.csv')
         gene_name_list = list(final_annotation_gene_df['kegg_gene'])
         print('READING GENE FEATURES FILES ...')
@@ -72,11 +72,11 @@ class LoadData():
                 x_input_list.append(drug_a_target_list[i])
                 x_input_list.append(drug_b_target_list[i])
                 # APPEND GENE FEATURES
-                # x_input_list.append(gene_rna_list[i])
+                x_input_list.append(gene_rna_list[i])
                 x_input_list.append(gene_cmeth_list[i])
-                # x_input_list.append(gene_cnv_list[i])
-                # x_input_list.append(gene_cmut_amp_list[i])
-                # x_input_list.append(gene_cmut_del_list[i])
+                x_input_list.append(gene_cnv_list[i])
+                x_input_list.append(gene_cmut_amp_list[i])
+                x_input_list.append(gene_cmut_del_list[i])
             if drug_feature == False:
                 fillin_list = [0.0] * num_feature
                 for i in range(num_drug):
@@ -107,7 +107,7 @@ class LoadData():
         for place_num in range(k):
             split_input_df = pd.read_csv('./datainfo/filtered_data/split_input_' + str(place_num + 1) + '.csv')
             input_num, input_dim = split_input_df.shape
-            num_feature = 3
+            num_feature = 7
             final_annotation_gene_df = pd.read_csv('./datainfo/filtered_data/kegg_gene_annotation.csv')
             gene_name_list = list(final_annotation_gene_df['kegg_gene'])
             num_gene = len(gene_name_list)
@@ -140,7 +140,7 @@ class LoadData():
 
     def load_train_test(self, k, n_fold):
         form_data_path = './datainfo/form_data'
-        num_feature = 3
+        num_feature = 7
         final_annotation_gene_df = pd.read_csv('./datainfo/filtered_data/kegg_gene_annotation.csv')
         gene_name_list = list(final_annotation_gene_df['kegg_gene'])
         num_gene = len(gene_name_list)
