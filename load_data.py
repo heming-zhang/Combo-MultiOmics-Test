@@ -72,8 +72,8 @@ class LoadData():
                 x_input_list.append(drug_a_target_list[i])
                 x_input_list.append(drug_b_target_list[i])
                 # APPEND GENE FEATURES
-                x_input_list.append(gene_rna_list[i])
-                # x_input_list.append(gene_cmeth_list[i])
+                # x_input_list.append(gene_rna_list[i])
+                x_input_list.append(gene_cmeth_list[i])
                 # x_input_list.append(gene_cnv_list[i])
                 # x_input_list.append(gene_cmut_amp_list[i])
                 # x_input_list.append(gene_cmut_del_list[i])
