@@ -65,7 +65,7 @@ def arg_parse():
                         lr = 0.001,
                         clip= 2.0,
                         batch_size = 64,
-                        num_epochs = 50,
+                        num_epochs = 150,
                         num_workers = 0,
                         input_dim = 3,
                         hidden_dim = 3,
@@ -379,9 +379,9 @@ if __name__ == "__main__":
     # # TRAIN THE MODEL
     # TRAIN [FOLD-1]
     fold_n = 1
-    prog_args.model = 'load'
-    load_path = './datainfo/result/epoch_50/best_train_model.pt'
-    # load_path = ''
+    # prog_args.model = 'load'
+    # load_path = './datainfo/result/epoch_50/best_train_model.pt'
+    load_path = ''
     yTr = np.load('./datainfo/form_data/yTr' + str(fold_n) + '.npy')
     # yTr = np.load('./datainfo/form_data/y_split1.npy')
     dl_input_num = yTr.shape[0]
