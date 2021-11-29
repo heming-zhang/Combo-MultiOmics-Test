@@ -65,7 +65,7 @@ def arg_parse():
                         lr = 0.001,
                         clip= 2.0,
                         batch_size = 64,
-                        num_epochs = 30,
+                        num_epochs = 50,
                         num_workers = 0,
                         input_dim = 3,
                         hidden_dim = 3,
