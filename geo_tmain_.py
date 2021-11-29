@@ -70,7 +70,7 @@ def arg_parse():
                         input_dim = 7,
                         hidden_dim = 7,
                         output_dim = 63,
-                        decoder_dim = 100,
+                        decoder_dim = 70,
                         num_classes = 1,
                         num_gc_layer = 3,
                         dropout = 0.01)
