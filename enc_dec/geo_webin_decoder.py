@@ -119,6 +119,8 @@ class WeBInDecoder(nn.Module):
         return conv_first, conv_block, conv_last
 
     def forward(self, x, edge_index, drug_index, label):
+        # DECOMPOSE FEATURE [x] => [Drug, RNA, CMeth, CNV, MUT(AMP,DEL)]
+        import pdb; pdb.set_trace()
         x = self.conv_first(x, edge_index)
         x = self.act2(x)
 

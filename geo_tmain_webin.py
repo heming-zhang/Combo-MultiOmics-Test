@@ -11,7 +11,7 @@ from torch.autograd import Variable
 import utils
 from geo_load.read_geograph import read_batch
 from geo_load.geograph_sampler import GeoGraphLoader
-from enc_dec.geo_webgnn_decoder import WeBInDecoder
+from enc_dec.geo_webin_decoder import WeBInDecoder
 
 # PARSE ARGUMENTS FROM COMMAND LINE
 def arg_parse():
