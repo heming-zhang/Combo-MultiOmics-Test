@@ -177,7 +177,7 @@ class WeBInDecoder(nn.Module):
         x_mut = self.act2(self.mut_conv_last(x_mut, edge_index))
         x_mut = self.mut_proj(x_mut)
         ### CONCAT ALL PARTS
-        x = torch.cat([x_drug, x_rna, x_cmeth, x_cnv, x_mut], dim=0)
+        x = torch.cat([x_drug, x_rna, x_cmeth, x_cnv, x_mut], dim=1)
         ### DRUG INDEX
         drug_index = torch.reshape(drug_index, (-1, 2))
 
