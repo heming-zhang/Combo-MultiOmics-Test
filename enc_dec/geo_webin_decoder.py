@@ -94,11 +94,36 @@ class WeBGNNConv(MessagePassing):
 class WeBInDecoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, embedding_dim, decoder_dim, node_num, num_edge, num_gene_edge, device):
         super(WeBInDecoder, self).__init__()
-        self.node_num = node_num
-        self.embedding_dim = embedding_dim
         self.device = device
-        self.conv_first, self.conv_block, self.conv_last = self.build_conv_layer(
-                    input_dim, hidden_dim, embedding_dim, node_num, num_edge, num_gene_edge)
+        drug_input_dim, rna_input_dim, cmeth_input_dim, cnv_input_dim, mut_input_dim = input_dim
+        drug_hidden_dim, rna_hidden_dim, cmeth_hidden_dim, cnv_hidden_dim, mut_hidden_dim = hidden_dim
+        drug_embedding_dim, rna_embedding_dim, cmeth_embedding_dim, cnv_embedding_dim, mut_embedding_dim = embedding_dim
+        ### BUILD UP INCEPTION GRAPH
+        # [drug]
+        self.drug_conv_first, self.drug_conv_block, self.drug_conv_last = self.build_conv_layer(
+                    input_dim=drug_input_dim, hidden_dim=drug_hidden_dim, embedding_dim=drug_embedding_dim,
+                    node_num, num_edge, num_gene_edge)
+        self.drug_proj = torch.nn.Linear((drug_embedding_dim*3), (drug_embedding_dim*3), bias=True)
+        # [rna]
+        self.rna_conv_first, self.rna_conv_block, self.rna_conv_last = self.build_conv_layer(
+                    input_dim=rna_input_dim, hidden_dim=rna_hidden_dim, embedding_dim=rna_embedding_dim,
+                    node_num, num_edge, num_gene_edge)
+        self.rna_proj = torch.nn.Linear((rna_embedding_dim*3), (rna_embedding_dim*3), bias=True)
+        # [cmeth]
+        self.cmeth_conv_first, self.cmeth_conv_block, self.cmeth_conv_last = self.build_conv_layer(
+                    input_dim=cmeth_input_dim, hidden_dim=cmeth_hidden_dim, embedding_dim=cmeth_embedding_dim,
+                    node_num, num_edge, num_gene_edge)
+        self.cmeth_proj = torch.nn.Linear((cmeth_embedding_dim*3), (cmeth_embedding_dim*3), bias=True)
+        # [cnv]
+        self.cnv_conv_first, self.cnv_conv_block, self.cnv_conv_last = self.build_conv_layer(
+                    input_dim=cnv_input_dim, hidden_dim=cnv_hidden_dim, embedding_dim=cnv_embedding_dim,
+                    node_num, num_edge, num_gene_edge)
+        self.cnv_proj = torch.nn.Linear((cnv_embedding_dim*3), (cnv_embedding_dim*3), bias=True)
+        # [mut]
+        self.mut_conv_first, self.mut_conv_block, self.mut_conv_last = self.build_conv_layer(
+                    input_dim=mut_input_dim, hidden_dim=mut_hidden_dim, embedding_dim=mut_embedding_dim,
+                    node_num, num_edge, num_gene_edge)
+        self.mut_proj = torch.nn.Linear((mut_embedding_dim*3), (mut_embedding_dim*3), bias=True)
         
         self.act = nn.ReLU()
         self.act2 = nn.LeakyReLU(negative_slope = 0.1)
@@ -119,18 +144,56 @@ class WeBInDecoder(nn.Module):
         return conv_first, conv_block, conv_last
 
     def forward(self, x, edge_index, drug_index, label):
-        # DECOMPOSE FEATURE [x] => [Drug, RNA, CMeth, CNV, MUT(AMP,DEL)]
+        ### DECOMPOSE FEATURE [x] => [Drug, RNA, CMeth, CNV, MUT(AMP,DEL)]
         import pdb; pdb.set_trace()
-        x = self.conv_first(x, edge_index)
-        x = self.act2(x)
+        x_drug = torch.reshape(x[:,0:2], (x.shape[0], 2))
+        x_rna = torch.reshape(x[:,2], (x.shape[0], 1))
+        x_cmeth = torch.reshape(x[:,3], (x.shape[0], 1))
+        x_cnv = torch.reshape(x[:,4], (x.shape[0], 1))
+        x_mut = torch.reshape(x[:,5:7], (x.shape[0], 2))
+        # DRUG INCEPTION
+        x_drug = self.drug_conv_first(x_drug, edge_index)
+        x_drug = self.act2(x_drug)
+        x_drug = self.drug_conv_block(x_drug, edge_index)
+        x_drug = self.act2(x_drug)
+        x_drug = self.drug_conv_last(x_drug, edge_index)
+        x_drug = self.act2(x_drug)
+        x_drug = self.drug_proj(x_drug)
+        # RNA INCEPTION
+        x_rna = self.rna_conv_first(x_rna, edge_index)
+        x_rna = self.act2(x_rna)
+        x_rna = self.rna_conv_block(x_rna, edge_index)
+        x_rna = self.act2(x_rna)
+        x_rna = self.rna_conv_last(x_rna, edge_index)
+        x_rna = self.act2(x_rna)
+        x_rna = self.rna_proj(x_rna)
+        # CMETH INCEPTION
+        x_cmeth = self.cmeth_conv_first(x_cmeth, edge_index)
+        x_cmeth = self.act2(x_cmeth)
+        x_cmeth = self.cmeth_conv_block(x_cmeth, edge_index)
+        x_cmeth = self.act2(x_cmeth)
+        x_cmeth = self.cmeth_conv_last(x_cmeth, edge_index)
+        x_cmeth = self.act2(x_cmeth)
+        x_cmeth = self.cmeth_proj(x_cmeth)
+        # CNV INCEPTION
+        x_cnv = self.cnv_conv_first(x_cnv, edge_index)
+        x_cnv = self.act2(x_cnv)
+        x_cnv = self.cnv_conv_block(x_cnv, edge_index)
+        x_cnv = self.act2(x_cnv)
+        x_cnv = self.cnv_conv_last(x_cnv, edge_index)
+        x_cnv = self.act2(x_cnv)
+        x_cnv = self.cnv_proj(x_cnv)
+        # MUT INCEPTION
+        x_mut = self.mut_conv_first(x_mut, edge_index)
+        x_mut = self.act2(x_mut)
+        x_mut = self.mut_conv_block(x_mut, edge_index)
+        x_mut = self.act2(x_mut)
+        x_mut = self.mut_conv_last(x_mut, edge_index)
+        x_mut = self.act2(x_mut)
+        x_mut = self.mut_proj(x_mut)
+        ### CONCAT ALL PARTS
+        x = torch.cat([x_drug, x_rna, x_cmeth, x_cnv, x_mut], dim=0)
 
-        x = self.conv_block(x, edge_index)
-        x = self.act2(x)
-
-        x = self.conv_last(x, edge_index)
-        x = self.act2(x)
-        # import pdb; pdb.set_trace()
-        # x = torch.reshape(x, (-1, self.node_num, self.embedding_dim))
         drug_index = torch.reshape(drug_index, (-1, 2))
 
         # EMBEDDING DECODER TO [ypred]
