@@ -102,27 +102,27 @@ class WeBInDecoder(nn.Module):
         # [drug]
         self.drug_conv_first, self.drug_conv_block, self.drug_conv_last = self.build_conv_layer(
                     input_dim=drug_input_dim, hidden_dim=drug_hidden_dim, embedding_dim=drug_embedding_dim,
-                    node_num, num_edge, num_gene_edge)
+                    node_num=node_num, num_edge=num_edge, num_gene_edge=num_gene_edge)
         self.drug_proj = torch.nn.Linear((drug_embedding_dim*3), (drug_embedding_dim*3), bias=True)
         # [rna]
         self.rna_conv_first, self.rna_conv_block, self.rna_conv_last = self.build_conv_layer(
                     input_dim=rna_input_dim, hidden_dim=rna_hidden_dim, embedding_dim=rna_embedding_dim,
-                    node_num, num_edge, num_gene_edge)
+                    node_num=node_num, num_edge=num_edge, num_gene_edge=num_gene_edge)
         self.rna_proj = torch.nn.Linear((rna_embedding_dim*3), (rna_embedding_dim*3), bias=True)
         # [cmeth]
         self.cmeth_conv_first, self.cmeth_conv_block, self.cmeth_conv_last = self.build_conv_layer(
                     input_dim=cmeth_input_dim, hidden_dim=cmeth_hidden_dim, embedding_dim=cmeth_embedding_dim,
-                    node_num, num_edge, num_gene_edge)
+                    node_num=node_num, num_edge=num_edge, num_gene_edge=num_gene_edge)
         self.cmeth_proj = torch.nn.Linear((cmeth_embedding_dim*3), (cmeth_embedding_dim*3), bias=True)
         # [cnv]
         self.cnv_conv_first, self.cnv_conv_block, self.cnv_conv_last = self.build_conv_layer(
                     input_dim=cnv_input_dim, hidden_dim=cnv_hidden_dim, embedding_dim=cnv_embedding_dim,
-                    node_num, num_edge, num_gene_edge)
+                    node_num=node_num, num_edge=num_edge, num_gene_edge=num_gene_edge)
         self.cnv_proj = torch.nn.Linear((cnv_embedding_dim*3), (cnv_embedding_dim*3), bias=True)
         # [mut]
         self.mut_conv_first, self.mut_conv_block, self.mut_conv_last = self.build_conv_layer(
                     input_dim=mut_input_dim, hidden_dim=mut_hidden_dim, embedding_dim=mut_embedding_dim,
-                    node_num, num_edge, num_gene_edge)
+                    node_num=node_num, num_edge=num_edge, num_gene_edge=num_gene_edge)
         self.mut_proj = torch.nn.Linear((mut_embedding_dim*3), (mut_embedding_dim*3), bias=True)
         
         self.act = nn.ReLU()
