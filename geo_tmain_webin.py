@@ -11,7 +11,7 @@ from torch.autograd import Variable
 import utils
 from geo_load.read_geograph import read_batch
 from geo_load.geograph_sampler import GeoGraphLoader
-from enc_dec.geo_webgnn_decoder import WeBGNNDecoder
+from enc_dec.geo_webgnn_decoder import WeBInDecoder
 
 # PARSE ARGUMENTS FROM COMMAND LINE
 def arg_parse():
@@ -113,7 +113,7 @@ def build_geowebgnn_model(args, device):
     num_drug_edge = drugbank_num_df.shape[0]
     num_edge = num_gene_edge + (num_drug_edge * 2) 
     # BUILD UP MODEL
-    model = WeBGNNDecoder(input_dim=args.input_dim, hidden_dim=args.hidden_dim, embedding_dim=args.output_dim, decoder_dim=args.decoder_dim,
+    model = WeBInDecoder(input_dim=args.input_dim, hidden_dim=args.hidden_dim, embedding_dim=args.output_dim, decoder_dim=args.decoder_dim,
             node_num=node_num, num_edge=num_edge, num_gene_edge=num_gene_edge, device=device)
     model = model.to(device)
     return model
