@@ -77,20 +77,23 @@ def arg_parse():
     return parser.parse_args()
 
 
-def learning_rate_schedule(args, dl_input_num, iteration_num, e1, e2, e3):
+def learning_rate_schedule(args, dl_input_num, iteration_num, e1, e2, e3, e4):
     epoch_iteration = int(dl_input_num / args.batch_size)
     l1 = (args.lr - 0.0008) / (e1 * epoch_iteration)
     l2 = (0.0008 - 0.0006) / (e2 * epoch_iteration)
     l3 = (0.0006 - 0.0005) / (e3 * epoch_iteration)
-    l4 = 0.0005
+    l4 = (0.0005 - 0.0001) / (e4 * epoch_iteration)
+    l5 = 0.0001
     if iteration_num <= (e1 * epoch_iteration):
         learning_rate = args.lr - iteration_num * l1
     elif iteration_num <= (e1 + e2) * epoch_iteration:
         learning_rate = 0.0008 - (iteration_num - e1 * epoch_iteration) * l2
     elif iteration_num <= (e1 + e2 + e3) * epoch_iteration:
         learning_rate = 0.0006 - (iteration_num - (e1 + e2) * epoch_iteration) * l3
+    elif iteration_num <= (e1 + e2 + e3 + e4) * epoch_iteration:
+        learning_rate = 0.0005 - (iteration_num - (e1 + e2 + e3) * epoch_iteration) * l4
     else:
-        learning_rate = l4
+        learning_rate = l5
     print('-------LEARNING RATE: ' + str(learning_rate) + '-------' )
     return learning_rate
 
@@ -121,7 +124,7 @@ def build_geowebgnn_model(args, device):
 
 def train_geowebgnn_model(dataset_loader, model, device, args, learning_rate):
     # optimizer = torch.optim.Adam(filter(lambda p : p.requires_grad, model.parameters()), lr=learning_rate)
-    optimizer = torch.optim.Adam(filter(lambda p : p.requires_grad, model.parameters()), lr=learning_rate, eps=1e-7,weight_decay=3e-8)
+    optimizer = torch.optim.Adam(filter(lambda p : p.requires_grad, model.parameters()), lr=learning_rate, eps=1e-7,weight_decay=5e-4)
     # import pdb; pdb.set_trace()
     # optimizer = torch.optim.SGD(model.parameters(), lr = learning_rate, momentum = 0.9)
     batch_loss = 0
@@ -181,9 +184,10 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
         iteration_num = 0
     max_test_corr = 0
     max_test_corr_id = 0
-    e1 = 50
-    e2 = 25
-    e3 = 25
+    e1 = 20
+    e2 = 15
+    e3 = 15
+    e4 = 50
     epoch_loss_list = []
     epoch_pearson_list = []
     test_loss_list = []
@@ -220,7 +224,7 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
             dataset_loader, node_num, feature_dim = GeoGraphLoader.load_graph(geo_datalist, prog_args)
             # ACTIVATE LEARNING RATE SCHEDULE
             iteration_num += 1
-            learning_rate = learning_rate_schedule(args, dl_input_num, iteration_num, e1, e2, e3)
+            learning_rate = learning_rate_schedule(args, dl_input_num, iteration_num, e1, e2, e3, e4)
             # learning_rate = 0.001
             print('TRAINING MODEL...')
             model, batch_loss, batch_ypred = train_geowebgnn_model(dataset_loader, model, device, args, learning_rate)
