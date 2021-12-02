@@ -11,7 +11,7 @@ from torch.autograd import Variable
 import utils
 from geo_load.read_geograph import read_batch
 from geo_load.geograph_sampler import GeoGraphLoader
-from enc_dec.geo_webin_trans_decoder import WeBInDecoder
+from enc_dec.geo_webin_decoder import WeBInDecoder
 
 # PARSE ARGUMENTS FROM COMMAND LINE
 def arg_parse():
@@ -55,13 +55,14 @@ def arg_parse():
                         add_self = '0', # 'add'
                         adj = '0', # 'sym'
                         model = '0', # 'load'
+                        transfer = [], # ['rna','cmeth','cnv','mut']
                         lr = 0.001,
                         clip= 2.0,
                         batch_size = 64,
                         num_epochs = 200,
                         num_workers = 0,
                         input_dim = [2,1,1,0,0],
-                        hidden_dim = [2,1,1,1,0],
+                        hidden_dim = [2,1,1,0,0],
                         output_dim = [6,3,3,0,0],
                         # input_dim = [2,1,1,1,2],
                         # hidden_dim = [2,1,1,1,2],
@@ -119,7 +120,7 @@ def build_geowebgnn_model(args, device):
 def train_geowebgnn_model(dataset_loader, model, device, args, learning_rate):
     # optimizer = torch.optim.Adam(filter(lambda p : p.requires_grad, model.parameters()), lr=learning_rate)
     optimizer = torch.optim.Adam(filter(lambda p : p.requires_grad, model.parameters()), lr=learning_rate, eps=1e-7,weight_decay=5e-6)
-    import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
     # optimizer = torch.optim.SGD(model.parameters(), lr = learning_rate, momentum = 0.9)
     batch_loss = 0
     for batch_idx, data in enumerate(dataset_loader):
@@ -139,8 +140,31 @@ def train_geowebgnn_model(dataset_loader, model, device, args, learning_rate):
     torch.cuda.empty_cache()
     return model, batch_loss, ypred
 
+def transfer_weight_net(model, args, transfer_model_path_list, device):
+    transfer_model_list = args.transfer
+    model_state_dict = model.state_dict()
+    # import pdb; pdb.set_trace()
+    for feature in transfer_model_list:
+        if feature == 'rna':
+            rna_model = torch.load(transfer_model_path_list[0], map_location=device)
+            for name, param in rna_model.items():
+                if 'rna_conv' in name: model_state_dict[name].copy_(param)
+        if feature == 'cmeth':
+            cmeth_model = torch.load(transfer_model_path_list[1], map_location=device)
+            for name, param in cmeth_model.items():
+                if 'cmeth_conv' in name: model_state_dict[name].copy_(param)
+        if feature == 'cnv':
+            cnv_model = torch.load(transfer_model_path_list[2], map_location=device)
+            for name, param in cnv_model.items():
+                if 'cnv_conv' in name: model_state_dict[name].copy_(param)
+        if feature == 'mut':
+            mut_model = torch.load(transfer_model_path_list[3], map_location=device)
+            for name, param in mut_model.items():
+                if 'mut_conv' in name: model_state_dict[name].copy_(param)
+    model.load_state_dict(model_state_dict)
+    return model
 
-def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
+def train_geowebgnn(args, fold_n, load_path, transfer_model_path_list, iteration_num, device):
     # TRAINING DATASET BASIC PARAMETERS
     # [num_feature, num_gene, num_drug]
     num_feature = 7
@@ -161,11 +185,11 @@ def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
     # READ ADJ FILES
     edge_index = np.load('./datainfo/form_data/edge_index.npy')
 
-
     # BUILD [WeightBiGNN, DECODER] MODEL
     model = build_geowebgnn_model(args, device)
     if args.model == 'load':
         model.load_state_dict(torch.load(load_path, map_location=device))
+    model = transfer_weight_net(model, args, transfer_model_path_list, device)
 
     # TRAIN MODEL ON TRAINING DATASET
     # OTHER PARAMETERS
@@ -359,7 +383,6 @@ def test_geowebgnn(args, fold_n, model, test_save_path, device):
 
 
 
-
 if __name__ == "__main__":
     # PARSE ARGUMENT FROM TERMINAL OR DEFAULT PARAMETERS
     prog_args = arg_parse()
@@ -374,21 +397,27 @@ if __name__ == "__main__":
     prog_args.gpu_ids = [0]
     os.environ["CUDA_VISIBLE_DEVICES"] = '0'
     
-    # # TRAIN THE MODEL
-    # TRAIN [FOLD-1]
+    ##### TRAIN THE MODEL
+    ### TRAIN [FOLD-1]
     fold_n = 1
+    ### [LOAD MODEL]
     # prog_args.model = 'load'
     # load_path = './datainfo/result/epoch_200/best_train_model.pt'
     load_path = ''
+    ### [LOAD TRANSFER]
+    prog_args.transfer = ['rna', 'cmeth']
+    transfer_model_path_list = ['./datainfo/result/webin/epoch_200_inc_rna_e4_5e6/best_train_model.pt',
+                                './datainfo/result/webin/epoch_200_inc_cmeth_e4_5e6/best_train_model.pt',
+                                './datainfo/result/webin/epoch_200_inc_cnv_e4_5e6/best_train_model.pt',
+                                './datainfo/result/webin/epoch_200_inc_mut_e4_5e6/best_train_model.pt']
     yTr = np.load('./datainfo/form_data/yTr' + str(fold_n) + '.npy')
-    # yTr = np.load('./datainfo/form_data/y_split1.npy')
     dl_input_num = yTr.shape[0]
     epoch_iteration = int(dl_input_num / prog_args.batch_size)
     start_iter_num = 200 * epoch_iteration
-    train_geowebgnn(prog_args, fold_n, load_path, start_iter_num, device)
+    train_geowebgnn(prog_args, fold_n, load_path, transfer_model_path_list, start_iter_num, device)
 
-    # # # TEST THE MODEL
-    # # TEST [FOLD-1]
+    ##### TEST THE MODEL
+    ### TEST [FOLD-1]
     # fold_n = 1
     # model = build_geowebgnn_model(prog_args, device)
     # test_load_path = './datainfo/result/epoch_50/best_train_model.pt'

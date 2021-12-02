@@ -67,9 +67,9 @@ def arg_parse():
                         batch_size = 64,
                         num_epochs = 200,
                         num_workers = 0,
-                        input_dim = [2,0,0,0,2],
-                        hidden_dim = [2,0,0,0,2],
-                        output_dim = [6,0,0,0,6],
+                        input_dim = [2,1,1,1,2],
+                        hidden_dim = [2,1,1,1,2],
+                        output_dim = [6,3,3,3,6],
                         # input_dim = [2,1,1,1,2],
                         # hidden_dim = [2,1,1,1,2],
                         # output_dim = [6,3,3,3,6],
@@ -147,7 +147,6 @@ def train_geowebgnn_model(dataset_loader, model, device, args, learning_rate):
         optimizer.step()
     torch.cuda.empty_cache()
     return model, batch_loss, ypred
-
 
 def train_geowebgnn(args, fold_n, load_path, iteration_num, device):
     # TRAINING DATASET BASIC PARAMETERS
@@ -383,21 +382,21 @@ if __name__ == "__main__":
     prog_args.gpu_ids = [0]
     os.environ["CUDA_VISIBLE_DEVICES"] = '0'
     
-    # # TRAIN THE MODEL
-    # TRAIN [FOLD-1]
+    ##### TRAIN THE MODEL
+    ### TRAIN [FOLD-1]
     fold_n = 1
+    ### [LOAD MODEL]
     # prog_args.model = 'load'
     # load_path = './datainfo/result/epoch_200/best_train_model.pt'
     load_path = ''
     yTr = np.load('./datainfo/form_data/yTr' + str(fold_n) + '.npy')
-    # yTr = np.load('./datainfo/form_data/y_split1.npy')
     dl_input_num = yTr.shape[0]
     epoch_iteration = int(dl_input_num / prog_args.batch_size)
     start_iter_num = 200 * epoch_iteration
     train_geowebgnn(prog_args, fold_n, load_path, start_iter_num, device)
 
-    # # # TEST THE MODEL
-    # # TEST [FOLD-1]
+    ##### TEST THE MODEL
+    ### TEST [FOLD-1]
     # fold_n = 1
     # model = build_geowebgnn_model(prog_args, device)
     # test_load_path = './datainfo/result/epoch_50/best_train_model.pt'
