@@ -6,9 +6,12 @@ library(kdensity)
 library(ggplot2)
 
 ### 1. READ GRAPH [edge_index, node] FROM FILES
-net_edge_weight = read.csv('./datainfo/analysis_data/network_edge_weight.csv')
+net_edge_weight = read.csv('./datainfo/analysis_data/network_edge_weight_cmeth.csv')
 net_edge = net_edge_weight[, c('src', 'dest', 'weight', 'edge_type')]
 net_node = read.csv('./datainfo/analysis_data/node_num_dict.csv')
+
+gene_edge_weight_filter = read.csv('./datainfo/analysis_data/gene_edge_weight_cmeth.csv')
+# gene_edge_weight_filter = filter(gene_edge_weight_filter, weight > 0.1)
 
 ui <- fluidPage(
   titlePanel('Whole Network Interaction'),
@@ -16,8 +19,8 @@ ui <- fluidPage(
     sidebarPanel(
       sliderInput('threshold',
                   'Select the threshold of edge weight to plot',
-                  min = 0.1, max = 0.5,
-                  value = 0.15),
+                  min = 0.005, max = 0.2,
+                  value = 0.015),
       selectInput('community', label = 'Selection of community detection', 
                   choices = list('No Community Detection' = 0, 
                                  'Greedy Community Detection' = 1, 
@@ -47,7 +50,7 @@ ui <- fluidPage(
       sliderInput('imgene_label_size',
                   'Select the label size of important genes',
                   min = 0.1, max = 2.5,
-                  value = 0.8),
+                  value = 0.7),
       selectInput('gene_node_color', 
                   'Select the common gene color', 
                   choices = c('lightblue', 'gold', 'purple','green', 'white', 'tomato'),
@@ -73,10 +76,10 @@ server <- function(input, output) {
       geom_density(color="darkblue", fill="lightblue")+
       geom_vline(xintercept = density(gene_edge_weight_filter$weight)$weight[max])+
       xlab("weight")+
-      scale_x_continuous(breaks=c(0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.3, 1), trans='log10')+
+      # scale_x_continuous(breaks=c(0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.3, 1), trans='log10')+
       geom_vline(aes(xintercept =input$threshold, color='edge_weight_threshold'), linetype='dashed')+
-      geom_vline(aes(xintercept =0.1, color='threshold=0.1'), linetype='dashed')+
-      scale_color_manual(values = c("edge_weight_threshold" = "red", 'threshold=0.1'='black'))+
+      # geom_vline(aes(xintercept =0.1, color='threshold=0.1'), linetype='dashed')+
+      # scale_color_manual(values = c("edge_weight_threshold" = "red", 'threshold=0.1'='black'))+
       xlab('Log10 Edge Weight')+
       ylab('Density')+
       ggtitle('KDE Plot of Gene-Gene Interaction (Start from 0.1)')+
@@ -101,16 +104,16 @@ server <- function(input, output) {
     vertex_fcol[V(net)$node_type=='drug'] = 'black'
     # vertex color
     vertex_col = rep(input$gene_node_color, vcount(net))
-    vertex_col[degree(net)>5] = input$impgene_node_color
+    vertex_col[degree(net)>=5] = input$impgene_node_color
     vertex_col[V(net)$node_type=='drug'] = input$drug_node_color
     # vertex size
     vertex_size = rep(5, vcount(net))
-    vertex_size[degree(net)>5] = degree(net)[degree(net)>5]
-    vertex_size[degree(net)>10] = 12
+    # vertex_size[degree(net)>5] = degree(net)[degree(net)>5]*1.5
+    vertex_size[degree(net)>=5] = 10
     vertex_size[V(net)$node_type=='drug'] = 7
     # vertex cex
     vertex_cex = c(input$drug_label_size, input$gene_label_size)[1+(V(net)$node_type=='gene')]
-    vertex_cex[degree(net)>5] = input$imgene_label_size
+    vertex_cex[degree(net)>=5] = input$imgene_label_size
     # edge with
     edge_width = (E(net)$weight-input$threshold+0.2)*(input$edge_width)
     edge_width[E(net)$edge_type=='drug-gene'] = (input$drug_edge_width)*(input$edge_width)

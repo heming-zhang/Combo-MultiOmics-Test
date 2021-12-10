@@ -81,57 +81,19 @@ class NetAnalyse():
         NetAnalyse().average_layer_weight(cnv_conv_edge_weight_list, net_type='cnv')
         NetAnalyse().average_layer_weight(mut_conv_edge_weight_list, net_type='mut')
 
-
-    def filter_net(self, percentile):
-        gene_edge_weight_df = pd.read_csv('./datainfo/analysis_data/gene_edge_weight.csv')
-        mean_conv_edge_weight = np.array(gene_edge_weight_df['weight'])
-        percentile_threshold = np.percentile(mean_conv_edge_weight, percentile)
-        print(percentile_threshold)
-
-    def net_threshold_stat(self):
-        gene_edge_weight_df = pd.read_csv('./datainfo/analysis_data/gene_edge_weight.csv')
+    def net_stat(self, net_type, percentile):
+        ### BASIC STAT INFO
+        gene_edge_weight_df = pd.read_csv('./datainfo/analysis_data/gene_edge_weight_' + net_type + '.csv')
+        print(gene_edge_weight_df.describe())
+        print(net_type.upper() + ' NETWORK ' + str(percentile) + '% WEIGHT: '\
+                + str(np.percentile(np.array(gene_edge_weight_df['weight']), percentile)))
         ### HISTOGRAM
-        gene_edge_weight_df = gene_edge_weight_df[gene_edge_weight_df['weight'] > 0.1]
-        data = list(gene_edge_weight_df['weight'])
-        plt.hist(data, weights = np.ones(len(data)) / len(data), bins=50)
-        plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-        plt.savefig('./datainfo/plot/net_threshold_hist.png', dpi=300)
-        ### PARETO PLOT
-        melt_edge_weight_df = gene_edge_weight_df[['weight']]
-        edge_weight_category=pd.cut(melt_edge_weight_df.weight,bins=[0.1,0.15,0.2,0.3,0.5,1.0],
-                                labels=['<0.15','0.15~0.2','0.2~0.3','0.3~0.5','>0.5'])
-        melt_edge_weight_df.insert(1,'edge_weight_category',edge_weight_category)
-        df_pareto=melt_edge_weight_df.groupby(by=['edge_weight_category']).sum()
-        df_pareto = df_pareto.sort_values(by='weight', ascending=False)
-        df_pareto['cumperc'] = df_pareto['weight'].cumsum()/df_pareto['weight'].sum()*100
-        fig, ax = plt.subplots()
-        ax.bar(df_pareto.index, df_pareto['weight'])
-        ax2 = ax.twinx()
-        ax2.plot(df_pareto.index, df_pareto['cumperc'], color='red', marker="D", ms=4)
-        ax2.yaxis.set_major_formatter(PercentFormatter())
-        plt.savefig('./datainfo/plot/net_threshold_edge_weight_pareto.png', dpi=300)
-        ### BOX PLOT
-        melt_edge_weight_df.boxplot(column=['weight'])
-        plt.savefig('./datainfo/plot/net_threshold_boxplot.png', dpi=300)
-
-
-    def net_stat(self):
-        gene_edge_weight_df = pd.read_csv('./datainfo/analysis_data/gene_edge_weight.csv')
-        ### HISTOGRAM
-        gene_edge_weight_df = gene_edge_weight_df[gene_edge_weight_df['weight'] > 0.1]
-        data = list(gene_edge_weight_df['weight'])
-        plt.hist(data, weights = np.ones(len(data)) / len(data))
-        plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-        # hist = gene_edge_weight_df.hist(column=['weight'], bins=50, density=True)
-        plt.savefig('./datainfo/plot/net_hist.png', dpi=300)
-        gene_edge_weight_df['weight'].plot.kde(bw_method=0.3)
+        gene_edge_weight_df.hist(column=['weight'], bins=50, density=True)
+        plt.savefig('./datainfo/plot/net_hist_' + net_type + '.png', dpi=300)
+        ### KDE PLOT
+        gene_edge_weight_df['weight'].plot.kde()
         plt.xscale('log')
-        plt.title('Edge weight of network kde distribution')
-        plt.savefig('./datainfo/plot/net_kde.png', dpi=300)
-        plt.show()
-        ### BOX PLOT
-        gene_edge_weight_df.boxplot(column=['weight'])
-        plt.savefig('./datainfo/plot/net_boxplot.png', dpi=300)
+        plt.savefig('./datainfo/plot/net_kde_' + net_type + '.png', dpi=300)
         ### PARETO PLOT
         melt_edge_weight_df = gene_edge_weight_df[['weight']]
         edge_weight_category=pd.cut(melt_edge_weight_df.weight,bins=[-0.01,0.001,0.01,0.1,0.15,0.2,1.0],
@@ -145,7 +107,7 @@ class NetAnalyse():
         ax2 = ax.twinx()
         ax2.plot(df_pareto.index, df_pareto['cumperc'], color='red', marker="D", ms=4)
         ax2.yaxis.set_major_formatter(PercentFormatter())
-        plt.savefig('./datainfo/plot/net_edge_weight_pareto.png', dpi=300)
+        plt.savefig('./datainfo/plot/net_edge_weight_pareto_' + net_type + '.png', dpi=300)
 
 
 if __name__ == "__main__":
@@ -153,8 +115,7 @@ if __name__ == "__main__":
     device = torch.device('cuda:0')
     if os.path.exists('./datainfo/analysis_data') == False:
         os.mkdir('./datainfo/analysis_data')
-    NetAnalyse().prepare_network(drug_gene_edge_weight=0.5)
-    NetAnalyse().load_param(file_path, device)
-    # NetAnalyse().filter_net(percentile=98)
-    # NetAnalyse().net_stat()
-    # NetAnalyse().net_threshold_stat()
+    # NetAnalyse().prepare_network(drug_gene_edge_weight=0.5)
+    # NetAnalyse().load_param(file_path, device)
+
+    NetAnalyse().net_stat(net_type='rna', percentile=99.9)
