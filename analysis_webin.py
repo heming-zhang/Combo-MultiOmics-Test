@@ -24,7 +24,7 @@ class NetAnalyse():
         drug_num_dict_df['node_type'] = ['drug'] * drug_num_dict_df.shape[0]
         node_num_dict_df = pd.concat([kegg_gene_num_dict_df, drug_num_dict_df])
         node_num_dict_df = node_num_dict_df[['node_num', 'node_name', 'node_type']]
-        node_num_dict_df.to_csv('./datainfo/analysis_data/node_num_dict.csv', index=False, header=True)
+        node_num_dict_df.to_csv('./datainfo/analysis_data/webin/node_num_dict.csv', index=False, header=True)
         ### GET [drug-gene] EDGES
         final_drugbank_num_df = pd.read_csv('./datainfo/filtered_data/final_drugbank_num.csv')
         final_drugbank_num_df = final_drugbank_num_df.rename(columns={'Drug': 'src', 'Target': 'dest'})
@@ -34,7 +34,7 @@ class NetAnalyse():
         node_dict = dict(zip(list(node_num_dict_df['node_num']), list(node_num_dict_df['node_name'])))
         final_drugbank_edge_df = final_drugbank_num_df.replace({'src_name': node_dict, 'dest_name': node_dict})
         final_drugbank_edge_df = final_drugbank_edge_df[['src', 'src_name', 'dest', 'dest_name', 'weight']]
-        final_drugbank_edge_df.to_csv('./datainfo/analysis_data/drug_edge_weight.csv', header=True, index=False)
+        final_drugbank_edge_df.to_csv('./datainfo/analysis_data/webin/drug_edge_weight.csv', header=True, index=False)
 
     def average_layer_weight(self, conv_edge_weight_list, net_type):
         ### AVERAGE [edge_weight] 
@@ -56,13 +56,13 @@ class NetAnalyse():
         gene_dict = dict(zip(list(kegg_gene_num_dict_df['gene_num']), list(kegg_gene_num_dict_df['kegg_gene'])))
         gene_edge_weight_df = gene_edge_weight_df.replace({'src_name': gene_dict, 'dest_name': gene_dict})
         gene_edge_weight_df = gene_edge_weight_df[['src', 'src_name', 'dest', 'dest_name', 'weight']]
-        gene_edge_weight_df.to_csv('./datainfo/analysis_data/gene_edge_weight_' + net_type + '.csv', header=True, index=False)
+        gene_edge_weight_df.to_csv('./datainfo/analysis_data/webin/gene_edge_weight_' + net_type + '.csv', header=True, index=False)
         ### COMBINE [gene-gene] AND [drug-gene] EDGES
-        final_drugbank_edge_df = pd.read_csv('./datainfo/analysis_data/drug_edge_weight.csv')
+        final_drugbank_edge_df = pd.read_csv('./datainfo/analysis_data/webin/drug_edge_weight.csv')
         gene_edge_weight_df['edge_type'] = ['gene-gene'] * gene_edge_weight_df.shape[0]
         final_drugbank_edge_df['edge_type'] = ['drug-gene'] * (final_drugbank_edge_df.shape[0])
         network_edge_weight_df = pd.concat([gene_edge_weight_df, final_drugbank_edge_df])
-        network_edge_weight_df.to_csv('./datainfo/analysis_data/network_edge_weight_' + net_type + '.csv', header=True, index=False)
+        network_edge_weight_df.to_csv('./datainfo/analysis_data/webin/network_edge_weight_' + net_type + '.csv', header=True, index=False)
 
     def load_param(self, file_path, device):
         ### LOAD PARAMETERS FROM SAVED TRAIN MODEL
@@ -83,7 +83,7 @@ class NetAnalyse():
 
     def net_stat(self, net_type, percentile):
         ### BASIC STAT INFO
-        gene_edge_weight_df = pd.read_csv('./datainfo/analysis_data/gene_edge_weight_' + net_type + '.csv')
+        gene_edge_weight_df = pd.read_csv('./datainfo/analysis_data/webin/gene_edge_weight_' + net_type + '.csv')
         print(gene_edge_weight_df.describe())
         print(net_type.upper() + ' NETWORK ' + str(percentile) + '% WEIGHT: '\
                 + str(np.percentile(np.array(gene_edge_weight_df['weight']), percentile)))
@@ -113,9 +113,9 @@ class NetAnalyse():
 if __name__ == "__main__":
     file_path = './datainfo/result/webin/epoch_200_inc_all/best_train_model.pt'
     device = torch.device('cuda:0')
-    if os.path.exists('./datainfo/analysis_data') == False:
-        os.mkdir('./datainfo/analysis_data')
-    # NetAnalyse().prepare_network(drug_gene_edge_weight=0.5)
-    # NetAnalyse().load_param(file_path, device)
+    if os.path.exists('./datainfo/analysis_data/webin') == False:
+        os.mkdir('./datainfo/analysis_data/webin')
+    NetAnalyse().prepare_network(drug_gene_edge_weight=0.2)
+    NetAnalyse().load_param(file_path, device)
 
-    NetAnalyse().net_stat(net_type='rna', percentile=99.9)
+    # NetAnalyse().net_stat(net_type='rna', percentile=99.9)
