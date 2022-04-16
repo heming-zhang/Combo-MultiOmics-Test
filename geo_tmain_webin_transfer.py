@@ -297,6 +297,8 @@ def train_geowebgnn(args, fold_n, load_path, transfer_model_path_list, iteration
             max_test_corr_id = i
             # torch.save(model.state_dict(), path + '/best_train_model'+ str(i) +'.pt')
             torch.save(model.state_dict(), path + '/best_train_model.pt')
+            tmp_training_input_df.to_csv(path + '/Best_TrainingPred_' + str(i) + '.txt', index=False, header=True)
+            tmp_test_input_df.to_csv(path + '/Best_TestPred' + str(i) + '.txt', index = False, header = True) 
         print('\n-------------BEST TEST PEARSON CORR MODEL ID INFO:' + str(max_test_corr_id) + '-------------')
         print('--- TRAIN ---')
         print('BEST MODEL TRAIN LOSS: ', epoch_loss_list[max_test_corr_id - 1])
