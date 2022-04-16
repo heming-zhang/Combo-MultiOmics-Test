@@ -371,6 +371,20 @@ class RecheckFinal():
         tail_gene_drug_drugbank_df = tail_gene_drug_drugbank_df.sort_values(by=['Drug', 'Target'])
         tail_gene_drug_drugbank_df.to_csv('../datainfo/filtered_data/final_drugbank.csv', index=False, header=True)
 
+    def stat(self):
+        ### FINAL CELL LINES
+        # final_dl_input_df = pd.read_csv('../datainfo/filtered_data/final_dl_input.csv')
+        # unique_cell_line_list = sorted(list(set(final_dl_input_df['Cell Line Name'])))
+        # print(len(unique_cell_line_list))
+        ### FINAL DRUGS
+        # final_drugbank = pd.read_csv('../datainfo/filtered_data/final_drugbank.csv')
+        # unique_drug_list = list(set(final_drugbank['Drug']))
+        # print(unique_drug_list)
+        # print(len(unique_drug_list))
+        # unique_drug_gene_list = list(set(final_drugbank['Target']))
+        # print(unique_drug_gene_list)
+        # print(len(unique_drug_gene_list))
+
 
 
 if os.path.exists('../datainfo/mid_gene') == False:
@@ -390,10 +404,11 @@ if os.path.exists('../datainfo/filtered_data') == False:
 
 # GeneAnnotation().gdsc_raw_cnv_tail_overzero()
 # GeneAnnotation().gdsc_cnv_tail_overzero()
-GeneAnnotation().kegg_omics_intersect()
+# GeneAnnotation().kegg_omics_intersect()
 # GeneAnnotation().kegg_drugbank_gene_intersect()
 
 # DrugAnnotation().nci_drugbank_drug_intersect()
 
 # RecheckFinal().recheck_cell_line()
 # RecheckFinal().final()
+RecheckFinal().stat()
